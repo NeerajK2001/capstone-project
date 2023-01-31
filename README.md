@@ -1,4 +1,4 @@
-# capstone-project
+# Capstone-project
 Capstone project for web development
 ## Team Members
 ### Neeraj Kumar
