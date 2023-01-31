@@ -1,9 +1,9 @@
 # capstone-project
 Capstone project for web development
-##Team Members
+## Team Members
 Neeraj Kumar
 Harshita Harshita
 Jaskaran Preet Singh
-##Useful Links
+## Useful Links
 [Github Documentation](https://docs.github.com/en)
 [Github Support](https://support.github.com/)
