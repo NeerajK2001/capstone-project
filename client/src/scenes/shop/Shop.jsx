@@ -1,51 +1,45 @@
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Item from "../../components/Item";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import { shades } from "../../theme";
+// import AddIcon from "@mui/icons-material/Add";
+// import RemoveIcon from "@mui/icons-material/Remove";
+// import { shades } from "../../theme";
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
+import { setIsCartOpen } from "../../state";
 
-const ItemDetails = () =>{
+console.log("hello this is about");
+
+const Shop = () =>{
     const dispatch = useDispatch();
-    const {itemId} = useParams();
     const [value, setValue] = useState("description");
     const [count, setCount] = useState(1);
     const [item, setItem] = useState(null);
-    const [items, setItems] = useState([]);
 
-    const handleChange = (evvent, newValue) =>{
+    const handleChange = (event, newValue) =>{
         setValue(newValue);
     }
 
     async function getItem() {
         const item = await fetch(
-            `http://localhost:1337/api/items/${itemId}?populate=image`,
+            `http://localhost:1337/api/items/5?populate=image`,
             {method: "GET"}
         );
+
+        // console.log(item);
 
         const itemJson = await item.json();
         setItem(itemJson.data);
     }
 
-    async function getItems() {
-        const items = await fetch(
-          "http://localhost:1337/api/items?populate=image",
-          { method: "GET" }
-        );
-        const itemsJson = await items.json();
-        setItems(itemsJson.data);
-      }
+    
 
     useEffect(() => {
         getItem();
         // getItems();
-    },[itemId])
+    },[])
 
     return <Box
     width="80%"
@@ -73,8 +67,8 @@ const ItemDetails = () =>{
                     <Typography>${item?.attributes?.price}</Typography>
                     <Typography sx={{ mt: "20px" }}>{item?.attributes?.longDescription}</Typography>
                 </Box>
-                <Box display="flex" alignItems="center" minHeight="50px">
-                    <Box
+                <Box display="flex" alignItems="center" justifyContent="space-between" minHeight="50px">
+                    {/* <Box
                         display="flex"
                         alignItems="center"
                         border={`1.5px solid ${shades.neutral[300]}`}
@@ -88,7 +82,7 @@ const ItemDetails = () =>{
                         <IconButton onClick={() => setCount(count + 1)}>
                             <AddIcon />
                         </IconButton>
-                    </Box>
+                    </Box> */}
                     <Button
                     sx={{
                         backgroundColor: "#222222",
@@ -102,6 +96,21 @@ const ItemDetails = () =>{
                     >
                         ADD TO CART
                     </Button>
+
+                    <Button
+                    sx={{
+                        backgroundColor: "#222222",
+                        color: "white",
+                        borderRadius: 0,
+                        minWidth: "150px",
+                        padding: "10px 40px",
+                    }}
+
+                    onClick={() => dispatch(setIsCartOpen({}))}
+                    >
+                       VIEW CART
+                    </Button>
+                    
                 </Box>
                 <Box>
                     <Box m="20px 0 5px 0" display="flex">
@@ -129,7 +138,7 @@ const ItemDetails = () =>{
         </Box>
 
         {/* Related Items */}
-        <Box mt="50px" width="100%">
+        {/* <Box mt="50px" width="100%">
             <Typography variant="h3" fontWeight="bold">
                 Reated Products
             </Typography>
@@ -143,10 +152,10 @@ const ItemDetails = () =>{
                     <Item key={`${item.name}-${i}`} item={item} />
                 ))}
             </Box>
-        </Box>
+        </Box> */}
     </Box>
 
     
 }
 
-export default ItemDetails;
+export default Shop;

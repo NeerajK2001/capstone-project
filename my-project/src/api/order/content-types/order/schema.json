@@ -4,7 +4,7 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order",
+    "displayName": "order",
     "description": ""
   },
   "options": {
@@ -12,14 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "products": {
+      "type": "json"
+    },
     "username": {
       "type": "string"
     },
     "stripeSessionID": {
       "type": "string"
-    },
-    "products": {
-      "type": "json"
     }
   }
 }

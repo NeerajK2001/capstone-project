@@ -5,7 +5,7 @@ import Subscribe from './Subscribe'
 function Home (){
     return <div className='home'>
         <MainCarousel/>
-        <ShoppingList/>
+        {/* <ShoppingList/> */}
         <Subscribe/>
     </div>
     

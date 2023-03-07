@@ -9,6 +9,11 @@ import {
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
+// import AppBar from '@mui/material/AppBar';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography'
+
+// import Link from 'next/link'
 
 function Navbar() {
   const navigate = useNavigate();
@@ -75,6 +80,13 @@ function Navbar() {
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
+          <Box
+           onClick={() => navigate("/Shop")}
+           sx={{ "&:hover": { cursor: "pointer" } }}
+           color={shades.secondary[500]}>
+            Shop
+          </Box>
+
           <IconButton sx={{ color: "black" }}>
             <MenuOutlined />
           </IconButton>
