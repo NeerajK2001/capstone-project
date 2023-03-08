@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useEffect, useState } from "react";
@@ -9,132 +9,147 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
 import { setIsCartOpen } from "../../state";
+import "../../styles/global.css";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import MainCarousel from "./MainCarousel";
+// console.log("hello this is about");
 
-console.log("hello this is about");
+const Shop = () => {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState("description");
+  const [count] = useState(1);
+  const [item, setItem] = useState(null);
 
-const Shop = () =>{
-    const dispatch = useDispatch();
-    const [value, setValue] = useState("description");
-    const [count, setCount] = useState(1);
-    const [item, setItem] = useState(null);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  async function getItem() {
+    const item = await fetch(
+      `http://localhost:1337/api/items/5?populate=image`,
+      { method: "GET" }
+    );
 
-    const handleChange = (event, newValue) =>{
-        setValue(newValue);
-    }
+    // console.log(item);
 
-    async function getItem() {
-        const item = await fetch(
-            `http://localhost:1337/api/items/5?populate=image`,
-            {method: "GET"}
-        );
+    const itemJson = await item.json();
+    setItem(itemJson.data);
+  }
 
-        // console.log(item);
+  useEffect(() => {
+    getItem();
+    // getItems();
+  }, []);
 
-        const itemJson = await item.json();
-        setItem(itemJson.data);
-    }
+  function MouseOverRed(event) {
+    event.target.style.background = '#BC4123';
+  }
+  function MouseOverGreen(event) {
+    event.target.style.background = 'green';
+  }
+  function MouseOut(event){
+    event.target.style.background="";
+  }
 
-    
-
-    useEffect(() => {
-        getItem();
-        // getItems();
-    },[])
-
-    return <Box
-    width="80%"
-    m= "80px auto"
-    >
+  return (
+    <Box>
+      <Box width="80%" m="80px auto">
         <Box display="flex" flexWrap="wrap" columnGap="40px">
-            {/* Images */}
-            <Box flex="1 1 40%" mb="40px">
-                <img
-                    alt={item?.name}
-                    width="100%"
-                    height="100%"
-                    src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
-                    style={{objectFit: "contain"}}
-                />
+          {/* Images */}
+          <Box flex="1 1 40%" mb="40px">
+            <img
+              alt={item?.name}
+              width="100%"
+              height="100%"
+              src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              style={{ objectFit: "fill" }}
+            />
+          </Box>
+          {/* actions */}
+          <Box flex="1 1 50%" mb="40px">
+            <Box m="0px 0 25px 0">
+              <Typography variant="h1">{item?.attributes?.name}</Typography>
+              <Box
+                display="flex"
+                flexWrap="wrap"
+                columnGap="1.33%"
+                justifyContent="space-between"
+                m="5px 0px"
+              >
+                <Typography variant="p">Sold By Jalfam Games</Typography>
+                <Typography variant="p">Eco-friendly</Typography>
+              </Box>
+              <Typography variant="p">See All Reviews</Typography>
+
+              <Typography variant="h2" m="5px 0px">
+                ${item?.attributes?.price}
+              </Typography>
+              <Typography sx={{ mt: "20px" }}>
+                {item?.attributes?.longDescription}
+              </Typography>
             </Box>
-            {/* actions */}
-            <Box flex="1 1 50%" mb="40px">
-                <Box display="flex" justifyContent="space-between">
-                    <Box>Home/Item</Box>
-                    <Box>Pren Next</Box>
-                </Box>
-                <Box m="65px 0 25px 0">
-                    <Typography variant="h3">{item?.attributes?.name}</Typography>
-                    <Typography>${item?.attributes?.price}</Typography>
-                    <Typography sx={{ mt: "20px" }}>{item?.attributes?.longDescription}</Typography>
-                </Box>
-                <Box display="flex" alignItems="center" justifyContent="space-between" minHeight="50px">
-                    {/* <Box
-                        display="flex"
-                        alignItems="center"
-                        border={`1.5px solid ${shades.neutral[300]}`}
-                        mr="20px"
-                        p="2px 5px"
-                        >
-                        <IconButton onClick={() => setCount(Math.max(count - 1, 0))}>
-                            <RemoveIcon />
-                        </IconButton>
-                        <Typography sx={{ p: "0 5px" }}>{count}</Typography>
-                        <IconButton onClick={() => setCount(count + 1)}>
-                            <AddIcon />
-                        </IconButton>
-                    </Box> */}
-                    <Button
-                    sx={{
-                        backgroundColor: "#222222",
-                        color: "white",
-                        borderRadius: 0,
-                        minWidth: "150px",
-                        padding: "10px 40px",
-                    }}
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              minHeight="50px"
+            >
+              <Button
+                sx={{
+                    backgroundColor: "#041E42",
+                    color: "white",
+                    borderRadius:"5px",
+                    minWidth: "150px",
+                    padding: "15px 100px",
+                }}
+                onMouseOver={MouseOverGreen}
+                onMouseOut={MouseOut}
+                onClick={() =>
+                  dispatch(addToCart({ item: { ...item, count } }))
 
-                    onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-                    >
-                        ADD TO CART
-                    </Button>
+                }
+              >
+                ADD TO CART
+              </Button>
 
-                    <Button
-                    sx={{
-                        backgroundColor: "#222222",
-                        color: "white",
-                        borderRadius: 0,
-                        minWidth: "150px",
-                        padding: "10px 40px",
-                    }}
+              <Button
+                sx={{
+                  backgroundColor: "#D1683B",
+                  color: "white",
+                  borderRadius:"5px",
+                  minWidth: "150px",
+                  padding: "15px 100px",
 
-                    onClick={() => dispatch(setIsCartOpen({}))}
-                    >
-                       VIEW CART
-                    </Button>
-                    
-                </Box>
-                <Box>
-                    <Box m="20px 0 5px 0" display="flex">
-                        <FavoriteBorderOutlinedIcon/>
-                        <Typography sx={{ml: "5px"}}>ADD TO WISHLIST</Typography>
-                    </Box>
-                    <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
-                </Box>
+                }}
+                onMouseOver={MouseOverRed}
+                onMouseOut={MouseOut}
+                onClick={() => dispatch(setIsCartOpen({}))}
+              >
+                VIEW CART
+              </Button>
             </Box>
+            <Box>
+              <Box m="20px 0 5px 0" display="flex">
+                <LocalShippingOutlinedIcon />
+                <Typography sx={{ ml: "5px" }}>
+                  Free delievery in Edmonton
+                </Typography>
+              </Box>
+              <Typography>In Stock</Typography>
+            </Box>
+          </Box>
         </Box>
         {/* Information */}
         <Box m="20px 0">
-            <Tabs value={value} onChange={handleChange}>
-                <Tab label="DESCRIPTION" value="description" />
-                <Tab label="REVIEWS" value="reviews" />
-            </Tabs>
+          <Tabs value={value} onChange={handleChange}>
+            <Tab label="DESCRIPTION" value="description" />
+            <Tab label="REVIEWS" value="reviews" />
+          </Tabs>
         </Box>
         <Box display="flex" flexWrap="wrap" gap="15px">
-            {value === "description" && (
-                <div>{item?.attributes?.longDescription}</div>
-            )}
-            {value === "reviews" && (
-                <div>reviews</div>
-            )}
+          {value === "description" && (
+            <div>{item?.attributes?.longDescription}</div>
+          )}
+          {value === "reviews" && <div>reviews</div>}
         </Box>
 
         {/* Related Items */}
@@ -153,9 +168,10 @@ const Shop = () =>{
                 ))}
             </Box>
         </Box> */}
+      </Box>
+      <MainCarousel/>
     </Box>
-
-    
-}
+  );
+};
 
 export default Shop;

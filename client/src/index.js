@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/global.css'
 import App from "./App";
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
@@ -8,14 +8,6 @@ import {theme} from './theme'
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './state'
-
-// ReactDOM.render(
-//   <ThemeProvider theme={theme}>
-//   <CssBaseline/>
-//   <App />
-// </ThemeProvider>,
-//   document.getElementById('root')
-// );
 
 const store = configureStore({
   reducer: {cart: cartReducer},
@@ -27,7 +19,9 @@ root.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <div className="container">
+          <App />
+        </div>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>

@@ -1,98 +1,83 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, Box, IconButton } from "@mui/material";
 import {
-  PersonOutline,
-  ShoppingBagOutlined,
-  MenuOutlined,
-  SearchOutlined,
+  // PersonOutline,
+  // ShoppingBagOutlinedIcon,
+  // MenuOutlined,
+  // SearchOutlined,
 } from "@mui/icons-material";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
-// import AppBar from '@mui/material/AppBar';
-// import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+// import logo from './img/main-logo.png';
+// import login from './img/login.png';
+// import cart from './img/cart.png';
+// import '../../components/Navbar.css';
+import '../../styles/Navbar.css'
 
-// import Link from 'next/link'
+import logo from '../../components/img/main-logo.png';
+import login from '../../components/img/login.png';
+import cartIcon from '../../components/img/cart.png';
+
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuIconAnimation, setMenuIconAnimation] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
-  return (
-    <Box
-      display="flex"
-      alignItems="center"
-      width="100%"
-      height="60px"
-      backgroundColor="rgba(255, 255, 255, 0.95)"
-      color="black"
-      position="fixed"
-      top="0"
-      left="0"
-      zIndex="1"
-    >
-      <Box
-        width="80%"
-        margin="auto"
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Box
-          onClick={() => navigate("/")}
-          sx={{ "&:hover": { cursor: "pointer" } }}
-          color={shades.secondary[500]}
-        >
-          ECOMMER
-        </Box>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          columnGap="20px"
-          zIndex="2"
-        >
-          <IconButton sx={{ color: "black" }}>
-            <SearchOutlined />
-          </IconButton>
-          <IconButton sx={{ color: "black" }}>
-            <PersonOutline />
-          </IconButton>
-          <Badge
-            badgeContent={cart.length}
-            color="secondary"
-            invisible={cart.length === 0}
-            sx={{
-              "& .MuiBadge-badge": {
-                right: 5,
-                top: 5,
-                padding: "0 4px",
-                height: "14px",
-                minWidth: "13px",
-              },
-            }}
-          >
-            <IconButton
-              onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
-            >
-              <ShoppingBagOutlined />
-            </IconButton>
-          </Badge>
-          <Box
-           onClick={() => navigate("/Shop")}
-           sx={{ "&:hover": { cursor: "pointer" } }}
-           color={shades.secondary[500]}>
-            Shop
-          </Box>
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen);
+    setMenuIconAnimation(menuOpen ? "" : "animate");
+  };
 
-          <IconButton sx={{ color: "black" }}>
-            <MenuOutlined />
-          </IconButton>
-        </Box>
-      </Box>
-    </Box>
+  return (
+        <nav>
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
+          <button className={`hamburger ${menuIconAnimation}`} onClick={handleMenuClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/event">Event</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/Shop">Shop</Link></li>
+            <li className='login'><Link to="/"><img src={login} alt="Login-icon" /></Link></li>
+            <li>
+              <Badge
+                badgeContent={cart.length}
+                color="secondary"
+                invisible={cart.length === 0}
+                sx={{
+                  "& .MuiBadge-badge": {
+                    right: 5,
+                    top: 5,
+                    padding: "0 4px",
+                    height: "14px",
+                    minWidth: "13px",
+                  },
+                }}
+              >
+                <IconButton
+                  onClick={() => dispatch(setIsCartOpen({}))}
+                  sx={{ color: "black" }}
+                >
+                  <img src={cartIcon} alt="Cart-icon" />
+                  {/* <ShoppingCartOutlinedIcon /> */}
+                </IconButton>
+              </Badge>
+            </li>
+          </ul>
+        </nav>
   );
 }
 
