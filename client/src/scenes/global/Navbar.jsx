@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Badge, Box, IconButton } from "@mui/material";
+import { Badge, IconButton } from "@mui/material";
 import {
   // PersonOutline,
   // ShoppingBagOutlinedIcon,
   // MenuOutlined,
   // SearchOutlined,
 } from "@mui/icons-material";
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useNavigate } from "react-router-dom";
-import { shades } from "../../theme";
+// import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
