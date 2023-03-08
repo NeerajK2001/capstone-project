@@ -7,7 +7,7 @@ import {
   // SearchOutlined,
 } from "@mui/icons-material";
 // import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 import React, { useState } from 'react';
@@ -26,7 +26,7 @@ import cartIcon from '../../components/img/cart.png';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuIconAnimation, setMenuIconAnimation] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
