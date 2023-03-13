@@ -26,6 +26,10 @@ const CartMenu = () => {
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
   const totalPrice = cart.reduce((total, item) => {
+    return total + item.count * item.attributes.price + (total + item.count * item.attributes.price) * 0.05;
+  }, 0);
+
+  const subTotalPrice = cart.reduce((total, item) => {
     return total + item.count * item.attributes.price;
   }, 0);
 
@@ -122,6 +126,14 @@ const CartMenu = () => {
           <Box m="20px 0">
             <FlexBox m="20px 0">
               <Typography fontWeight="bold">SUBTOTAL</Typography>
+              <Typography fontWeight="bold">${subTotalPrice}</Typography>
+            </FlexBox>
+            <FlexBox m="20px 0">
+              <Typography fontWeight="bold">G.S.T.</Typography>
+              <Typography fontWeight="bold">5% </Typography>
+            </FlexBox>
+            <FlexBox m="20px 0">
+              <Typography fontWeight="bold">TOTAL</Typography>
               <Typography fontWeight="bold">${totalPrice}</Typography>
             </FlexBox>
             <Button

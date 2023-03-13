@@ -24,7 +24,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
               product_data: {
                 name: item.name,
               },
-              unit_amount: item.price * 100,
+              unit_amount: item.price * 100 + (item.price * 100) * 0.05,
             },
             quantity: product.count,
           };
@@ -36,8 +36,8 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
         payment_method_types: ['card'],
         customer_email: email,
         mode: 'payment',
-        success_url: 'http://localhost:2001/checkout/success',
-        cancel_url: 'http://localhost:2001',
+        success_url: 'http://localhost:3000/checkout/success',
+        cancel_url: 'http://localhost:3000',
         line_items: lineItems,
       });
 

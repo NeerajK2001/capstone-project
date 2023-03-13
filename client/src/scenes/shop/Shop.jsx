@@ -14,6 +14,35 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 import MainCarousel from "./MainCarousel";
 // console.log("hello this is about");
 
+
+// export async function getServerSideProps(ctx) {
+//   const loginData = {
+//       identifier: 'neerajkumar94652@gmail.com',
+//       password: 'Quantum@786',
+//   };
+
+//   const login = await fetch(`https://starfish-app-ettw4.ondigitalocean.app/api/auth/local`, {
+//       method: 'POST',
+//       headers: {
+//           Accept: 'application/json',
+//           'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(loginData),
+//   });
+
+//   const loginResponseData = await login.json();
+//   // get posts from strapi REST API
+//   const res = await fetch(`https://starfish-app-ettw4.ondigitalocean.app/api/items`);
+//   let posts = await res.json();
+//   posts = posts.data
+//   return {
+//       props: {
+//           posts: posts,
+//           loginResponseData: loginResponseData,
+//       },
+//   };
+// }
+
 const Shop = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("description");
@@ -23,10 +52,14 @@ const Shop = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  
   async function getItem() {
+    // let headers = {Authorization: `Bearer ${process.env.ADMIN_TOKEN}`}
     const item = await fetch(
       `http://localhost:1337/api/items/5?populate=image`,
-      { method: "GET" }
+      { method: "Get"}
+      // { headers: headers}
     );
 
     // console.log(item);
