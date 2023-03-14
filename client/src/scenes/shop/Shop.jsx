@@ -52,15 +52,16 @@ const Shop = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  // jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I
   
   async function getItem() {
     // let headers = {Authorization: `Bearer ${process.env.ADMIN_TOKEN}`}
     const item = await fetch(
-      `http://localhost:1337/api/items/5?populate=image`,
-      { method: "Get"}
-      // { headers: headers}
-    );
+      `https://starfish-app-ettw4.ondigitalocean.app/api/items/1?populate=image`,
+      {headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I`
+        }}
+  );
 
     // console.log(item);
 
@@ -93,7 +94,7 @@ const Shop = () => {
               alt={item?.name}
               width="100%"
               height="100%"
-              src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`https://starfish-app-ettw4.ondigitalocean.app${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
               style={{ objectFit: "fill" }}
             />
           </Box>
