@@ -1,7 +1,8 @@
 import React from 'react';
-import img from '../../img/nora.jpeg';
-import '../../../styles/About.css';
-
+// import img from '../../img/nora.jpeg';
+import img from '../../components/img/nora.jpeg'
+import '../../styles/About.css';
+import Footer from '../global/Footer';
 function About() {
   return (
     <div>
@@ -37,6 +38,7 @@ function About() {
               <h4>Person-3</h4>
               </div>
         </div>
+        <Footer/>
     </div>
   );
 }

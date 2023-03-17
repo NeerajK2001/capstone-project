@@ -12,6 +12,7 @@ import { setIsCartOpen } from "../../state";
 import "../../styles/global.css";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import MainCarousel from "./MainCarousel";
+import Footer from "../global/Footer";
 // console.log("hello this is about");
 
 
@@ -204,6 +205,7 @@ const Shop = () => {
         </Box> */}
       </Box>
       <MainCarousel/>
+      <Footer/>
     </Box>
   );
 };

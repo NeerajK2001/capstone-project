@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import '../../styles/Home.css';
 import img4 from '../../components/img/img4.webp';
 import Pdf from '../../components/img/rules.pdf';
-import TestimonialCarousel from './testimonials/TestimonialCarousel';
+// import TestimonialCarousel from './testimonials/TestimonialCarousel';
 import bgvideo from '../../components/img/bgVideo.mp4';
-
+import TestimonialCarousel from '../../components/testimonials/TestimonialCarousel';
+import Footer from '../global/Footer.jsx';
 const testimonials = [
   {
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor nibh nec nulla elementum, nec lobortis sapien auctor. Integer laoreet magna vel felis pulvinar, eu fringilla nisi rhoncus.',
@@ -63,6 +64,7 @@ function Home() {
             <button>OUR STORY</button>
           </div>
         </div>
+        <Footer/>
     </div>
   );
 }

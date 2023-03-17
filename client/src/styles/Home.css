@@ -116,7 +116,7 @@ html {
 .section-3{
     height:80vh;
     background-color: #000000;
-    background: url('../img/img1.jpg') repeat fixed 100%;
+    background: url('../components/img/img1.jpg') repeat fixed 100%;
     text-align: center;
     background-size: cover;
 }
@@ -140,7 +140,7 @@ html {
 
 
 .section-4{
-    background: url('../img/img2.webp') no-repeat  100%;
+    background: url('../components/img/img2.webp') no-repeat  100%;
     background-color: #000;
     /* background-position: left;
     background-size: contain; */
@@ -296,7 +296,7 @@ html {
         padding:6rem 2rem;
     }
     .section-6{
-        background-image: url('../img/img3.webp');
+        background-image: url('../components/img/img3.webp');
         background-size:cover;
         background-repeat: no-repeat;
         height: 50vw;

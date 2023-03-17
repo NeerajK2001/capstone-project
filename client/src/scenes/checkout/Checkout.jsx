@@ -48,11 +48,12 @@ const Checkout = () => {
     };
 
     const response = await fetch("https://starfish-app-ettw4.ondigitalocean.app/api/orders", {
-      // headers: {
-      //   Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I`
-      // }
-      // method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I`
+      },
+      method: "POST",
+      // headers: { "Content-Type": "application/json" },
+      // Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I`,
       body: JSON.stringify(requestBody),
     });
     const session = await response.json();
