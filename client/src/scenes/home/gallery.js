@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Contact() {
+function Gallery() {
   return (
     <div>
         <h1>Gallery Page</h1>
@@ -8,4 +8,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Gallery;
