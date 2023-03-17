@@ -4,7 +4,7 @@ import '../../styles/Home.css';
 import img4 from '../../components/img/img4.webp';
 import Pdf from '../../components/img/rules.pdf';
 import TestimonialCarousel from './testimonials/TestimonialCarousel';
-import bgvideo from '../../components/img/bgVideo.mp4';
+import bgvideo from '../../components/img/ogimgs/ogVideo.MP4';
 
 const testimonials = [
   {
