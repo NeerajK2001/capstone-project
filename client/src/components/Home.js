@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
+import '../styles/Home.css';
 import img2 from './img/img-2.jpg';
 import Pdf from './img/rules.pdf';
 import TestimonialCarousel from './testimonials/TestimonialCarousel';
