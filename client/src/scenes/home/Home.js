@@ -1,26 +1,10 @@
-// import MainCarousel from './MainCarousel'
-// import ShoppingList from './ShoppingList'
-// import React from 'react';
-// // import Subscribe from './Subscribe'
-// function Home (){
-//     return <div className='home'>
-//         {/* <MainCarousel/>
-//         <ShoppingList/>
-//         <Subscribe/> */}
-//     </div>
-    
-// }
-
-// export default Home;
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/Home.css'
-import img2 from '../../components/img/img-2.jpg';
+import '../../styles/Home.css';
+import img4 from '../../components/img/img4.webp';
 import Pdf from '../../components/img/rules.pdf';
-// import TestimonialCarousel from './testimonials/TestimonialCarousel';
-import TestimonialCarousel from '../../components/testimonials/TestimonialCarousel';
-import '../../styles/global.css'
+import TestimonialCarousel from './testimonials/TestimonialCarousel';
+import bgvideo from '../../components/img/bgVideo.mp4';
 
 const testimonials = [
   {
@@ -42,7 +26,9 @@ function Home() {
   return (
     <div>
         <div className="section-1">
-          <h1>A <span>Game</span> For <br/>Everyone</h1>
+          <video src={bgvideo} autoPlay muted loop className='video' />
+          <div className="overlay"></div>
+          <h1>A Board <span>Game</span> <br/>For Everyone</h1>
           <button>SHOP NOW</button>
         </div>
 
@@ -53,13 +39,13 @@ function Home() {
             <Link to = {Pdf} target = "_blank">RULES</Link>
           </div>
           <div className="sec2-box2">
-            <img src={img2} alt="Login-icon" />
+            <img src={img4} alt="Login-icon" />
           </div>
         </div>
 
         <div className="section-3">
           <div>
-            <h1>LEARN  &nbsp; PLAY &nbsp; GROW</h1>
+            <h1> <span>LEARN </span> &nbsp; <span>PLAY</span> &nbsp;<span>GROW</span> </h1>
             </div>
         </div>
 
@@ -69,10 +55,10 @@ function Home() {
           <TestimonialCarousel testimonials={testimonials} />
         </div>
 
-
+      <div className="section-6"></div>
         <div className="section-4">
           <div className="about">
-            <h3>ABOUT-US</h3>
+            <h3><span>AB</span>OUT US</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
             <button>OUR STORY</button>
           </div>
