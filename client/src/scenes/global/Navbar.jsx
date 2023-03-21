@@ -51,6 +51,7 @@ function Navbar() {
             <li><Link to="/event">Event</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/Shop">Shop</Link></li>
+            <li><Link to="/Events">Events</Link></li>
             <li className='login'><Link to="/"><img src={login} alt="Login-icon" /></Link></li>
             <li>
               <Badge

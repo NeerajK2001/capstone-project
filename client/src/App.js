@@ -10,6 +10,9 @@ import Confirmation from "./scenes/checkout/Confirmation";
 import Shop from "./scenes/shop/Shop"
 import About from "./scenes/home/About"
 import Contact from "./scenes/home/Contact";
+import Events from "./scenes/event/Events";
+import Footer from "./scenes/global/Footer";
+import EventDetails from "./scenes/event/EventDetails"
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -34,9 +37,11 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="About" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="Events" element={<Events />} />
+          <Route path="item/:itemId" element={<EventDetails />} />
         </Routes>
         <CartMenu />
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </div>
   );

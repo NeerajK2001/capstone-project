@@ -39,7 +39,7 @@ const Checkout = () => {
   async function makePayment(values) {
     const stripe = await stripePromise;
     const requestBody = {
-      userName: [values.firstName, values.lastName].join(" "),
+      userName: 'neeraj',
       email: values.email,
       products: cart.map(({ id, count }) => ({
         id,
@@ -48,18 +48,21 @@ const Checkout = () => {
     };
 
     const response = await fetch("https://starfish-app-ettw4.ondigitalocean.app/api/orders", {
-      headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I`
-      },
       method: "POST",
-      // headers: { "Content-Type": "application/json" },
-      // Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I`,
+      headers: {
+        Authorization: `Bearer 751e40c47dc9a08cb4d6ccbb5fe41089bf8d53b55ff0bfc51afb1428fda74f8b70fda081a25fe31662651ed24b554d240ec15e52174c51b76e8daf02fb17e926898fee5c00d5383a513a5ad5e69cf31aebec8cca363e4e92dee8e47d67c81df8282a5c998a63d08a337ec0b6a61f0f9058d61fe587a393dc21d1228762821e7f`
+      },
       body: JSON.stringify(requestBody),
     });
+    console.log(requestBody)
+
+    console.log("Done")
     const session = await response.json();
     await stripe.redirectToCheckout({
       sessionId: session.id,
     });
+    console.log(requestBody)
+
   }
 
   return (
