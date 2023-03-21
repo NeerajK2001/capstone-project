@@ -1,0 +1,17 @@
+.gallery-main{
+    padding: 1rem;
+    padding-top: 5rem;
+}
+
+.gimg1,
+.gimg2,
+.gimg3,
+.gimg4,
+.gimg5,
+.gimg6,
+.gimg7,
+.gimg8{
+    height: 333px;
+    width: 205px;
+    margin:0.5rem;
+}
