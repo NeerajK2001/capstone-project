@@ -10,6 +10,9 @@ import Shop from "./scenes/shop/Shop"
 import About from "./scenes/home/About"
 import Contact from "./scenes/home/Contact";
 import Events from "./scenes/event/Events";
+
+import Gallery from "./scenes/home/gallery";
+
 import Footer from "./scenes/global/Footer";
 import EventDetails from "./scenes/event/EventDetails"
 const ScrollToTop = () => {
@@ -37,6 +40,9 @@ function App() {
           <Route path="About" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="Events" element={<Events />} />
+
+          <Route path="gallery" element={<Gallery />
+
           <Route path="item/:itemId" element={<EventDetails />} />
         </Routes>
         <CartMenu />
