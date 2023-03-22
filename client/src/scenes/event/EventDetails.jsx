@@ -3,7 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Item from "./event";
+import Event from "./event";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -11,44 +11,44 @@ import { shades } from "../../theme";
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
 
-const ItemDetails = () =>{
+const EventDetails = () =>{
     const dispatch = useDispatch();
-    const {itemId} = useParams();
+    const {eventId} = useParams();
     const [value, setValue] = useState("description");
     const [count, setCount] = useState(1);
-    const [item, setItem] = useState(null);
-    const [items, setItems] = useState([]);
+    const [event, setEvent] = useState(null);
+    const [items, setEvents] = useState([]);
 
     const handleChange = (event, newValue) =>{
         setValue(newValue);
     }
 
     async function getItem() {
-        const item = await fetch(
-            `https://starfish-app-ettw4.ondigitalocean.app/api/items/${itemId}?populate=image`,
+        const event = await fetch(
+            `http://localhost:1337/api/events/${eventId}?populate=image`,
             {headers: {
-                Authorization: `Bearer 751e40c47dc9a08cb4d6ccbb5fe41089bf8d53b55ff0bfc51afb1428fda74f8b70fda081a25fe31662651ed24b554d240ec15e52174c51b76e8daf02fb17e926898fee5c00d5383a513a5ad5e69cf31aebec8cca363e4e92dee8e47d67c81df8282a5c998a63d08a337ec0b6a61f0f9058d61fe587a393dc21d1228762821e7f`
+                Authorization: `Bearer 7bf43d6454985574e8a847f0573d63683ec60829af862ba191b123788bb95324ebaa9b3c47e6bfbfe935330977564d417e6c6486a955093ecf05a0a48bbcb76a918544611b5787a20d1069e623102e2098e2a341e3e6e96bc97ea2e891d0fc4b1aa7a2e06c44ff6a28574cb6b7eb0e446de00331ea26d60ac7f33d9aaf8e06a2`
               }}
         );
 
-        console.log(item);
+        console.log();
 
-        const itemJson = await item.json();
-        setItem(itemJson.data);
+        const itemJson = await event.json();
+        setEvent(itemJson.data);
     }
 
     async function getItems() {
-        const items = await fetch(
-          "https://starfish-app-ettw4.ondigitalocean.app/api/items?populate=image",
+        const events = await fetch(
+          "http://localhost:1337/api/events?populate=image",
           {headers: {
-            Authorization: `Bearer 751e40c47dc9a08cb4d6ccbb5fe41089bf8d53b55ff0bfc51afb1428fda74f8b70fda081a25fe31662651ed24b554d240ec15e52174c51b76e8daf02fb17e926898fee5c00d5383a513a5ad5e69cf31aebec8cca363e4e92dee8e47d67c81df8282a5c998a63d08a337ec0b6a61f0f9058d61fe587a393dc21d1228762821e7f`
+            Authorization: `Bearer 7bf43d6454985574e8a847f0573d63683ec60829af862ba191b123788bb95324ebaa9b3c47e6bfbfe935330977564d417e6c6486a955093ecf05a0a48bbcb76a918544611b5787a20d1069e623102e2098e2a341e3e6e96bc97ea2e891d0fc4b1aa7a2e06c44ff6a28574cb6b7eb0e446de00331ea26d60ac7f33d9aaf8e06a2`
           }}
         );
 
-        console.log(items);
+        // console.log(events);
 
-        const itemsJson = await items.json();
-        setItems(itemsJson.data);
+        const itemsJson = await events.json();
+        setEvents(itemsJson.data);
       }
 
     useEffect(() => {
@@ -64,23 +64,19 @@ const ItemDetails = () =>{
             {/* Images */}
             <Box flex="1 1 40%" mb="40px">
                 <img
-                    alt={item?.name}
+                    alt={event?.name}
                     width="100%"
                     height="100%"
-                    src={`https://starfish-app-ettw4.ondigitalocean.app${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                    src={`http://localhost:1337${event?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     style={{objectFit: "contain"}}
                 />
             </Box>
             {/* actions */}
             <Box flex="1 1 50%" mb="40px">
-                <Box display="flex" justifyContent="space-between">
-                    <Box>Home/Item</Box>
-                    <Box>Pren Next</Box>
-                </Box>
                 <Box m="65px 0 25px 0">
-                    <Typography variant="h3">{item?.attributes?.name}</Typography>
-                    <Typography>${item?.attributes?.price}</Typography>
-                    <Typography sx={{ mt: "20px" }}>{item?.attributes?.longDescription}</Typography>
+                    <Typography variant="h3">{event?.attributes?.name}</Typography>
+                    <Typography>${event?.attributes?.price}</Typography>
+                    <Typography sx={{ mt: "20px" }}>{event?.attributes?.longDescription}</Typography>
                 </Box>
                 <Box display="flex" alignItems="center" minHeight="50px">
                     <Box
@@ -107,7 +103,7 @@ const ItemDetails = () =>{
                         padding: "10px 40px",
                     }}
 
-                    onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+                    onClick={() => dispatch(addToCart({ event: { ...event, count } }))}
                     >
                         ADD TO CART
                     </Button>
@@ -117,7 +113,7 @@ const ItemDetails = () =>{
                         <FavoriteBorderOutlinedIcon/>
                         <Typography sx={{ml: "5px"}}>ADD TO WISHLIST</Typography>
                     </Box>
-                    <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
+                    <Typography>CATEGORIES: {event?.attributes?.category}</Typography>
                 </Box>
             </Box>
         </Box>
@@ -130,7 +126,7 @@ const ItemDetails = () =>{
         </Box>
         <Box display="flex" flexWrap="wrap" gap="15px">
             {value === "description" && (
-                <div>{item?.attributes?.longDescription}</div>
+                <div>{event?.attributes?.longDescription}</div>
             )}
             {value === "reviews" && (
                 <div>reviews</div>
@@ -148,8 +144,8 @@ const ItemDetails = () =>{
                 columnGap="1.33%"
                 justifyContent="space-between"
             >
-                {items.slice(0, 4).map((item, i) => (
-                    <Item key={`${item.name}-${i}`} item={item} />
+                {items.slice(0, 4).map((event, i) => (
+                    <Event key={`${event.name}-${i}`} event={event} />
                 ))}
             </Box>
         </Box>
@@ -158,4 +154,4 @@ const ItemDetails = () =>{
     
 }
 
-export default ItemDetails;
+export default EventDetails;

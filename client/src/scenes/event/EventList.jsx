@@ -2,52 +2,51 @@ import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import Item from "./event";
+import Event from "./event";
 import { Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
-import { setItems } from "../../state";
+import { setEvents } from "../../state";
 
 const EventList = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("all");
-  const items = useSelector((state) => state.cart.items);
+  const events = useSelector((state) => state.cart.events);
   const breakPoint = useMediaQuery("(min-width:600px)");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  async function getItems() {
-    const items = await fetch(
-      "https://starfish-app-ettw4.ondigitalocean.app/api/items?populate=image",
+  async function getEvents() {
+    const events = await fetch(
+      "http://localhost:1337/api/events?populate=image",
     //   { method: "GET" },
       {headers: {
-        Authorization: `Bearer 751e40c47dc9a08cb4d6ccbb5fe41089bf8d53b55ff0bfc51afb1428fda74f8b70fda081a25fe31662651ed24b554d240ec15e52174c51b76e8daf02fb17e926898fee5c00d5383a513a5ad5e69cf31aebec8cca363e4e92dee8e47d67c81df8282a5c998a63d08a337ec0b6a61f0f9058d61fe587a393dc21d1228762821e7f`
+        Authorization: `Bearer 7bf43d6454985574e8a847f0573d63683ec60829af862ba191b123788bb95324ebaa9b3c47e6bfbfe935330977564d417e6c6486a955093ecf05a0a48bbcb76a918544611b5787a20d1069e623102e2098e2a341e3e6e96bc97ea2e891d0fc4b1aa7a2e06c44ff6a28574cb6b7eb0e446de00331ea26d60ac7f33d9aaf8e06a2`
       }}
     );
-    const itemsJson = await items.json();
-    dispatch(setItems(itemsJson.data));
+    console.log(events);
+    const itemsJson = await events.json();
+    dispatch(setEvents(itemsJson.data));
+    console.log(itemsJson)
   }
 
   useEffect(() => {
-    getItems();
+    getEvents();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const topRatedItems = items.filter(
-    (item) => item.attributes.category === "topRated"
+  const latest = events.filter(
+    (event) => event.attributes.category === "latest"
   );
-  const newArrivalsItems = items.filter(
-    (item) => item.attributes.category === "newArrivals"
-  );
-  const bestSellersItems = items.filter(
-    (item) => item.attributes.category === "bestSellers"
+  const previous = events.filter(
+    (event) => event.attributes.category === "previous"
   );
 
   return (
     <Box width="80%" margin="80px auto">
-      <Typography variant="h3" textAlign="center">
-        Our Featured <b>Products</b>
+      <Typography variant="h2" textAlign="center">
+        Events
       </Typography>
       <Tabs
         textColor="primary"
@@ -64,9 +63,8 @@ const EventList = () => {
         }}
       >
         <Tab label="ALL" value="all" />
-        <Tab label="NEW ARRIVALS" value="newArrivals" />
-        <Tab label="BEST SELLERS" value="bestSellers" />
-        <Tab label="TOP RATED" value="topRated" />
+        <Tab label="LATEST" value="latest" />
+        <Tab label="PREVIOUS" value="previous" />
       </Tabs>
       <Box
         margin="0 auto"
@@ -77,20 +75,16 @@ const EventList = () => {
         columnGap="1.33%"
       >
         {value === "all" &&
-          items.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
+          events.map((event) => (
+            <Event event={event} key={`${event.name}-${event.id}`} />
+          ))} 
+        {value === "latest" &&
+          latest.map((event) => (
+            <Event event={event} key={`${event.name}-${event.id}`} />
           ))}
-        {value === "newArrivals" &&
-          newArrivalsItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "bestSellers" &&
-          bestSellersItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "topRated" &&
-          topRatedItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
+        {value === "previous" &&
+          previous.map((event) => (
+            <Event event={event} key={`${event.name}-${event.id}`} />
           ))}
       </Box>
     </Box>

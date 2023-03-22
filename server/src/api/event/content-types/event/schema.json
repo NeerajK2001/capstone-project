@@ -29,6 +29,24 @@
     },
     "date": {
       "type": "date"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Latest",
+        "Previous"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

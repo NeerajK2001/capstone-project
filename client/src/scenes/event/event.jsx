@@ -6,8 +6,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 // import { shades } from "../theme";
 import { shades } from "../../theme";
 import { useNavigate } from "react-router-dom";
-
-const Event = ({ item, width }) => {
+import { addToCart } from "../../state";
+const Event = ({ event, width }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
@@ -16,7 +16,7 @@ const Event = ({ item, width }) => {
     palette: { neutral },
   } = useTheme();
 
-  const { category, price, name, image } = item.attributes;
+  const { category, time, date, shortDescription, name, image } = event.attributes;
   const {
     data: {
       attributes: {
@@ -35,11 +35,11 @@ const Event = ({ item, width }) => {
         onMouseOut={() => setIsHovered(false)}
       >
         <img
-          alt={item.name}
+          alt={event.name}
           width="300px"
           height="400px"
-          src={`https://starfish-app-ettw4.ondigitalocean.app${url}`}
-          onClick={() => navigate(`/item/${item.id}`)}
+          src={`http://localhost:1337${url}`}
+          onClick={() => navigate(`/event/${event.id}`)}
           style={{ cursor: "pointer" }}
         />
         <Box
@@ -51,7 +51,7 @@ const Event = ({ item, width }) => {
           padding="0 5%"
         >
           <Box display="flex" justifyContent="space-between">
-            <Box
+            {/* <Box
               display="flex"
               alignItems="center"
               backgroundColor={shades.neutral[100]}
@@ -64,10 +64,10 @@ const Event = ({ item, width }) => {
               <IconButton onClick={() => setCount(count + 1)}>
                 <AddIcon />
               </IconButton>
-            </Box>
+            </Box> */}
             {/* <Button
               onClick={() => {
-                dispatch(addToCart({ item: { ...item, count } }));
+                dispatch(addToCart({ item: { ...event, count } }));
               }}
               sx={{ backgroundColor: shades.primary[300], color: "white" }}
             >
@@ -84,7 +84,10 @@ const Event = ({ item, width }) => {
             .replace(/^./, (str) => str.toUpperCase())}
         </Typography>
         <Typography>{name}</Typography>
-        <Typography fontWeight="bold">${price}</Typography>
+        <Typography>{date}</Typography>
+        <Typography>{time}</Typography>
+        <Typography>{shortDescription}</Typography>
+        {/* <Typography fontWeight="bold">${price}</Typography> */}
       </Box>
     </Box>
   );
