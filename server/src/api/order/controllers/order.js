@@ -46,7 +46,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
         .service('api::order.order')
         .create({ data: { userName, products, stripeSessionId: session.id } });
 
-      // return the session id
+      // rsioeturn the sesn id
       return { id: session.id };
     } catch (error) {
       ctx.response.status = 500;

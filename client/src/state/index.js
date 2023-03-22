@@ -4,6 +4,7 @@ const initialState = {
   isCartOpen: false,
   cart: [],
   items: [],
+  events:[],
 };
 
 export const cartSlice = createSlice({
@@ -12,6 +13,9 @@ export const cartSlice = createSlice({
   reducers: {
     setItems: (state, action) => {
       state.items = action.payload;
+    },
+    setEvents: (state, action) => {
+      state.events = action.payload;
     },
 
     addToCart: (state, action) => {
@@ -48,6 +52,7 @@ export const cartSlice = createSlice({
 
 export const {
   setItems,
+  setEvents,
   addToCart,
   removeFromCart,
   increaseCount,

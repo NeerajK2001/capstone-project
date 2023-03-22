@@ -36,7 +36,7 @@ function Navbar() {
   };
 
   return (
-        <nav>
+        <nav className='navbar nav-bg'>
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
@@ -46,11 +46,12 @@ function Navbar() {
             <span></span>
           </button>
           <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/About">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/event">Event</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/Shop">Shop</Link></li>
+            <li><Link to="/Events">Events</Link></li>
             <li className='login'><Link to="/"><img src={login} alt="Login-icon" /></Link></li>
             <li>
               <Badge
