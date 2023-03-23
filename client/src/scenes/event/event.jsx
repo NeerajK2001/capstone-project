@@ -31,15 +31,15 @@ const Event = ({ event, width }) => {
 
   return (
     <Box display="flex" justifyContent="space-between" >
-          <Box display="flex" justifyContent="space-between" flex="wrap" border="2px solid black" borderRadius="5px" background-color="#eee" box-shadow="0 8px 8px -4px lightblue"
+          <Box display="flex" justifyContent="space-between" flex="wrap" border="2px solid black" borderRadius="5px" background-color="#eee" box-shadow="0 8px 8px -4px lightblue" onClick={() => navigate(`/event/${event.id}`)}
+          style={{ cursor: "pointer" }}
           >
             <img
             alt={event.name}
             width="200px"
             height="200px"
             src={`http://localhost:1337${url}`}
-            onClick={() => navigate(`/event/${event.id}`)}
-          style={{ cursor: "pointer" }}
+            
             />
             <Box mt="3px" height="100px" padding="0.5rem">
               <Typography variant="subtitle2" color={neutral.dark}>

@@ -88,6 +88,7 @@ const Shop = () => {
   return (
     <Box>
       <Box width="80%" m="80px auto">
+      `<Typography variant="h1" mb="20px">Shop 9on9 game</Typography>
         <Box display="flex" flexWrap="wrap" columnGap="40px">
           {/* Images */}
           <Box flex="1 1 40%" mb="40px">
@@ -102,7 +103,7 @@ const Shop = () => {
           {/* actions */}
           <Box flex="1 1 50%" mb="40px">
             <Box m="0px 0 25px 0">
-              <Typography variant="h1">{item?.attributes?.name}</Typography>
+              <Typography variant="h2">{item?.attributes?.name}</Typography>
               <Box
                 display="flex"
                 flexWrap="wrap"
@@ -115,7 +116,7 @@ const Shop = () => {
               </Box>
               <Typography variant="p">See All Reviews</Typography>
 
-              <Typography variant="h2" m="5px 0px">
+              <Typography variant="h3" m="5px 0px">
                 ${item?.attributes?.price}
               </Typography>
               <Typography sx={{ mt: "20px" }}>

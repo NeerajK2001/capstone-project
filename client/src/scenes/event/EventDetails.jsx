@@ -80,16 +80,14 @@ const EventDetails = () =>{
         <Box m="20px 0">
             <Tabs value={value} onChange={handleChange}>
                 <Tab label="DESCRIPTION" value="description" />
-                <Tab label="REVIEWS" value="reviews" />
+                {/* <Tab label="REVIEWS" value="reviews" /> */}
             </Tabs>
         </Box>
         <Box display="flex" flexWrap="wrap" gap="15px">
             {value === "description" && (
                 <div>{event?.attributes?.shortDescription}</div>
             )}
-            {value === "reviews" && (
-                <div>reviews</div>
-            )}
+            
         </Box>
 
         

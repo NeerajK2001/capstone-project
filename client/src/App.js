@@ -33,17 +33,16 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="event/:eventId" element={<EventDetails />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
           <Route path="shop" element={<Shop />} />
           <Route path="About" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="Events" element={<Events />} />
+          <Route path="event/:eventId" element={<EventDetails />} />
+          <Route path="gallery" element={<Gallery />} />
 
-          <Route path="gallery" element={<Gallery />
 
-          <Route path="item/:itemId" element={<EventDetails />} />
         </Routes>
         <CartMenu />
         <Footer />
