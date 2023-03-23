@@ -7,6 +7,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../../theme";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../state";
+import "../../styles/global.css"
 const Event = ({ event, width }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -16,7 +17,8 @@ const Event = ({ event, width }) => {
     palette: { neutral },
   } = useTheme();
 
-  const { category, time, date, shortDescription, name, image } = event.attributes;
+  const { category, time, date, shortDescription, name, image } =
+    event.attributes;
   const {
     data: {
       attributes: {
@@ -28,68 +30,34 @@ const Event = ({ event, width }) => {
   } = image;
 
   return (
-    <Box width={width}>
-      <Box
-        position="relative"
-        onMouseOver={() => setIsHovered(true)}
-        onMouseOut={() => setIsHovered(false)}
-      >
-        <img
-          alt={event.name}
-          width="300px"
-          height="400px"
-          src={`http://localhost:1337${url}`}
-          onClick={() => navigate(`/event/${event.id}`)}
+    <Box display="flex" justifyContent="space-between" >
+          <Box display="flex" justifyContent="space-between" flex="wrap" border="2px solid black" borderRadius="5px" background-color="#eee" box-shadow="0 8px 8px -4px lightblue"
+          >
+            <img
+            alt={event.name}
+            width="200px"
+            height="200px"
+            src={`http://localhost:1337${url}`}
+            onClick={() => navigate(`/event/${event.id}`)}
           style={{ cursor: "pointer" }}
-        />
-        <Box
-          display={isHovered ? "block" : "none"}
-          position="absolute"
-          bottom="10%"
-          left="0"
-          width="100%"
-          padding="0 5%"
-        >
-          <Box display="flex" justifyContent="space-between">
-            {/* <Box
-              display="flex"
-              alignItems="center"
-              backgroundColor={shades.neutral[100]}
-              borderRadius="3px"
-            >
-              <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
-                <RemoveIcon />
-              </IconButton>
-              <Typography color={shades.primary[300]}>{count}</Typography>
-              <IconButton onClick={() => setCount(count + 1)}>
-                <AddIcon />
-              </IconButton>
-            </Box> */}
-            {/* <Button
-              onClick={() => {
-                dispatch(addToCart({ item: { ...event, count } }));
-              }}
-              sx={{ backgroundColor: shades.primary[300], color: "white" }}
-            >
-              Add to Cart
-            </Button> */}
+            />
+            <Box mt="3px" height="100px" padding="0.5rem">
+              <Typography variant="subtitle2" color={neutral.dark}>
+                {category
+                  .replace(/([A-Z])/g, " $1")
+                  .replace(/^./, (str) => str.toUpperCase())}
+              </Typography>
+              <Typography>{name}</Typography>
+              <Typography variant="p">{shortDescription}</Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography>{date}</Typography>
+                  <Typography>{time}</Typography>
+                </Box>
+              {/* <Typography fontWeight="bold">${price}</Typography> */}
+            </Box>
           </Box>
         </Box>
-      </Box>
-
-      <Box mt="3px">
-        <Typography variant="subtitle2" color={neutral.dark}>
-          {category
-            .replace(/([A-Z])/g, " $1")
-            .replace(/^./, (str) => str.toUpperCase())}
-        </Typography>
-        <Typography>{name}</Typography>
-        <Typography>{date}</Typography>
-        <Typography>{time}</Typography>
-        <Typography>{shortDescription}</Typography>
-        {/* <Typography fontWeight="bold">${price}</Typography> */}
-      </Box>
-    </Box>
+      
   );
 };
 

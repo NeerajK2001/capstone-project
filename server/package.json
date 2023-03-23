@@ -1,5 +1,5 @@
 {
-  "name": "strapi-ecommerce",
+  "name": "server",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -10,10 +10,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.7.0",
-    "@strapi/plugin-users-permissions": "4.7.0",
-    "@strapi/strapi": "4.7.0",
-    "better-sqlite3": "7.4.6",
+    "@strapi/strapi": "4.7.1",
+    "@strapi/plugin-users-permissions": "4.7.1",
+    "@strapi/plugin-i18n": "4.7.1",
+    "better-sqlite3": "8.0.1",
     "pg": "^8.10.0",
     "stripe": "^11.13.0"
   },
@@ -21,7 +21,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "e4a2f37f-046f-472f-bff8-c63d7aa6e85c"
+    "uuid": "018ca6db-22e6-48fb-8385-c8089a17a894"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",

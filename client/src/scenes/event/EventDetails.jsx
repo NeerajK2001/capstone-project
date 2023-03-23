@@ -10,6 +10,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../../theme";
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
+import "../../styles/global.css"
 
 const EventDetails = () =>{
     const dispatch = useDispatch();
@@ -37,29 +38,16 @@ const EventDetails = () =>{
         setEvent(itemJson.data);
     }
 
-    async function getItems() {
-        const events = await fetch(
-          "http://localhost:1337/api/events?populate=image",
-          {headers: {
-            Authorization: `Bearer 7bf43d6454985574e8a847f0573d63683ec60829af862ba191b123788bb95324ebaa9b3c47e6bfbfe935330977564d417e6c6486a955093ecf05a0a48bbcb76a918544611b5787a20d1069e623102e2098e2a341e3e6e96bc97ea2e891d0fc4b1aa7a2e06c44ff6a28574cb6b7eb0e446de00331ea26d60ac7f33d9aaf8e06a2`
-          }}
-        );
-
-        // console.log(events);
-
-        const itemsJson = await events.json();
-        setEvents(itemsJson.data);
-      }
-
     useEffect(() => {
         getItem();
-        getItems();
     })
 
     return <Box
     width="80%"
-    m= "80px auto"
+    m= "80px auto" 
     >
+            <Typography variant="h1" mb="20px">{event?.attributes?.name}</Typography>
+
         <Box display="flex" flexWrap="wrap" columnGap="40px">
             {/* Images */}
             <Box flex="1 1 40%" mb="40px">
@@ -74,46 +62,17 @@ const EventDetails = () =>{
             {/* actions */}
             <Box flex="1 1 50%" mb="40px">
                 <Box m="65px 0 25px 0">
-                    <Typography variant="h3">{event?.attributes?.name}</Typography>
-                    <Typography>${event?.attributes?.price}</Typography>
+                    <Typography variant="h2">{event?.attributes?.name}</Typography>
                     <Typography sx={{ mt: "20px" }}>{event?.attributes?.longDescription}</Typography>
                 </Box>
-                <Box display="flex" alignItems="center" minHeight="50px">
-                    <Box
-                        display="flex"
-                        alignItems="center"
-                        border={`1.5px solid ${shades.neutral[300]}`}
-                        mr="20px"
-                        p="2px 5px"
-                        >
-                        <IconButton onClick={() => setCount(Math.max(count - 1, 0))}>
-                            <RemoveIcon />
-                        </IconButton>
-                        <Typography sx={{ p: "0 5px" }}>{count}</Typography>
-                        <IconButton onClick={() => setCount(count + 1)}>
-                            <AddIcon />
-                        </IconButton>
-                    </Box>
-                    <Button
-                    sx={{
-                        backgroundColor: "#222222",
-                        color: "white",
-                        borderRadius: 0,
-                        minWidth: "150px",
-                        padding: "10px 40px",
-                    }}
-
-                    onClick={() => dispatch(addToCart({ event: { ...event, count } }))}
-                    >
-                        ADD TO CART
-                    </Button>
-                </Box>
                 <Box>
-                    <Box m="20px 0 5px 0" display="flex">
+                    {/* <Box m="20px 0 5px 0" display="flex">
                         <FavoriteBorderOutlinedIcon/>
                         <Typography sx={{ml: "5px"}}>ADD TO WISHLIST</Typography>
-                    </Box>
+                    </Box> */}
                     <Typography>CATEGORIES: {event?.attributes?.category}</Typography>
+                    <Typography>Time: {event?.attributes?.time}</Typography>
+                    <Typography>Date: {event?.attributes?.date}</Typography>
                 </Box>
             </Box>
         </Box>
@@ -126,29 +85,14 @@ const EventDetails = () =>{
         </Box>
         <Box display="flex" flexWrap="wrap" gap="15px">
             {value === "description" && (
-                <div>{event?.attributes?.longDescription}</div>
+                <div>{event?.attributes?.shortDescription}</div>
             )}
             {value === "reviews" && (
                 <div>reviews</div>
             )}
         </Box>
 
-        {/* Related Items */}
-        <Box mt="50px" width="100%">
-            <Typography variant="h3" fontWeight="bold">
-                Reated Products
-            </Typography>
-            <Box mt="20px"
-                display="flex"
-                flexWrap="wrap"
-                columnGap="1.33%"
-                justifyContent="space-between"
-            >
-                {items.slice(0, 4).map((event, i) => (
-                    <Event key={`${event.name}-${i}`} event={event} />
-                ))}
-            </Box>
-        </Box>
+        
     </Box>
 
     

@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { setEvents } from "../../state";
-
+import "../../styles/global.css"
 const EventList = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("all");
@@ -69,10 +69,11 @@ const EventList = () => {
       <Box
         margin="0 auto"
         display="grid"
-        gridTemplateColumns="repeat(auto-fill, 300px)"
-        justifyContent="space-around"
-        rowGap="20px"
-        columnGap="1.33%"
+        gridTemplateColumns="repeat(auto-fill, 450px)"
+        // justifyContent="space-between"
+        // rowGap="20px"
+        // columnGap="0.33%"
+        gap="1.5rem"
       >
         {value === "all" &&
           events.map((event) => (

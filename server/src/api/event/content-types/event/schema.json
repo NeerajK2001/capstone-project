@@ -33,8 +33,9 @@
     "category": {
       "type": "enumeration",
       "enum": [
-        "Latest",
-        "Previous"
+        "all",
+        "latest",
+        "previous"
       ]
     },
     "image": {
