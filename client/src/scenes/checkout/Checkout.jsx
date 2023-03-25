@@ -39,7 +39,7 @@ const Checkout = () => {
   async function makePayment(values) {
     const stripe = await stripePromise;
     const requestBody = {
-      userName: 'neeraj',
+      userName: [values.firstName, values.lastName].join(" "),
       email: values.email,
       products: cart.map(({ id, count }) => ({
         id,
@@ -47,16 +47,32 @@ const Checkout = () => {
       })),
     };
 
-    const response = await fetch("https://starfish-app-ettw4.ondigitalocean.app/api/orders", {
+    // const response = await fetch("http://localhost:1337/api/orders", {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization: `Bearer c37c8f6ec109a97dd46dde3cec5a40678d799cbdcdf5449c3ac34bb053f360263571fb7a33a14a20afae4a8bf442497ca0d5727344d7bbaee9e00c762b69e3c01946c4eeb3c459e2b6bd273c44ce07ce410a59dc75f8771e6343ccc75adace6ec2e809d69e4badf55fce4670ed6411020456fb82e5294660daa81da771a806c5`
+    //   },
+    //   body: JSON.stringify(requestBody),
+    // });
+    // console.log(requestBody)
+
+    // console.log("Done")
+    // const session = await response.json();
+    // await stripe.redirectToCheckout({
+    //   sessionId: session.id,
+    // });
+    // console.log(requestBody)
+
+    const response = await fetch("https://starfish-app-ettw4.ondigitalocean.app/api/orders/", {
       method: "POST",
       headers: {
-        Authorization: `Bearer 751e40c47dc9a08cb4d6ccbb5fe41089bf8d53b55ff0bfc51afb1428fda74f8b70fda081a25fe31662651ed24b554d240ec15e52174c51b76e8daf02fb17e926898fee5c00d5383a513a5ad5e69cf31aebec8cca363e4e92dee8e47d67c81df8282a5c998a63d08a337ec0b6a61f0f9058d61fe587a393dc21d1228762821e7f`
-      },
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer fe928d18747478e81e7f75967c780cf2cc3800b42f6b9666743c857ded6cc3c795657c8eb0c3e64c7855a269c66f4912197b68731c5069f1390a1dd0fcddeb1ea6b3293e9dd48a48b5ddeb6ae221f5bebae14379f1280a12c0b70d8fccae68d4497b5a934da05cb0c36c5755ddda9ed4d8b0a54f6e0c41e062c944b1ffe3c143`
+            
+          },
       body: JSON.stringify(requestBody),
     });
-    console.log(requestBody)
-
-    console.log("Done")
     const session = await response.json();
     await stripe.redirectToCheckout({
       sessionId: session.id,

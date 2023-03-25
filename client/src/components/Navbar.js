@@ -32,7 +32,7 @@ function Navbar() {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li className='login'><Link to="/"><img src={login} alt="Login-icon" /></Link></li>
-            <li className='cart'><Link to="/"><img src={cart} alt="Cart-icon" /></Link></li>
+            <li className='cart'><Link to="/register"><img src={cart} alt="Cart-icon" /></Link></li>
           </ul>
         </nav>
   );

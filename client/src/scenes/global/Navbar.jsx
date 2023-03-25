@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 // import cart from './img/cart.png';
 // import '../../components/Navbar.css';
 import '../../styles/Navbar.css'
+import '../../styles/global.css'
 
 import logo from '../../components/img/main-logo.png';
 import login from '../../components/img/login.png';
@@ -51,7 +52,7 @@ function Navbar() {
             <li><Link to="/Events">Events</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/Shop">Shop</Link></li>
-            <li className='login'><Link to="/"><img src={login} alt="Login-icon" /></Link></li>
+            <li className='login'><Link to="/register"><img src={login} alt="Login-icon" /></Link></li>
             <li>
               <Badge
                 badgeContent={cart.length}

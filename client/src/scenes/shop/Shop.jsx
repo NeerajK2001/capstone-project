@@ -57,10 +57,10 @@ const Shop = () => {
   async function getItem() {
     // let headers = {Authorization: `Bearer ${process.env.ADMIN_TOKEN}`}
     const item = await fetch(
-      `http://localhost:1337/api/items/1?populate=image`,
+      `http://localhost:1337/api/items/5?populate=image`,
       // {method: "GET"}
       {headers: {
-          Authorization: `Bearer 7bf43d6454985574e8a847f0573d63683ec60829af862ba191b123788bb95324ebaa9b3c47e6bfbfe935330977564d417e6c6486a955093ecf05a0a48bbcb76a918544611b5787a20d1069e623102e2098e2a341e3e6e96bc97ea2e891d0fc4b1aa7a2e06c44ff6a28574cb6b7eb0e446de00331ea26d60ac7f33d9aaf8e06a2`
+          Authorization: `Bearer c37c8f6ec109a97dd46dde3cec5a40678d799cbdcdf5449c3ac34bb053f360263571fb7a33a14a20afae4a8bf442497ca0d5727344d7bbaee9e00c762b69e3c01946c4eeb3c459e2b6bd273c44ce07ce410a59dc75f8771e6343ccc75adace6ec2e809d69e4badf55fce4670ed6411020456fb82e5294660daa81da771a806c5`
         }}
   );
 
@@ -178,7 +178,7 @@ const Shop = () => {
         <Box m="20px 0">
           <Tabs value={value} onChange={handleChange}>
             <Tab label="DESCRIPTION" value="description" />
-            <Tab label="REVIEWS" value="reviews" />
+            {/* <Tab label="REVIEWS" value="reviews" /> */}
           </Tabs>
         </Box>
         <Box display="flex" flexWrap="wrap" gap="15px">

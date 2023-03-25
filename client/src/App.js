@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./scenes/home/Home";
 import Navbar from "./scenes/global/Navbar";
-// import Footer from "./scenes/global/Footer";
 import CartMenu from "./scenes/global/CartMenu";
 import Checkout from "./scenes/checkout/Checkout";
 import Confirmation from "./scenes/checkout/Confirmation";
@@ -15,6 +14,7 @@ import Gallery from "./scenes/home/gallery";
 
 import Footer from "./scenes/global/Footer";
 import EventDetails from "./scenes/event/EventDetails"
+import Register from "./scenes/authentication/register";
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -41,8 +41,7 @@ function App() {
           <Route path="Events" element={<Events />} />
           <Route path="event/:eventId" element={<EventDetails />} />
           <Route path="gallery" element={<Gallery />} />
-
-
+          <Route path="register" element={<Register />} />
         </Routes>
         <CartMenu />
         <Footer />

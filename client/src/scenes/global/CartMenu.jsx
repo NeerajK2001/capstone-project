@@ -72,7 +72,7 @@ const CartMenu = () => {
                       alt={item?.name}
                       width="123px"
                       height="164px"
-                      src={`https://starfish-app-ettw4.ondigitalocean.app${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     />
                   </Box>
                   <Box flex="1 1 60%">
