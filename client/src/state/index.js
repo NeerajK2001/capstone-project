@@ -2,9 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isCartOpen: false,
+  isAuthOpen: false,
   cart: [],
   items: [],
   events:[],
+  reviews:[]
 };
 
 export const cartSlice = createSlice({
@@ -16,6 +18,9 @@ export const cartSlice = createSlice({
     },
     setEvents: (state, action) => {
       state.events = action.payload;
+    },
+    setReviews: (state, action) => {
+      state.reviews = action.payload;
     },
 
     addToCart: (state, action) => {
@@ -47,17 +52,23 @@ export const cartSlice = createSlice({
     setIsCartOpen: (state) => {
       state.isCartOpen = !state.isCartOpen;
     },
+
+    setIsAuthOpen: (state) => {
+      state.isAuthOpen = !state.isAuthOpen;
+    },
   },
 });
 
 export const {
   setItems,
   setEvents,
+  setReviews,
   addToCart,
   removeFromCart,
   increaseCount,
   decreaseCount,
   setIsCartOpen,
+  setIsAuthOpen
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

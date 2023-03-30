@@ -63,13 +63,12 @@ const Checkout = () => {
     // });
     // console.log(requestBody)
 
-    const response = await fetch("https://starfish-app-ettw4.ondigitalocean.app/api/orders/", {
+    const response = await fetch("http://localhost:1337/api/orders/", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer fe928d18747478e81e7f75967c780cf2cc3800b42f6b9666743c857ded6cc3c795657c8eb0c3e64c7855a269c66f4912197b68731c5069f1390a1dd0fcddeb1ea6b3293e9dd48a48b5ddeb6ae221f5bebae14379f1280a12c0b70d8fccae68d4497b5a934da05cb0c36c5755ddda9ed4d8b0a54f6e0c41e062c944b1ffe3c143`
-            
+        Authorization: `Bearer a741f6c535a10e67baa5359dfa69d942c4ea786d56c617f53d171ead61e07072ab1c04101d82d4caae6d86c0e42ca41e3070c85969ea3bfcf9179758e51c428fd919496ff384506aaa26939299ef83f8b2d71c566f715cf4ad1c1936caa864490882a24c6c3e52b49fa9602d3053ea6bbc3e14193145cd77b207d0fd543a2973`
           },
       body: JSON.stringify(requestBody),
     });

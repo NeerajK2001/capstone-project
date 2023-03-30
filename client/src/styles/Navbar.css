@@ -175,6 +175,7 @@ nav img:nth-child(1) {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem;
   /* height: 60px; */
   /* position:absolute;
   left: 50%;
@@ -216,12 +217,13 @@ nav a {
 nav li:nth-child(1):hover a,
 nav li:nth-child(2):hover a,
 nav li:nth-child(3):hover a,
-nav li:nth-child(4):hover a{
+nav li:nth-child(4):hover a,
+nav li:nth-child(5):hover a{
   color: #EA5A0B;
 }
 
-nav li:nth-child(5):hover img,
-nav li:nth-child(6):hover img{
+nav li:nth-child(6):hover img,
+nav li:nth-child(7):hover img{
   transform: scale(1.1);
 }
 
@@ -281,6 +283,11 @@ nav li:nth-child(6):hover img{
 
 .hamburger.animate span:nth-child(3) {
   transform: rotate(-45deg) translate(-3px, 2px);
+}
+
+.nav-bg a img{
+  width: 10rem;
+
 }
 
 @media (max-width: 768px) {

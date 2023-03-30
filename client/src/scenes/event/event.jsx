@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useState } from "react";
+// import { useDispatch } from "react-redux";
 import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+// import AddIcon from "@mui/icons-material/Add";
+// import RemoveIcon from "@mui/icons-material/Remove";
 // import { shades } from "../theme";
-import { shades } from "../../theme";
+// import { shades } from "../../theme";
 import { useNavigate } from "react-router-dom";
-import { addToCart } from "../../state";
+// import { addToCart } from "../../state";
 import "../../styles/global.css"
 const Event = ({ event, width }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
+  // const dispatch = useDispatch();
+  // const [count, setCount] = useState(1);
+  // const [isHovered, setIsHovered] = useState(false);
   const {
     palette: { neutral },
   } = useTheme();

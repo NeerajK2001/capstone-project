@@ -9,12 +9,18 @@ import Shop from "./scenes/shop/Shop"
 import About from "./scenes/home/About"
 import Contact from "./scenes/home/Contact";
 import Events from "./scenes/event/Events";
-
+import AuthMenu from "./scenes/global/AuthMenu";
 import Gallery from "./scenes/home/gallery";
-
 import Footer from "./scenes/global/Footer";
 import EventDetails from "./scenes/event/EventDetails"
-import Register from "./scenes/authentication/register";
+import Registration from "./scenes/authentication/register";
+import ReviewsList from "./scenes/shop/ReviewsList";
+import Login from "./scenes/authentication/login";
+import Logout from "./scenes/authentication/logout";
+import Product from "./scenes/shop/ProductPage";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -37,12 +43,18 @@ function App() {
           <Route path="checkout/success" element={<Confirmation />} />
           <Route path="shop" element={<Shop />} />
           <Route path="About" element={<About />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="Contact" element={<Contact />} />
           <Route path="Events" element={<Events />} />
+          <Route path="ReviewsList" element={<ReviewsList />} />
           <Route path="event/:eventId" element={<EventDetails />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="registration" element={<Registration />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="productpage" element={<Product />} />
         </Routes>
+        <ToastContainer />
+        <AuthMenu/>
         <CartMenu />
         <Footer />
       </BrowserRouter>

@@ -12,6 +12,9 @@ import { setIsCartOpen } from "../../state";
 import "../../styles/global.css";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import MainCarousel from "./MainCarousel";
+import ReviewsList from "./ReviewsList";
+import Comment from "./Comment";
+
 // console.log("hello this is about");
 
 
@@ -60,9 +63,9 @@ const Shop = () => {
       `http://localhost:1337/api/items/5?populate=image`,
       // {method: "GET"}
       {headers: {
-          Authorization: `Bearer c37c8f6ec109a97dd46dde3cec5a40678d799cbdcdf5449c3ac34bb053f360263571fb7a33a14a20afae4a8bf442497ca0d5727344d7bbaee9e00c762b69e3c01946c4eeb3c459e2b6bd273c44ce07ce410a59dc75f8771e6343ccc75adace6ec2e809d69e4badf55fce4670ed6411020456fb82e5294660daa81da771a806c5`
+          Authorization: `Bearer a741f6c535a10e67baa5359dfa69d942c4ea786d56c617f53d171ead61e07072ab1c04101d82d4caae6d86c0e42ca41e3070c85969ea3bfcf9179758e51c428fd919496ff384506aaa26939299ef83f8b2d71c566f715cf4ad1c1936caa864490882a24c6c3e52b49fa9602d3053ea6bbc3e14193145cd77b207d0fd543a2973`
         }}
-  );
+  );   
 
     // console.log(item);
 
@@ -187,25 +190,10 @@ const Shop = () => {
           )}
           {value === "reviews" && <div>reviews</div>}
         </Box>
-
-        {/* Related Items */}
-        {/* <Box mt="50px" width="100%">
-            <Typography variant="h3" fontWeight="bold">
-                Reated Products
-            </Typography>
-            <Box mt="20px"
-                display="flex"
-                flexWrap="wrap"
-                columnGap="1.33%"
-                justifyContent="space-between"
-            >
-                {items.slice(0, 4).map((item, i) => (
-                    <Item key={`${item.name}-${i}`} item={item} />
-                ))}
-            </Box>
-        </Box> */}
       </Box>
       <MainCarousel/>
+      <Comment/>
+      <ReviewsList/>
     </Box>
   );
 };

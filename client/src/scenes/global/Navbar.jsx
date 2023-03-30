@@ -10,6 +10,7 @@ import {
 // import { useNavigate } from "react-router-dom";
 // import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
+import { setIsAuthOpen } from "../../state";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import logo from './img/main-logo.png';
@@ -27,6 +28,7 @@ import cartIcon from '../../components/img/cart.png';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuIconAnimation, setMenuIconAnimation] = useState("");
+  
   // const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
@@ -52,7 +54,28 @@ function Navbar() {
             <li><Link to="/Events">Events</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/Shop">Shop</Link></li>
-            <li className='login'><Link to="/register"><img src={login} alt="Login-icon" /></Link></li>
+            {/* <li className='login'><Link to="/Login"><img src={login} alt="Login-icon" /></Link></li> */}
+            <li>
+              <Badge
+                sx={{
+                  "& .MuiBadge-badge": {
+                    right: 5,
+                    top: 5,
+                    padding: "0 4px",
+                    height: "14px",
+                    minWidth: "13px",
+                  },
+                }}
+              >
+                <IconButton
+                  onClick={() => dispatch(setIsAuthOpen({}))}
+                  sx={{ color: "black" }}
+                >
+                  <img src={login} alt="Login-icon" />
+                  {/* <ShoppingCartOutlinedIcon /> */}
+                </IconButton>
+              </Badge>
+            </li>
             <li>
               <Badge
                 badgeContent={cart.length}
