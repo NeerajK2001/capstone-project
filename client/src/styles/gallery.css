@@ -1,38 +1,19 @@
-.gallery-main{
-    padding: 1rem;
-    padding-top: 5rem;
+.css-qxwadg{
+    margin: 0 auto;
 }
-
-.gallery-main h1{
-    color: #EA5A0B;
-    font-weight: bolder;
+.gallery h1{
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color:#EA5A0B;
+    text-align: center;
+    margin:3rem 0 1.5rem 0;
 }
-
-.gimg1,
-.gimg2,
-.gimg3,
-.gimg4,
-.gimg5,
-.gimg6,
-.gimg7,
-.gimg8{
-    height: 333px;
-    width: 200px;
-    margin:0.5rem;
+.css-10riir9-MuiImageList-root{
+    column-count: 4;
 }
-
-@media (min-width: 700px) {
-    .gimg2,
-    .gimg3,
-    .gimg6,
-    .gimg7{
-        width: 50vw;
+@media (max-width:768px) {
+    .css-10riir9-MuiImageList-root{
+        column-count: 3;
     }
-    .gimg1,
-    .gimg4,
-    .gimg5,
-    .gimg8{
-        width: 30vw;
-    }
-
 }
