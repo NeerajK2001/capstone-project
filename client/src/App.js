@@ -10,7 +10,7 @@ import About from "./scenes/home/About"
 import Contact from "./scenes/home/Contact";
 import Events from "./scenes/event/Events";
 import AuthMenu from "./scenes/global/AuthMenu";
-import Gallery from "./scenes/home/gallery";
+import MyGallery from "./scenes/home/gallery";
 import Footer from "./scenes/global/Footer";
 import EventDetails from "./scenes/event/EventDetails"
 import Registration from "./scenes/authentication/register";
@@ -47,7 +47,7 @@ function App() {
           <Route path="Events" element={<Events />} />
           <Route path="ReviewsList" element={<ReviewsList />} />
           <Route path="event/:eventId" element={<EventDetails />} />
-          <Route path="gallery" element={<Gallery />} />
+          <Route path="gallery" element={<MyGallery />} />
           <Route path="login" element={<Login />} />
           <Route path="registration" element={<Registration />} />
           <Route path="logout" element={<Logout />} />

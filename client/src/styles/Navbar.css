@@ -175,7 +175,7 @@ nav img:nth-child(1) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.2rem;
   /* height: 60px; */
   /* position:absolute;
   left: 50%;
@@ -286,7 +286,8 @@ nav li:nth-child(7):hover img{
 }
 
 .nav-bg a img{
-  width: 10rem;
+  width: 7rem;
+  padding-top: .3rem;
 
 }
 
@@ -330,14 +331,14 @@ nav li:nth-child(7):hover img{
   }
 
   .nav-menu.open {
-    height: 101vh;
+    height: 95vh;
     left: -17px;
-    top: 70px;
+    top: 57px;
   }
 
-  .nav-menu li:nth-child(5){
+  /* .nav-menu li:nth-child(5){
     margin-top: 5rem;
-  }
+  } */
 
   .nav-menu li:nth-child(6){
     margin-top: 0;

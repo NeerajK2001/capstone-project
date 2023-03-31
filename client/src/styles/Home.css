@@ -20,7 +20,7 @@ html {
     transform: translate(-50%, -50%);
 }
 .section-1{
-    height: 88.5vh;
+    height: 88vh;
     background-color:  rgba(0, 0, 0, 0.5);
     /* background-image: url('../img/sec-1-bg.jpg');
     background-position: center;
@@ -177,7 +177,7 @@ html {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     margin-top: 4rem;
-    max-height: 49vh;
+    max-height: 33vh;
     overflow: hidden;
 }
 .about button{
@@ -214,18 +214,26 @@ html {
 
 
 @media (max-width: 768px){
+    .app h3,
+    .section-5 h3:nth-child(1){
+        font-size: 35px;
+    }
     nav{
-        height:75px;
+        height:40px;
+    }
+    .nav-bg a img{
+        margin: 0;
     }
     .video{
         height:80vh;
-        top:49.5%;
+        top:47.5%;
     }
     .section-1{
-        height:80vh;
+        height:78.6vh;
     }
     .section-1 h1{
         font-size: 3.5rem;
+        padding-top: 10rem;
     }
     .section-2{
         float: none;
@@ -263,12 +271,14 @@ html {
     .about{
         position: static;
         margin: 0;
+        margin-bottom: 4rem;
         width:fit-content;    
         bottom: 0;
+        border: 0;
         -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
         transform: translateY(0%);
-        text-align: center;
+        text-align: center
     }
     .about h3{
         position: relative;
@@ -281,6 +291,9 @@ html {
     }
     .about p{
         margin: 0;
+        max-height: 29vh;
+        overflow: hidden;
+        z-index: 2;
     }
     .about button{
         position: relative;
@@ -290,6 +303,7 @@ html {
     }
     .section-4{
         background-image: none;
+        background-color: #fff;
         height: fit-content;
     }
     .about{
@@ -299,7 +313,7 @@ html {
         background-image: url('../components/img/img3.webp');
         background-size:cover;
         background-repeat: no-repeat;
-        height: 50vw;
+        height: 60vw;
         max-height: 550px;
     }
 }
