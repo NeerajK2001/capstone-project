@@ -20,6 +20,7 @@
     "dotenv": "^16.0.2",
     "formik": "^2.2.9",
     "js-cookie": "^3.0.1",
+    "luxon": "^3.3.0",
     "next": "^13.2.3",
     "pure-react-carousel": "^1.29.0",
     "react": "^18.2.0",

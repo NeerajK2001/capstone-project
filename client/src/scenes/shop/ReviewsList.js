@@ -4,18 +4,20 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 // import useMediaQuery from "@mui/material/useMediaQuery";
-// import { useDispatch, useSelector } from "react-redux";
-// import { setReviews } from "../../state";
+import { useDispatch, useSelector } from "react-redux";
+import { setReviews } from "../../state";
 import "../../styles/global.css";
 import profile from '../../components/img/img3.webp';
-// import Review from "./Reviews";
+import Reviews from "./Reviews";
 const ReviewsList = () => {
-  //   const dispatch = useDispatch();
+    const dispatch = useDispatch();
   //   const breakPoint = useMediaQuery("(min-width:600px)");
-  const [reviews, setReviews] = useState(null);
+//   const [reviews, setReviews] = useState(null);
+const reviews = useSelector((state) => state.cart.reviews);
+
 
   async function getReviews() {
-    const reviewsData = await fetch(
+    const reviews = await fetch(
       "http://localhost:1337/api/reviews",
       {
         headers: {
@@ -23,18 +25,18 @@ const ReviewsList = () => {
         },
       }
     );
-    console.log(reviewsData);
+    console.log(reviews);
 
-    const itemsJson = await reviewsData.json();
-    setReviews(itemsJson.data);
+    const reviewssJson = await reviews.json();
+    setReviews(reviewssJson.data);
+    dispatch(setReviews(reviewssJson.data))
+    console.log(reviewssJson.data);
+
   }
 
   useEffect(() => {
     getReviews();
   }, []);
-
-    // console.log(reviews);
-
 
   return (
     <Box width="80%" margin="80px auto">
@@ -48,10 +50,17 @@ const ReviewsList = () => {
         // justifyContent="space-between"
         // rowGap="20px"
         // columnGap="0.33%"
-        // gap="1.5rem"
+        gap="1.5rem"
       >
-        {/* {
+        {
             reviews.slice(0,4).map((review)=>{
+                return(
+                    <Reviews  review={review} key={`${review.username}-${review.id}`}/>
+                )
+            })
+        }
+        {/* {
+            reviews.map((review)=>{
                 return(
                 <Box display="flex" justifyContent="space-between" flexDirection="row"
                 border="2px solid black"
@@ -59,12 +68,11 @@ const ReviewsList = () => {
                 background-color="#eee"
                 box-shadow="0 8px 8px -4px lightblue"
                 >
-                    <img
+                     <img
                     alt="profile"
                     width="200px"
                     height="200px"
                     src={profile}
-                    
                     />
                   <Box
                     display="flex"

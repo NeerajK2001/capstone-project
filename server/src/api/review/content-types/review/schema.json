@@ -16,12 +16,12 @@
       "type": "richtext"
     },
     "username": {
-      "type": "string",
-      "default": "King123"
+      "type": "string"
     },
     "date": {
       "type": "date",
-      "default": "2023-03-09"
+      "unique": false,
+      "required": false
     },
     "rating": {
       "type": "integer"
