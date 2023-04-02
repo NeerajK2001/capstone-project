@@ -1,7 +1,11 @@
 import React from 'react';
-// import img from '../../img/nora.jpeg';
-import img from '../../components/img/nora.jpeg'
 import '../../styles/About.css';
+import person1 from '../../components/img/person1.jpg'
+import person2 from '../../components/img/person2.jpg'
+import person3 from '../../components/img/person3.jpg'
+
+
+
 function About() {
   return (
     <div>
@@ -25,15 +29,15 @@ function About() {
         <div className="Article-3">
           <h3>TEAM MEMBERS</h3>
           <div className="person-1">
-              <img src={img} alt="1st Person" />
+              <img src={person1} alt="1st Person" />
               <h4>Person-1</h4>
           </div>
           <div className="person-2">
-              <img src={img} alt="2nd Person" />
+              <img src={person2} alt="2nd Person" />
               <h4>Person-2</h4>
               </div>
           <div className="person-3">
-              <img src={img} alt="3rd Person" />
+              <img src={person3} alt="3rd Person" />
               <h4>Person-3</h4>
               </div>
         </div>
