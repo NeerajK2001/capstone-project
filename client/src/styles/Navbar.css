@@ -287,7 +287,7 @@ nav li:nth-child(7):hover img{
 
 .nav-bg a img{
   width: 7rem;
-  padding-top: .3rem;
+  padding-top: .3rem; 
 
 }
 
@@ -334,6 +334,7 @@ nav li:nth-child(7):hover img{
     height: 95vh;
     left: -17px;
     top: 57px;
+    z-index: 5;
   }
 
   /* .nav-menu li:nth-child(5){
