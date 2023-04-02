@@ -235,10 +235,10 @@ html {
     .nav-bg a img{
         margin: 0;
     }
-    .video{
+    /* .video{
         height:80vh;
         top:47.5%;
-    }
+    } */
     .section-1 h1{
         font-size: 3.5rem;
         padding-top: 10rem;
@@ -299,7 +299,7 @@ html {
     }
     .about p{
         margin: 0;
-        max-height: 29vh;
+        max-height: 28vh;
         overflow: hidden;
         z-index: 2;
     }
