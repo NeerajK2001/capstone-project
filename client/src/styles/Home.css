@@ -151,20 +151,23 @@ html {
 
 
 .section-4{
-    background: url('../components/img/img2.webp') no-repeat  100%;
-    background-color: #000;
-    /* background-position: left;
-    background-size: contain; */
-    /* margin-bottom: 1rem; */
+    background: url('../components/img/img6.webp') no-repeat  100%;
     background-size: cover;
     height:90vh;
+    position: relative;
+}
+.sec4-overlay{
+    background-color:rgb(0, 0, 0, 0.2);
+    position: absolute;
+    height:100%;
+    width:100%;
 }
 .about{
     min-height:40vh;
     max-height: 60vh;
     background-color: #ffffff;
-    width: 30%;
-    margin-left:50%;
+    width: 40%;
+    margin-left:45%;
     padding:4rem 3rem;
     position: relative;
     top: 50%;
@@ -178,7 +181,7 @@ html {
     font-weight: 400;
     color:#19211C; 
     position: absolute;
-    top:-1rem;
+    top:-2rem;
     left: -4rem;
 }
 .about span{
@@ -187,7 +190,7 @@ html {
 .about p{
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     max-height: 33vh;
     overflow: hidden;
 }
