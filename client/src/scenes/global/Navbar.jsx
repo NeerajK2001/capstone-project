@@ -39,7 +39,10 @@ function Navbar() {
   };
 
   return (
+    
+    <div className="nav-maxwidth">
         <nav className='navbar nav-bg'>
+
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
@@ -101,7 +104,10 @@ function Navbar() {
               </Badge>
             </li>
           </ul>
+
+
         </nav>
+                  </div>
   );
 }
 

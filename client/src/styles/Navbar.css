@@ -164,14 +164,24 @@ nav img:nth-child(1) {
     margin-top: 0;
   }
 } */
+.MuiBox-root .css-assi0b{
+  background-color: #272C48;
+  color: #fff;
+}
+.MuiBox-root .css-assi0b svg{
+  fill: #fff;
+}
 
 
+.nav-maxwidth{
+  background-color: #272C48;
+  width:100%
+}
 .navbar {
   /* position: fixed; */
   width:100%;
   margin: 0 auto;
   padding-top: .2rem;
-  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,6 +200,7 @@ nav img:nth-child(1) {
 }
 .nav-bg{
   background-color: #272C48;
+  max-width: 1400px;
 }
 .logo{
   padding-left: 2rem;
@@ -288,7 +299,7 @@ nav li:nth-child(7):hover img{
 .nav-bg a img{
   width: 7rem;
   padding-top: .3rem; 
-
+  margin-left: 2rem;
 }
 
 @media (max-width: 768px) {

@@ -94,6 +94,7 @@ export default function MyGallery() {
       <div className="gallery">
         <h1>GALLERY</h1>
       </div>
+      <div className="container">
       <Box sx={{ width: 9/10, height: 1/0}}>  {/*, overflowY: 'scroll' */}
         <ImageList variant="masonry" cols={'fitcontent'} gap={8}>
           {itemData.slice(0, itemsToShow).map((item) => (
@@ -115,6 +116,7 @@ export default function MyGallery() {
           </Box>
         )}
       </Box>
+      </div>
     </div>
   );
 }

@@ -32,6 +32,7 @@ function Home() {
           <button>SHOP NOW</button>
         </div>
 
+    <div className="container">
         <div className="section-2">
           <div className="sec2-box1">
             <h3>HOW TO PLAY</h3>
@@ -42,6 +43,7 @@ function Home() {
             <img src={img4} alt="Login-icon" />
           </div>
         </div>
+    </div>
 
         <div className="section-3">
           <div>
@@ -49,11 +51,12 @@ function Home() {
             </div>
         </div>
 
-
+      <div className="container">
         <div className="section-5">
           <h3>TESTIMONIALS</h3>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
+      </div>
 
       <div className="section-6"></div>
         <div className="section-4">

@@ -1,3 +1,7 @@
+.fa-maxwidth{
+    background-color: #041E42;
+    width:100%;
+}
 .footer{
     background-color: #041E42;
     padding: 5rem 2rem 2rem 2rem;
@@ -5,6 +9,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .copyright{
     margin:0 auto;

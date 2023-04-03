@@ -26,20 +26,22 @@ function About() {
             <p>Secondly, board games are inherently social. The vast majority of board games require social interaction to function, even if there are several board games that may be played alone. In a cooperative game like Pandemic or Forbidden island, players must collaborate to find solutions and issues. Players participate in friendly competition. All players can find something to enjoy in cooperative and competitive games. By keeping all these things in our mind we came across a product called 9on9, that emphasizes enjoyment, movement, and skill.</p>
           </div>
         </div>
-        <div className="Article-3">
-          <h3>TEAM MEMBERS</h3>
-          <div className="person-1">
-              <img src={person1} alt="1st Person" />
-              <h4>Person-1</h4>
+        <div className="container">
+          <div className="Article-3">
+            <h3>TEAM MEMBERS</h3>
+            <div className="person-1">
+                <img src={person1} alt="1st Person" />
+                <h4>Person-1</h4>
+            </div>
+            <div className="person-2">
+                <img src={person2} alt="2nd Person" />
+                <h4>Person-2</h4>
+                </div>
+            <div className="person-3">
+                <img src={person3} alt="3rd Person" />
+                <h4>Person-3</h4>
+                </div>
           </div>
-          <div className="person-2">
-              <img src={person2} alt="2nd Person" />
-              <h4>Person-2</h4>
-              </div>
-          <div className="person-3">
-              <img src={person3} alt="3rd Person" />
-              <h4>Person-3</h4>
-              </div>
         </div>
     </div>
   );

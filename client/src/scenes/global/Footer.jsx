@@ -7,6 +7,7 @@ function Footer() {
     window.scrollTo({top:0,left:0,behavior:"smooth"});
   };
   return (
+  <div className="fa-maxwidth">
     <div className='footer'>
         <div className="fa-sec-1">
             <a href='/'><img src={img} alt='Logo'></img></a>
@@ -31,6 +32,7 @@ function Footer() {
         </div>
         <p className='copyright'>Copyright &copy; 2023 | All Rights Reserved By Jalfam Games Pvt. Ltd. </p>
     </div>
+  </div>
   );
 }
 
