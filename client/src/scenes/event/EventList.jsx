@@ -20,10 +20,10 @@ const EventList = () => {
 
   async function getEvents() {
     const events = await fetch(
-      "http://localhost:1337/api/events?populate=image",
+      "https://starfish-app-ettw4.ondigitalocean.app/api/events?populate=image",
     //   { method: "GET" },
       {headers: {
-        Authorization: `Bearer a741f6c535a10e67baa5359dfa69d942c4ea786d56c617f53d171ead61e07072ab1c04101d82d4caae6d86c0e42ca41e3070c85969ea3bfcf9179758e51c428fd919496ff384506aaa26939299ef83f8b2d71c566f715cf4ad1c1936caa864490882a24c6c3e52b49fa9602d3053ea6bbc3e14193145cd77b207d0fd543a2973`
+        Authorization: `Bearer d2ad2d8de4034dd459d315dc8a01356121c3b4d2ca5286f255b3fddca855362e23461a9c4caa2dd6d9e23f6b4cc663c08585890f206cd2e1fbe90aaf2bb9c229b6c751a490e69e8d19c5c02c1c9a250cbaf22655e1e65723b23b65a77afa833a553ddd96f1cc8b09ad001fc0511e548b4b125c38a6fa1a88be38968091f0244f`
       }}
     );
     console.log(events);
