@@ -167,9 +167,18 @@ nav img:nth-child(1) {
 .MuiBox-root .css-assi0b{
   background-color: #272C48;
   color: #fff;
+  width: 40%;
+  min-width: 225px;
 }
 .MuiBox-root .css-assi0b svg{
   fill: #fff;
+}
+.MuiBox-root .css-0 button{
+  padding:.3rem;
+  border-radius: 3px;
+}
+.MuiBox-root .css-assi0b h3{
+  font-size: 20px;
 }
 
 

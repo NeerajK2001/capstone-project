@@ -5,7 +5,10 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { storeUser } from "./helper";
 import { useState } from "react";
+import '../../styles/Login.css';
+
 const initialUser = { password: "", identifier: "" };
+
 
 
 const Login = () => {
@@ -46,31 +49,42 @@ const Login = () => {
     <Row className="login">
       <Col sm="12" md={{ size: 4, offset: 4 }}>
         <div>
-          <h2>Login:</h2>
-          <FormGroup>
-            <Input
-              type="email"
-              name="identifier"
-              value={user.identifier}
-              onChange={handleChange}
-              placeholder="Enter your email"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Input
-              type="password"
-              name="password"
-              value={user.password}
-              onChange={handleChange}
-              placeholder="Enter password"
-            />
-          </FormGroup>
-          <Button color="primary" onClick={handleLogin}>
-            Login
-          </Button>
-          <h6>
-            Click <Link to="/registration">Here</Link> to sign up
-          </h6>
+          <div className="login">
+              <div className="part-1">  
+                    <div className="part1-overlay">
+                    <h2>WELCOME!</h2>
+                    <p>Login to <br />continue</p>
+                    </div>
+              </div>
+              
+              <div className="part-2">
+                <h3>Login</h3>
+                  <FormGroup>
+                    <Input
+                      type="email"
+                      name="identifier"
+                      value={user.identifier}
+                      onChange={handleChange}
+                      placeholder="Email"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Input
+                      type="password"
+                      name="password"
+                      value={user.password}
+                      onChange={handleChange}
+                      placeholder="Password"
+                    />
+                  </FormGroup>
+                  <Button color="primary" onClick={handleLogin}>
+                    Login
+                  </Button>
+                  <h6>
+                    Don't Have An Account? <Link to="/registration">&nbsp; Signup</Link>
+                  </h6> 
+              </div>
+          </div>
         </div>
       </Col>
     </Row>

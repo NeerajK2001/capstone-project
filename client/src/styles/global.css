@@ -30,7 +30,8 @@ a, button{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width:800px;
+  width:100%;
+  max-width: 900px;
   margin-top: 3rem;
 }
 
@@ -69,4 +70,36 @@ a, button{
 .MuiBox-root .css-1iq9sk8 img{
   width:150px;
   height:160px;
+}
+
+
+
+
+.css-uoixap-MuiTypography-root{
+  color:#19211c;
+  display: none;
+}
+.MuiBox-root .css-ulyp6h{
+  margin-top: 1rem;
+}
+.css-795kcv-MuiTypography-root{
+  color: #19211c;
+}
+
+@media screen and (max-width:768px) {
+  .css-1r1jipd .css-uoixap-MuiTypography-root{
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .css-795kcv-MuiTypography-root{
+    display: none;
+  }
+  .css-1r1jipd  .css-15au250{
+    display:block;
+    width: 100%;
+  }
+  .css-199bq0s{
+    width:100%;
+  }
 }
