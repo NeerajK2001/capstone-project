@@ -24,3 +24,49 @@ a, button{
   max-width: 1400px;
   margin: 0 auto;
 }
+
+.MuiBox-root .css-rnxxer{
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width:800px;
+  margin-top: 3rem;
+}
+
+.css-1iq9sk8{
+  margin: 0 auto;
+}
+
+.MuiBox-root .css-gg4vpm{
+  margin: 0 auto;
+}
+
+.MuiBox-root .css-1iq9sk8{
+  border: .5px solid #041e42;
+}
+.css-1r1jipd .css-buwpns-MuiTypography-root{
+  font-size: 3.2rem;
+  color:#EA5A0B;
+  font-weight: 40;
+}
+.css-1xeedn6 .css-1hdlhmy-MuiTypography-root:nth-child(2){
+  color:#19211c;
+  display:block;
+  width:100%;
+  font-weight: 700;
+}
+.css-1hdlhmy-MuiTypography-root{
+  display: block;
+  width:100%;
+}
+.MuiBox-root .css-gg4vpm{
+  display:block;
+}
+.MuiBox-root .css-1xeedn6{
+  padding:0 1rem 0 1rem;
+}
+.MuiBox-root .css-1iq9sk8 img{
+  width:150px;
+  height:160px;
+}

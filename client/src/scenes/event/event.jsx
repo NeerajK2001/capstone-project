@@ -38,7 +38,7 @@ const Event = ({ event, width }) => {
             alt={event.name}
             width="200px"
             height="200px"
-            src={`http://localhost:1337${url}`}
+            src={`https://starfish-app-ettw4.ondigitalocean.app${url}`}
             
             />
             <Box mt="3px" height="100px" padding="0.5rem">
