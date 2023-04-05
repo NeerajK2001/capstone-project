@@ -11,6 +11,7 @@ import { shades } from "../../theme";
 import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
 import "../../styles/global.css"
+import "../../styles/Event.css"
 
 const EventDetails = () =>{
     const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const EventDetails = () =>{
         const event = await fetch(
             `https://starfish-app-ettw4.ondigitalocean.app/api/events/${eventId}?populate=image`,
             {headers: {
-                Authorization: `Bearer d2ad2d8de4034dd459d315dc8a01356121c3b4d2ca5286f255b3fddca855362e23461a9c4caa2dd6d9e23f6b4cc663c08585890f206cd2e1fbe90aaf2bb9c229b6c751a490e69e8d19c5c02c1c9a250cbaf22655e1e65723b23b65a77afa833a553ddd96f1cc8b09ad001fc0511e548b4b125c38a6fa1a88be38968091f0244f`
+                Authorization: `Bearer b204f249f07d78414ad22f7dd5905342b2d6d9b817ab206cee92fff4b132ccc56aa986ce86e5b30d112dfbe665ce8db311985df76dc063490a07298ddfc293935791125ae8083854b14680d227bea733ba254eaca54389db92e82806fd2f9f1a8e0c549dc052008623e9892bd8fde082ac4995b512123ad8bc91ca84af6c8e6f`
               }}
         );
 

@@ -7,7 +7,6 @@ import { storeUser } from "./helper";
 import { useState } from "react";
 const initialUser = { password: "", identifier: "" };
 
-
 const Login = () => {
   const [user, setUser] = useState(initialUser);
 
@@ -22,7 +21,7 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    const url = `http://localhost:1337/api/auth/local`;
+    const url = `https://starfish-app-ettw4.ondigitalocean.app/api/auth/local`;
     try {
       if (user.identifier && user.password) {
         const { data } = await axios.post(url, user);
@@ -33,6 +32,7 @@ const Login = () => {
           });
           setUser(initialUser);
           navigate("/");
+          window.location.reload(false);
         }
       }
     } catch (error) {
@@ -43,37 +43,58 @@ const Login = () => {
   };
 
   return (
-    <Row className="login">
-      <Col sm="12" md={{ size: 4, offset: 4 }}>
-        <div>
-          <h2>Login:</h2>
-          <FormGroup>
-            <Input
-              type="email"
-              name="identifier"
-              value={user.identifier}
-              onChange={handleChange}
-              placeholder="Enter your email"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Input
-              type="password"
-              name="password"
-              value={user.password}
-              onChange={handleChange}
-              placeholder="Enter password"
-            />
-          </FormGroup>
-          <Button color="primary" onClick={handleLogin}>
-            Login
-          </Button>
-          <h6>
-            Click <Link to="/registration">Here</Link> to sign up
-          </h6>
+    <div>
+      <div className="sign-up">
+        <div className="part-1 login-box">
+          <div className="part1-overlay">
+            <h2>WELCOME!</h2>
+            <p>
+              Log in to<br />
+              continue
+            </p>
+          </div>
         </div>
-      </Col>
-    </Row>
+        <div className="part-2">
+          <h3>Log In</h3>
+          <div className="form">
+            <Row className="login">
+              <Col sm="12" md={{ size: 4, offset: 4 }}>
+                <div>
+                  <FormGroup>
+                    <Input
+                      type="email"
+                      name="identifier"
+                      value={user.identifier}
+                      onChange={handleChange}
+                      placeholder="Enter your email"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Input
+                      type="password"
+                      name="password"
+                      value={user.password}
+                      onChange={handleChange}
+                      placeholder="Enter password"
+                    />
+                  </FormGroup>
+                  <Button color="primary" onClick={handleLogin}>
+                    Login
+                  </Button>
+                  
+                </div>
+              </Col>
+            </Row>
+            <p>or</p>
+            <button>Log in with google</button>
+            <button>Log in with facebook</button>
+            <h6>
+                    Click <Link to="/signup">Here</Link> to Signup
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

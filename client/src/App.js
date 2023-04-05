@@ -13,11 +13,12 @@ import AuthMenu from "./scenes/global/AuthMenu";
 import Gallery from "./scenes/home/gallery";
 import Footer from "./scenes/global/Footer";
 import EventDetails from "./scenes/event/EventDetails"
-import Registration from "./scenes/authentication/register";
+// import Registration from "./scenes/authentication/register";
 import ReviewsList from "./scenes/shop/ReviewsList";
 import Login from "./scenes/authentication/login";
 import Logout from "./scenes/authentication/logout";
 import Product from "./scenes/shop/ProductPage";
+import Signup from "./scenes/authentication/Signup";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -49,9 +50,9 @@ function App() {
           <Route path="event/:eventId" element={<EventDetails />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="login" element={<Login />} />
-          <Route path="registration" element={<Registration />} />
           <Route path="logout" element={<Logout />} />
           <Route path="productpage" element={<Product />} />
+          <Route path="signup" element={<Signup />} />
         </Routes>
         <ToastContainer />
         <AuthMenu/>

@@ -1,6 +1,10 @@
 import React from 'react';
 // import img from '../../img/nora.jpeg';
-import img from '../../components/img/nora.jpeg'
+// import img from '../../components/img/nora.jpeg'
+import leann from '../../components/img/leann-zahara.jpg'
+import annette from '../../components/img/annette-maltais.jpg'
+import john from '../../components/img/john-Thibert.jpg'
+
 import '../../styles/About.css';
 function About() {
   return (
@@ -25,16 +29,16 @@ function About() {
         <div className="Article-3">
           <h3>TEAM MEMBERS</h3>
           <div className="person-1">
-              <img src={img} alt="1st Person" />
-              <h4>Person-1</h4>
+              <img src={annette} alt="1st Person" />
+              <h4>Annette Maltais</h4>
           </div>
           <div className="person-2">
-              <img src={img} alt="2nd Person" />
-              <h4>Person-2</h4>
+              <img src={john} alt="2nd Person" />
+              <h4>John Thibert</h4>
               </div>
           <div className="person-3">
-              <img src={img} alt="3rd Person" />
-              <h4>Person-3</h4>
+              <img src={leann} alt="3rd Person" />
+              <h4>Leann Zahara</h4>
               </div>
         </div>
     </div>

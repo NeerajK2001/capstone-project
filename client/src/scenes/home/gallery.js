@@ -1,41 +1,122 @@
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import Button from '@mui/material/Button';
 import '../../styles/gallery.css';
-import childrenplayingindoor from '../../components/img/childrenplaying-indoor.webp';
-import childrenplaying from '../../components/img/childrenplaying.webp';
-import gardenside from '../../components/img/gardenside.webp';
-import homeplay from '../../components/img/homeplay.webp';
-import indoorgame from '../../components/img/indoor game.webp';
-import insidegame from '../../components/img/insidegame.webp';
-import riversidegame from '../../components/img/river-sidegame.webp';
-import sidewalkgame from '../../components/img/sidewalkgame.webp';
 
+import img1 from '../../components/img/img1.jpg';
+import img2 from '../../components/img/img2.webp';
+import img3 from '../../components/img/img3.webp';
+import img4 from '../../components/img/img4.webp';
+import img5 from '../../components/img/img5.webp';
+import img6 from '../../components/img/img6.webp';
+import img7 from '../../components/img/img7.webp';
+import img8 from '../../components/img/img8.webp';
+import img9 from '../../components/img/img14.webp';
+import img10 from '../../components/img/img10.webp';
+import img11 from '../../components/img/img11.webp';
+import img12 from '../../components/img/img15.webp';
+import img13 from '../../components/img/img16.webp';
 
-function Gallery() {
+export default function MyGallery() {
+  const [itemsToShow, setItemsToShow] = React.useState(12);
+  const [showLoadMore, setShowLoadMore] = React.useState(true);
+
+  const itemData = [
+    {img: img1,
+    title: '9on9',
+  },
+  {
+    img: img2,
+    title: '9on9',
+  },
+  {
+    img: img3,
+    title: '9on9',
+  },
+  {
+    img: img4,
+    title: '9on9',
+  },
+  {
+    img: img5,
+    title: '9on9',
+  },
+  {
+    img: img6,
+    title: '9on9',
+  },
+  {
+    img: img7,
+    title: '9on9',
+  },
+  {
+    img: img8,
+    title: '9on9',
+  },
+  {
+    img: img9,
+    title: '9on9',
+  },
+  {
+    img: img10,
+    title: '9on9',
+  },
+  {
+    img: img11,
+    title: '9on9',
+  },
+  {
+    img: img12,
+    title: '9on9',
+  },
+  {
+    img: img13,
+    title: '9on9',
+  },
+  ];
+
+  const handleLoadMore = () => {
+    setItemsToShow(itemsToShow + 12);
+  };
+
+  React.useEffect(() => {
+    if (itemsToShow >= itemData.length) {
+      setShowLoadMore(false);
+    } else {
+      setShowLoadMore(true);
+    }
+  }, [itemsToShow, itemData.length]);
+
   return (
-    <div class="gallery-main">
     <div>
-        <h1>Gallery Page</h1>
-    </div>
-    <div class="gallery-images">
-    <div>
-      <img class="gimg1" src={sidewalkgame} alt="You can play anywhere even at side-walk"/>
-      <img class="gimg2" src={riversidegame} alt="Portable game which you can play when you are camping and go somewhere"/>
-    </div>
-    <div>
-      <img class="gimg3" src={insidegame} alt="People can also play inside the house"/>
-      <img class="gimg4" src={indoorgame} alt="when you tired and you wanna utilize your time you can play this game att home"/>
-    </div>
-    <div>
-      <img class="gimg5" src={homeplay} alt="It can be played by children, youth and senior at home"/>
-      <img class="gimg6" src={gardenside} alt="You can play at gardenside too"/>
-    </div>
-    <div>
-      <img class="gimg7" src={childrenplaying} alt="children can also play anywhere according to their "/>
-      <img class="gimg8" src={childrenplayingindoor} alt="children can also play inside the house"/>
-    </div>
-    </div>
+      <div className="gallery">
+        <h1>GALLERY</h1>
+      </div>
+      <div className="container">
+      <Box  className='gallery-box' sx={{ width: 9/10, height: 1/0}}>  {/*, overflowY: 'scroll' */}
+        <ImageList  className='image-ul' variant="masonry" cols={'fitcontent'} gap={8}>
+          {itemData.slice(0, itemsToShow).map((item) => (
+            <ImageListItem key={item.img} className='image-li'>
+              <img
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+        {showLoadMore && (
+          <Box className='button-box' sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
+            <Button variant="contained" onClick={handleLoadMore}>
+              Load More
+            </Button>
+          </Box>
+        )}
+      </Box>
+      </div>
     </div>
   );
 }
-
-export default Gallery;

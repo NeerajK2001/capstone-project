@@ -10,6 +10,7 @@ import { addToCart } from "../../state";
 import { useDispatch } from "react-redux";
 import { setIsCartOpen } from "../../state";
 import "../../styles/global.css";
+import "../../styles/Shop.css";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import MainCarousel from "./MainCarousel";
 import ReviewsList from "./ReviewsList";
@@ -60,10 +61,10 @@ const Shop = () => {
   async function getItem() {
     // let headers = {Authorization: `Bearer ${process.env.ADMIN_TOKEN}`}
     const item = await fetch(
-      `http://localhost:1337/api/items/5?populate=image`,
+      `https://starfish-app-ettw4.ondigitalocean.app/api/items/1?populate=image`,
       // {method: "GET"}
       {headers: {
-          Authorization: `Bearer a741f6c535a10e67baa5359dfa69d942c4ea786d56c617f53d171ead61e07072ab1c04101d82d4caae6d86c0e42ca41e3070c85969ea3bfcf9179758e51c428fd919496ff384506aaa26939299ef83f8b2d71c566f715cf4ad1c1936caa864490882a24c6c3e52b49fa9602d3053ea6bbc3e14193145cd77b207d0fd543a2973`
+          Authorization: `Bearer b204f249f07d78414ad22f7dd5905342b2d6d9b817ab206cee92fff4b132ccc56aa986ce86e5b30d112dfbe665ce8db311985df76dc063490a07298ddfc293935791125ae8083854b14680d227bea733ba254eaca54389db92e82806fd2f9f1a8e0c549dc052008623e9892bd8fde082ac4995b512123ad8bc91ca84af6c8e6f`
         }}
   );   
 
@@ -78,20 +79,20 @@ const Shop = () => {
     // getItems();
   }, []);
 
-  function MouseOverRed(event) {
-    event.target.style.background = '#BC4123';
-  }
-  function MouseOverGreen(event) {
-    event.target.style.background = 'green';
-  }
-  function MouseOut(event){
-    event.target.style.background="";
-  }
+  // function MouseOverRed(event) {
+  //   event.target.style.background = '#BC4123';
+  // }
+  // function MouseOverGreen(event) {
+  //   event.target.style.background = 'green';
+  // }
+  // function MouseOut(event){
+  //   event.target.style.background="";
+  // }
 
   return (
     <Box>
-      <Box width="80%" m="80px auto">
-      `<Typography variant="h1" mb="20px">Shop 9on9 game</Typography>
+      <Box width="90%" m="0 auto" >
+      <Typography variant="h1" mb="20px" mt="20px">Shop 9on9 game</Typography>
         <Box display="flex" flexWrap="wrap" columnGap="40px">
           {/* Images */}
           <Box flex="1 1 40%" mb="40px">
@@ -99,7 +100,7 @@ const Shop = () => {
               alt={item?.name}
               width="100%"
               height="100%"
-              src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`https://starfish-app-ettw4.ondigitalocean.app${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
               style={{ objectFit: "fill" }}
             />
           </Box>
@@ -131,6 +132,8 @@ const Shop = () => {
               alignItems="center"
               justifyContent="space-between"
               minHeight="50px"
+              gap="1rem"
+              className="shop-button"
             >
               <Button
                 sx={{
@@ -139,9 +142,12 @@ const Shop = () => {
                     borderRadius:"5px",
                     minWidth: "150px",
                     padding: "15px 100px",
+                    '&:hover': {
+                      backgroundColor: 'green',
+                    },
+                    width:"50%"
                 }}
-                onMouseOver={MouseOverGreen}
-                onMouseOut={MouseOut}
+                
                 onClick={() =>
                   dispatch(addToCart({ item: { ...item, count } }))
 
@@ -157,10 +163,12 @@ const Shop = () => {
                   borderRadius:"5px",
                   minWidth: "150px",
                   padding: "15px 100px",
+                  '&:hover': {
+                    backgroundColor: '#BC4123',
+                  },
+                  width:"50%"
 
                 }}
-                onMouseOver={MouseOverRed}
-                onMouseOut={MouseOut}
                 onClick={() => dispatch(setIsCartOpen({}))}
               >
                 VIEW CART
@@ -184,11 +192,11 @@ const Shop = () => {
             {/* <Tab label="REVIEWS" value="reviews" /> */}
           </Tabs>
         </Box>
-        <Box display="flex" flexWrap="wrap" gap="15px">
+        <Box display="flex" flexWrap="wrap" gap="15px" mb="20px">
           {value === "description" && (
             <div>{item?.attributes?.longDescription}</div>
           )}
-          {value === "reviews" && <div>reviews</div>}
+          {/* {value === "reviews" && <div>reviews</div>} */}
         </Box>
       </Box>
       <MainCarousel/>

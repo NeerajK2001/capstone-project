@@ -60,6 +60,7 @@
 import  { useState } from 'react'; 
 import React, { useRef } from "react";
 import '../../styles/Contact.css'
+import '../../styles/global.css'
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 

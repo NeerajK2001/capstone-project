@@ -60,12 +60,15 @@ const AuthMenu = () => {
             <Box >
               <Button
                   sx={{
-                    backgroundColor:"orange",
+                    backgroundColor: "#D1683B",
                     color: "white",
-                    borderRadius: 0,
+                    borderRadius:"5px",
                     minWidth: "100%",
                     padding: "20px 40px",
                     m: "20px 0",
+                    '&:hover': {
+                      backgroundColor: '#BC4123',
+                    },
                   }}
                   onClick={() => {
                     navigate("/login");
@@ -77,19 +80,23 @@ const AuthMenu = () => {
                 <Typography variant="h3" textAlign="center">OR</Typography>
                 <Button
                   sx={{
-                    backgroundColor: "green",
+                    backgroundColor: "#041E42",
                     color: "white",
-                    borderRadius: 0,
+                    borderRadius:"5px",
+                    
+                    '&:hover': {
+                      backgroundColor: 'green',
+                    },
                     minWidth: "100%",
                     padding: "20px 40px",
                     m: "20px 0",
                   }}
                   onClick={() => {
-                    navigate("/registration");
+                    navigate("/signup");
                     dispatch(setIsAuthOpen({}));
                   }}
                 >
-                  Register
+                  Signup
                 </Button> 
             </Box>
             :

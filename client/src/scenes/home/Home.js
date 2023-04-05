@@ -29,7 +29,7 @@ function Home() {
           <video src={bgvideo} autoPlay muted loop className='video' />
           <div className="overlay"></div>
           <h1>A Board <span>Game</span> <br/>For Everyone</h1>
-          <button>SHOP NOW</button>
+          <button><Link to ="/shop">SHOP NOW</Link></button>
         </div>
 
         <div className="section-2">

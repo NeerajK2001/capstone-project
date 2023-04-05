@@ -11,7 +11,7 @@
     text-align: center;
     color:white;
 }
-h1{
+.contact-sec1 h1{
     font-size: 3rem;
     padding: 4rem 0 2rem 0;
     margin:0;
@@ -48,14 +48,16 @@ p span{
     margin-top: 1rem;
     position: relative;
 }
-.field input{
+.field input,
+.field textarea{
     width:90%;
     height:5vh;
     border-radius: 3px;
     border:0px;
     text-align: left;
-    padding:.2rem;
+    padding: 1rem;
     padding-left: 1rem;
+    font-family: 'Lato', sans-serif;
 }
 .error{
     color:rgb(255, 95, 95);

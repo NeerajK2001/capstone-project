@@ -11,7 +11,7 @@ const Registration = () => {
 
   const signUp = async () => {
     try {
-      const url = `http://localhost:1337/api/auth/local/register`;
+      const url = `https://starfish-app-ettw4.ondigitalocean.app/api/auth/local/register`;
       if (user.username && user.email && user.password) {
         const res = await axios.post(url, user);
         if (!!res) {
@@ -20,6 +20,7 @@ const Registration = () => {
           });
           setUser(initialUser);
           navigate("/login");
+          window.location.reload(false);
         }
       }
     } catch (error) {

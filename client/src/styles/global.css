@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;500&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -8,8 +8,16 @@ body{
   padding: 0;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400 !important;
+}
+
+
 p{
   font-size:16px ;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300 !important;
 }
 
 a, button{
@@ -21,6 +29,7 @@ a, button{
 }
 
 .container{
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
 }
+

@@ -10,7 +10,7 @@ html {
     object-fit: cover;
     left: 0;
     width: 100%;
-    max-width: 1400px; 
+    max-width: 1800px; 
     top:51.6%; 
     left: 50%;
     -moz-transform: translate(-50%, -50%);
@@ -53,7 +53,15 @@ html {
     font-family: 'Lato', sans-serif;
     transition: .2s ease-in-out 0s;
 }
-.section-1 button:hover{
+
+.section-1 button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.section-1 button:hover,
+.section-1 button a:hover
+{
     background-color: #fff;
     color: #000;
     transform: scale(1.1);

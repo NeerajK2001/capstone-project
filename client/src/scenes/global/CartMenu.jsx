@@ -72,7 +72,7 @@ const CartMenu = () => {
                       alt={item?.name}
                       width="123px"
                       height="164px"
-                      src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={`https://starfish-app-ettw4.ondigitalocean.app${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     />
                   </Box>
                   <Box flex="1 1 60%">
@@ -138,12 +138,15 @@ const CartMenu = () => {
             </FlexBox>
             <Button
               sx={{
-                backgroundColor: shades.primary[400],
+                backgroundColor: "#D1683B",
                 color: "white",
-                borderRadius: 0,
+                borderRadius: "5px",
                 minWidth: "100%",
                 padding: "20px 40px",
                 m: "20px 0",
+                '&:hover': {
+                  backgroundColor: '#BC4123',
+                },
               }}
               onClick={() => {
                 navigate("/checkout");

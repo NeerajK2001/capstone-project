@@ -1,0 +1,9 @@
+@media only screen and (max-width: 600px) {
+    .shop-button{
+        flex-direction: column;
+    }
+    
+    .shop-button button{
+        width: 100%;
+    }
+  }

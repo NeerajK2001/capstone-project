@@ -18,13 +18,11 @@
     "username": {
       "type": "string"
     },
-    "date": {
-      "type": "date",
-      "unique": false,
-      "required": false
-    },
     "rating": {
       "type": "integer"
+    },
+    "date": {
+      "type": "string"
     }
   }
 }

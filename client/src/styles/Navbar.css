@@ -171,11 +171,12 @@ nav img:nth-child(1) {
   width:100%;
   margin: 0 auto;
   padding-top: .2rem;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+  z-index: 100;
   /* height: 60px; */
   /* position:absolute;
   left: 50%;
@@ -333,6 +334,7 @@ nav li:nth-child(7):hover img{
     height: 101vh;
     left: -17px;
     top: 70px;
+    z-index: 2;
   }
 
   .nav-menu li:nth-child(5){

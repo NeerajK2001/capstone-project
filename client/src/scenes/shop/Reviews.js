@@ -9,6 +9,7 @@ import profile from "../../components/img/img3.webp";
 import { useNavigate } from "react-router-dom";
 // import { addToCart } from "../../state";
 import "../../styles/global.css";
+import "../../styles/Reviews.css";
 const Reviews = ({ review, width }) => {
   const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -24,21 +25,25 @@ const Reviews = ({ review, width }) => {
     <Box
       display="flex"
       flexDirection="row"
-      border="2px solid black"
+    //   border="2px solid black"
       borderRadius="5px"
-      background-color="#eee"
-      box-shadow="0 8px 8px -4px lightblue"
+      className="review-box"
+      gap="1rem"
+      width="100%"
+      background="#eee"
+    
     >
-      <img alt="profile" width="200px" height="200px" src={profile} />
+      <img alt="profile" width="100px" height="100px" src={profile} />
       <Box
         display="flex"
         // justifyContent="space-between"
         flex="wrap"
         style={{ cursor: "pointer" }}
         flexDirection="column"
+        width="70%"
       >
         <Box display="flex" justifyContent="space-between" flexDirection="row">
-          <Typography>{username}</Typography>
+          <Typography variant="h3">{username}</Typography>
           <Typography>{date}</Typography>
         </Box>
         <Box
@@ -46,8 +51,8 @@ const Reviews = ({ review, width }) => {
           justifyContent="space-between"
           flexDirection="column"
         >
-          <Typography>{message}</Typography>
-          <Typography>Rating: {rating}Stars</Typography>
+          <Typography >{message}</Typography>
+          <Typography variant="p">Rating: {rating}Stars</Typography>
         </Box>
       </Box>
     </Box>
