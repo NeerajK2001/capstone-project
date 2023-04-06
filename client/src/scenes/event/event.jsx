@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 // import AddIcon from "@mui/icons-material/Add";
 // import RemoveIcon from "@mui/icons-material/Remove";
 // import { shades } from "../theme";
@@ -8,6 +8,7 @@ import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 // import { addToCart } from "../../state";
 import "../../styles/global.css"
+import { BASE_URL } from "../../utils/base";
 const Event = ({ event, width }) => {
   const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const Event = ({ event, width }) => {
             alt={event.name}
             width="200px"
             height="200px"
-            src={`https://starfish-app-ettw4.ondigitalocean.app${url}`}
+            src={`${BASE_URL}${url}`}
             
             />
             <Box mt="3px" height="100px" padding="0.5rem">

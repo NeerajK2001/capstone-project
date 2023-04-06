@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { Col, Row, Button, FormGroup, Input } from "reactstrap";
 import "../../styles/Signup.css";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../utils/base";
 
 const initialUser = { email: "", password: "", username: "" };
 const Signup = () => {
@@ -14,7 +15,7 @@ const Signup = () => {
 
   const signUp = async () => {
     try {
-      const url = `https://starfish-app-ettw4.ondigitalocean.app/api/auth/local/register`;
+      const url = `${BASE_URL}/api/auth/local/register`;
       if (user.username && user.email && user.password) {
         const res = await axios.post(url, user);
         if (!!res) {

@@ -1,23 +1,24 @@
 // import { useState } from "react";
 // import { useDispatch } from "react-redux";
-import { IconButton, Box, Typography, useTheme, Button } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
+// import { IconButton,  Button } from "@mui/material";
 import profile from "../../components/img/img3.webp";
 // import AddIcon from "@mui/icons-material/Add";
 // import RemoveIcon from "@mui/icons-material/Remove";
 // import { shades } from "../theme";
 // import { shades } from "../../theme";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { addToCart } from "../../state";
 import "../../styles/global.css";
 import "../../styles/Reviews.css";
 const Reviews = ({ review, width }) => {
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
   // const dispatch = useDispatch();
   // const [count, setCount] = useState(1);
   // const [isHovered, setIsHovered] = useState(false);
-  const {
-    palette: { neutral },
-  } = useTheme();
+//   const {
+//     // palette: { neutral },
+//   } = useTheme();
 
   const { username, date, message, rating } = review.attributes;
 

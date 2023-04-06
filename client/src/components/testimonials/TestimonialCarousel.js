@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './testimonials.css';
-import img from "../img/nora.jpeg"
+import img from "../img/img3.webp"
 
 const TestimonialCarousel = ({ testimonials }) => {
   const settings = {

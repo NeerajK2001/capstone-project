@@ -5,6 +5,9 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { storeUser } from "./helper";
 import { useState } from "react";
+import { BASE_URL } from "../../utils/base";
+
+
 const initialUser = { password: "", identifier: "" };
 
 const Login = () => {
@@ -21,7 +24,7 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    const url = `https://starfish-app-ettw4.ondigitalocean.app/api/auth/local`;
+    const url = `${BASE_URL}/api/auth/local`;
     try {
       if (user.identifier && user.password) {
         const { data } = await axios.post(url, user);

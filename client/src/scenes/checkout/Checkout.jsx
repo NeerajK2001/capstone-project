@@ -3,10 +3,12 @@ import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
-import { shades } from "../../theme";
+// import { shades } from "../../theme";
 import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
+import { BASE_URL } from "../../utils/base";
+import { KEY } from "../../utils/key";
 
 const stripePromise = loadStripe(
   "pk_test_51Mf522BMldolGarEcUn4XsmcdjUPvz1gu2P3ATld3jnNeNKdAIFuxdeg9f6Zk1o4V29f8D11Ns7g8dwuzyzp1beP00t9lQLIFv"
@@ -47,28 +49,12 @@ const Checkout = () => {
       })),
     };
 
-    // const response = await fetch("http://localhost:1337/api/orders", {
-    //   method: "POST",
-    //   headers: {
-    //     Authorization: `Bearer c37c8f6ec109a97dd46dde3cec5a40678d799cbdcdf5449c3ac34bb053f360263571fb7a33a14a20afae4a8bf442497ca0d5727344d7bbaee9e00c762b69e3c01946c4eeb3c459e2b6bd273c44ce07ce410a59dc75f8771e6343ccc75adace6ec2e809d69e4badf55fce4670ed6411020456fb82e5294660daa81da771a806c5`
-    //   },
-    //   body: JSON.stringify(requestBody),
-    // });
-    // console.log(requestBody)
-
-    // console.log("Done")
-    // const session = await response.json();
-    // await stripe.redirectToCheckout({
-    //   sessionId: session.id,
-    // });
-    // console.log(requestBody)
-
-    const response = await fetch("https://starfish-app-ettw4.ondigitalocean.app/api/orders/", {
+    const response = await fetch(`${BASE_URL}/api/orders/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer b204f249f07d78414ad22f7dd5905342b2d6d9b817ab206cee92fff4b132ccc56aa986ce86e5b30d112dfbe665ce8db311985df76dc063490a07298ddfc293935791125ae8083854b14680d227bea733ba254eaca54389db92e82806fd2f9f1a8e0c549dc052008623e9892bd8fde082ac4995b512123ad8bc91ca84af6c8e6f`
+        Authorization: `${KEY}`
           },
       body: JSON.stringify(requestBody),
     });

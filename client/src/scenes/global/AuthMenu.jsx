@@ -1,18 +1,18 @@
 import { Box,Button, IconButton, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
-import axios from 'axios'
+// import axios from 'axios'
 import styled from "@emotion/styled";
-import { shades } from "../../theme";
+// import { shades } from "../../theme";
 import {
   setIsAuthOpen,
 } from "../../state";
 import { useNavigate } from "react-router-dom";
-import { Nav } from "reactstrap";
-import { Link } from 'react-router-dom';
+// import { Nav } from "reactstrap";
+// import { Link } from 'react-router-dom';
 // import { userData } from "../../helpers";
 import { userData } from "../authentication/helper";
-import { useState } from "react";
+// import { useState } from "react";
 const FlexBox = styled(Box)`
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,7 @@ const AuthMenu = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isAuthOpen = useSelector((state) => state.cart.isAuthOpen);
-  const [loggedIn,setLoggedIn] = useState('false');
+  // const [loggedIn,setLoggedIn] = useState('false');
 
   return (
     <Box

@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setEvents } from "../../state";
 import "../../styles/global.css"
 import "../../styles/Event.css"
+import { BASE_URL } from "../../utils/base";
+import { KEY } from "../../utils/key";
+
 const EventList = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("all");
@@ -21,10 +24,10 @@ const EventList = () => {
 
   async function getEvents() {
     const events = await fetch(
-      "https://starfish-app-ettw4.ondigitalocean.app/api/events?populate=image",
+      `${BASE_URL}/api/events?populate=image`,
     //   { method: "GET" },
       {headers: {
-        Authorization: `Bearer b204f249f07d78414ad22f7dd5905342b2d6d9b817ab206cee92fff4b132ccc56aa986ce86e5b30d112dfbe665ce8db311985df76dc063490a07298ddfc293935791125ae8083854b14680d227bea733ba254eaca54389db92e82806fd2f9f1a8e0c549dc052008623e9892bd8fde082ac4995b512123ad8bc91ca84af6c8e6f`
+        Authorization: `${KEY}`
       }}
     );
     console.log(events);

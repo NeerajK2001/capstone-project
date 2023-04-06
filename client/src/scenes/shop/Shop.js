@@ -15,37 +15,9 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 import MainCarousel from "./MainCarousel";
 import ReviewsList from "./ReviewsList";
 import Comment from "./Comment";
+import { BASE_URL } from "../../utils/base";
+import { KEY } from "../../utils/key";
 
-// console.log("hello this is about");
-
-
-// export async function getServerSideProps(ctx) {
-//   const loginData = {
-//       identifier: 'neerajkumar94652@gmail.com',
-//       password: 'Quantum@786',
-//   };
-
-//   const login = await fetch(`https://starfish-app-ettw4.ondigitalocean.app/api/auth/local`, {
-//       method: 'POST',
-//       headers: {
-//           Accept: 'application/json',
-//           'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(loginData),
-//   });
-
-//   const loginResponseData = await login.json();
-//   // get posts from strapi REST API
-//   const res = await fetch(`https://starfish-app-ettw4.ondigitalocean.app/api/items`);
-//   let posts = await res.json();
-//   posts = posts.data
-//   return {
-//       props: {
-//           posts: posts,
-//           loginResponseData: loginResponseData,
-//       },
-//   };
-// }
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -56,38 +28,21 @@ const Shop = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  // jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4NzEwMzYyLCJleHAiOjE2ODEzMDIzNjJ9.87-i9MhSsV6btPPMbwBQLlqHq3wou08fzh92L9utE7I
   
   async function getItem() {
-    // let headers = {Authorization: `Bearer ${process.env.ADMIN_TOKEN}`}
     const item = await fetch(
-      `https://starfish-app-ettw4.ondigitalocean.app/api/items/1?populate=image`,
-      // {method: "GET"}
-      {headers: {
-          Authorization: `Bearer b204f249f07d78414ad22f7dd5905342b2d6d9b817ab206cee92fff4b132ccc56aa986ce86e5b30d112dfbe665ce8db311985df76dc063490a07298ddfc293935791125ae8083854b14680d227bea733ba254eaca54389db92e82806fd2f9f1a8e0c549dc052008623e9892bd8fde082ac4995b512123ad8bc91ca84af6c8e6f`
+      `${BASE_URL}/api/items/1?populate=image`,
+        {headers: {
+          Authorization: `${KEY}`
         }}
   );   
-
-    // console.log(item);
-
     const itemJson = await item.json();
     setItem(itemJson.data);
   }
 
   useEffect(() => {
     getItem();
-    // getItems();
   }, []);
-
-  // function MouseOverRed(event) {
-  //   event.target.style.background = '#BC4123';
-  // }
-  // function MouseOverGreen(event) {
-  //   event.target.style.background = 'green';
-  // }
-  // function MouseOut(event){
-  //   event.target.style.background="";
-  // }
 
   return (
     <Box>
@@ -100,7 +55,7 @@ const Shop = () => {
               alt={item?.name}
               width="100%"
               height="100%"
-              src={`https://starfish-app-ettw4.ondigitalocean.app${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`${BASE_URL}${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
               style={{ objectFit: "fill" }}
             />
           </Box>
@@ -196,7 +151,6 @@ const Shop = () => {
           {value === "description" && (
             <div>{item?.attributes?.longDescription}</div>
           )}
-          {/* {value === "reviews" && <div>reviews</div>} */}
         </Box>
       </Box>
       <MainCarousel/>

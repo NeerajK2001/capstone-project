@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css'
 import '../../styles/global.css'
 
-import logo from '../../components/img/main-logo.png';
+import logo from '../../components/img/main.png';
 import login from '../../components/img/login.png';
 import cartIcon from '../../components/img/cart.png';
 
@@ -50,7 +50,7 @@ function Navbar() {
           </button>
           <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
             <li><Link to="/About">About</Link></li>
-            <li><Link to="/Contact">Contact</Link></li>
+            <li><Link to="/ontact">Contact</Link></li>
             <li><Link to="/Events">Events</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/Shop">Shop</Link></li>

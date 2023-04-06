@@ -42,7 +42,6 @@
 }
 .article2-sec1{
     width: 45%;
-    /* background-image: url('../components/img/img6.webp'); */
     background-image: url('../components/img/team.jpg');
     background-size: cover;
 }
@@ -120,6 +119,8 @@
         left: 0;
         margin:0 auto;
         margin-top: 3rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
     }
     .article1-sec2{
         width:100%;
@@ -159,4 +160,3 @@
         margin: 1rem 0;
     }
 }
-

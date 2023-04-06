@@ -1,25 +1,28 @@
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+// import {  Button, IconButton } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Event from "./event";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
-import { shades } from "../../theme";
-import { addToCart } from "../../state";
-import { useDispatch } from "react-redux";
+// import Event from "./event";
+// import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+// import AddIcon from "@mui/icons-material/Add";
+// import RemoveIcon from "@mui/icons-material/Remove";
+// import { shades } from "../../theme";
+// import { addToCart } from "../../state";
+// import { useDispatch } from "react-redux";
 import "../../styles/global.css"
 import "../../styles/Event.css"
 
+import { BASE_URL } from "../../utils/base";
+import { KEY } from "../../utils/key";
 const EventDetails = () =>{
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const {eventId} = useParams();
     const [value, setValue] = useState("description");
-    const [count, setCount] = useState(1);
+    // const [count, setCount] = useState(1);
     const [event, setEvent] = useState(null);
-    const [items, setEvents] = useState([]);
+    // const [items, setEvents] = useState([]);
 
     const handleChange = (event, newValue) =>{
         setValue(newValue);
@@ -27,9 +30,9 @@ const EventDetails = () =>{
 
     async function getItem() {
         const event = await fetch(
-            `https://starfish-app-ettw4.ondigitalocean.app/api/events/${eventId}?populate=image`,
+            `${BASE_URL}/api/events/${eventId}?populate=image`,
             {headers: {
-                Authorization: `Bearer b204f249f07d78414ad22f7dd5905342b2d6d9b817ab206cee92fff4b132ccc56aa986ce86e5b30d112dfbe665ce8db311985df76dc063490a07298ddfc293935791125ae8083854b14680d227bea733ba254eaca54389db92e82806fd2f9f1a8e0c549dc052008623e9892bd8fde082ac4995b512123ad8bc91ca84af6c8e6f`
+                Authorization: `${KEY}`
               }}
         );
 
@@ -56,7 +59,7 @@ const EventDetails = () =>{
                     alt={event?.name}
                     width="100%"
                     height="100%"
-                    src={`https://starfish-app-ettw4.ondigitalocean.app${event?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                    src={`${BASE_URL}${event?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     style={{objectFit: "contain"}}
                 />
             </Box>

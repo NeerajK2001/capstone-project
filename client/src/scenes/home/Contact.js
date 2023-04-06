@@ -73,7 +73,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [nameError, setNameError] = useState('');
   
-  const [phoneError, setPhoneError] = useState('');
+//   const [phoneError, setPhoneError] = useState('');
 
   const [emailError, setEmailError] = useState('');
   const [messageError, setMessageError] = useState('');
@@ -134,7 +134,7 @@ const Contact = () => {
   const validate = () => {
     let nameError = '';
     
-    let phoneError = '';
+    // let phoneError = '';
     
     let emailError = '';
     let messageError = '';
@@ -192,7 +192,7 @@ const Contact = () => {
                       </div>
 
                       <div className='field'>
-                        <input id="subject"  name="user_subject" label="subject" placeholder="subject" />
+                        <input id="subject"  name="user_subject" label="subject" placeholder="Subject" />
                       </div>
                   </div>
 

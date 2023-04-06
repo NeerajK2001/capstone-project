@@ -1,6 +1,4 @@
 import React from 'react';
-// import img from '../../img/nora.jpeg';
-// import img from '../../components/img/nora.jpeg'
 import leann from '../../components/img/leann-zahara.jpg'
 import annette from '../../components/img/annette-maltais.jpg'
 import john from '../../components/img/john-Thibert.jpg'
