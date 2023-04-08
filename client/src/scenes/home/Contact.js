@@ -92,6 +92,7 @@ const Contact = () => {
 //   };
 
     const form = useRef();
+    // console.log(phone);
 
     const sendEmail = (e) => {
     e.preventDefault();

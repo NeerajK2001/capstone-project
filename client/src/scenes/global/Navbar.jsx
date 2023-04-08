@@ -50,7 +50,7 @@ function Navbar() {
           </button>
           <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
             <li><Link to="/About">About</Link></li>
-            <li><Link to="/ontact">Contact</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/Events">Events</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/Shop">Shop</Link></li>

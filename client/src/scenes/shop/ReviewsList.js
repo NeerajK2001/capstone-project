@@ -35,7 +35,7 @@ const reviews = useSelector((state) => state.cart.reviews);
 
   useEffect(() => {
     getReviews();
-  }, []);
+  },[]);
 
   return (
     <Box width="90%" margin="40px auto">
