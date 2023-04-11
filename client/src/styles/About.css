@@ -82,10 +82,11 @@
 .person-1 img,
 .person-2 img,
 .person-3 img{
-    width:12rem;
+    width:14rem;
     border-radius: 100%;
     display :block;
     margin: 0 auto;
+    height:14rem;
 }
 .person-1 h4,
 .person-2 h4,

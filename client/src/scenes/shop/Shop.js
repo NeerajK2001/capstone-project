@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
+// import Tabs from "@mui/material/Tabs";
+// import Tab from "@mui/material/Tab";
 import { useEffect, useState } from "react";
 // import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 // import AddIcon from "@mui/icons-material/Add";
@@ -17,21 +17,24 @@ import ReviewsList from "./ReviewsList";
 import Comment from "./Comment";
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
-
+import ProductInfo from "./ProductInfo";
+import ProductPros from "./ProductPros";
+import EnergySavingsLeafOutlinedIcon from '@mui/icons-material/EnergySavingsLeafOutlined';
+// import CallToShop from "../../components/img/img2.webp";
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = useState("description");
+  // const [value, setValue] = useState("description");
   const [count] = useState(1);
   const [item, setItem] = useState(null);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
   
   async function getItem() {
     const item = await fetch(
-      `${BASE_URL}/api/items/1?populate=image`,
+      `${BASE_URL}/api/items/5?populate=image`,
         {headers: {
           Authorization: `${KEY}`
         }}
@@ -48,6 +51,9 @@ const Shop = () => {
     <Box>
       <Box width="90%" m="0 auto" >
       <Typography variant="h1" mb="20px" mt="20px">Shop 9on9 game</Typography>
+      <div className="shop-banner">
+          <h2>Guaranteed Fun with<br/><span>9on9 Board Game</span> </h2>
+        </div>
         <Box display="flex" flexWrap="wrap" columnGap="40px">
           {/* Images */}
           <Box flex="1 1 40%" mb="40px">
@@ -69,9 +75,10 @@ const Shop = () => {
                 columnGap="1.33%"
                 justifyContent="space-between"
                 m="5px 0px"
+                className="leaf-icon"
               >
                 <Typography variant="p">Sold By Jalfam Games</Typography>
-                <Typography variant="p">Eco-friendly</Typography>
+                <Typography variant="p">Eco-friendly <EnergySavingsLeafOutlinedIcon/></Typography>
               </Box>
               <Typography variant="p">See All Reviews</Typography>
 
@@ -141,19 +148,21 @@ const Shop = () => {
           </Box>
         </Box>
         {/* Information */}
-        <Box m="20px 0">
+        {/* <Box m="20px 0">
           <Tabs value={value} onChange={handleChange}>
             <Tab label="DESCRIPTION" value="description" />
-            {/* <Tab label="REVIEWS" value="reviews" /> */}
+            <Tab label="REVIEWS" value="reviews" />
           </Tabs>
-        </Box>
-        <Box display="flex" flexWrap="wrap" gap="15px" mb="20px">
+        </Box> */}
+        {/* <Box display="flex" flexWrap="wrap" gap="15px" mb="20px">
           {value === "description" && (
             <div>{item?.attributes?.longDescription}</div>
           )}
-        </Box>
+        </Box> */}
       </Box>
+      <ProductInfo/>
       <MainCarousel/>
+      <ProductPros/>
       <Comment/>
       <ReviewsList/>
     </Box>

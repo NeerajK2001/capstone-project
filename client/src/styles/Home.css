@@ -41,33 +41,27 @@ html {
 .section-1 span{
     color:#EA5A0B;
 }
-.section-1 button{
+.section-1 a{
     background-color: transparent;
     border: 1px solid white;
     border-radius: 3px;
     height:2.3rem;
     width:7.5rem;
-    color:white;
+    color:#fff;
     cursor:pointer;
     margin-top: 1rem;
     font-family: 'Lato', sans-serif;
     transition: .2s ease-in-out 0s;
-}
-
-.section-1 button a{
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    color: #fff;
+
 }
 
-.section-1 button:hover,
-.section-1 button a:hover
-{
+.section-1 a:hover{
     background-color: #fff;
     color: #000;
     transform: scale(1.1);
 }
-
-
 
 .section-2{
     display: flex;
@@ -101,8 +95,7 @@ html {
 .sec2-box1 p{
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    margin-bottom: 1.68rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .sec2-box1 a{
     background-color: #19211C;
@@ -188,7 +181,7 @@ html {
     max-height: 49vh;
     overflow: hidden;
 }
-.about button{
+.about a{
     position: absolute;
     bottom:-10px;
     right:40px;
@@ -200,8 +193,10 @@ html {
     font-family: 'Lato', sans-serif;
     transition: .2s ease-in-out 0s;
     border: 0;
+    text-decoration: none;
+    padding: 0.5rem 0.6rem;
 }
-.about button:hover{
+.about a:hover{
     /* transition: ease-in-out .15s; */
     transform: scale(1.1);
 }

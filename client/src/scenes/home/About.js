@@ -12,8 +12,8 @@ function About() {
             <h1>ABOUT US</h1>
           </div>
           <div className="article1-sec2">
-            <p>Pandemics have historically resulted in increased state power because when people fear death, they agree to measures properly. Just to don't focus on covid we at Jalfam Games Inc. Questioned what we could do to combat the world's gloom and misery.According to my research, board games foster this communal empathy in three different ways. First of all, board games are challenging but not insurmountable. As psychologists and game researchers have demonstrated, many people claim to experience emotional growth when skillfully challenged. Game offer challenges that players can succeed at, empowering them in new ways.
-</p>
+            <p>In the past, pandemics resulted in a rise in state power and an increase in people's fear. Jalfam game was started because we needed an outlet from the doom and gloom of pandemic. According to our research, board games foster this communal empathy in two different ways. Firstly, board games are challenging but not insurmountable. As psychologists and game researchers have demonstrated, many people claim to experience emotional growth when skillfully challenged. Game offer challenges that players can succeed at, empowering them in new ways.
+            </p>
           </div>
           <div className="article1-sec3"></div>
         </div>
@@ -21,7 +21,7 @@ function About() {
         <div className="Article-2">
           <div className="article2-sec1"></div>
           <div className="article2-sec2">
-            <p>Secondly, board games are inherently social. The vast majority of board games require social interaction to function, even if there are several board games that may be played alone. In a cooperative game like Pandemic or Forbidden island, players must collaborate to find solutions and issues. Players participate in friendly competition. All players can find something to enjoy in cooperative and competitive games. By keeping all these things in our mind we came across a product called 9on9, that emphasizes enjoyment, movement, and skill.</p>
+            <p>Secondly, board games are inherently social. The vast majority of board games require social interaction to function, even if there are several board games that may be played alone. In a cooperative game like 9 on 9 game players must strategize to get 99 points. Players participate in friendly competition. All players can find something to enjoy in cooperative and competitive games. By keeping all these things in mind we developed a game 9on9, that emphasizes enjoyment, movement, and skill.</p>
           </div>
         </div>
         <div className="Article-3">

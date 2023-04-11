@@ -81,6 +81,10 @@ p span{
     border-radius: 4px;
     font-size: 16px;
 }
+
+.btn-primary{
+    margin-top: 1rem;
+}
 .btn:hover{
     background-color: #de5735;
     cursor: pointer;

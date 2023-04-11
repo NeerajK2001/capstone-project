@@ -4,7 +4,7 @@ import '../../styles/Home.css';
 import img4 from '../../components/img/img4.webp';
 import Pdf from '../../components/img/rules.pdf';
 import bgvideo from '../../components/img/bgVideo.mp4';
-import TestimonialCarousel from '../../components/testimonials/TestimonialCarousel';
+import TestimonialCarousel from './TestimonialCarousel';
 const testimonials = [
   {
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor nibh nec nulla elementum, nec lobortis sapien auctor. Integer laoreet magna vel felis pulvinar, eu fringilla nisi rhoncus.',
@@ -28,13 +28,16 @@ function Home() {
           <video src={bgvideo} autoPlay muted loop className='video' />
           <div className="overlay"></div>
           <h1>A Board <span>Game</span> <br/>For Everyone</h1>
-          <button><Link to ="/shop">SHOP NOW</Link></button>
+          <Link to ="/shop">BUY NOW</Link>
         </div>
 
         <div className="section-2">
           <div className="sec2-box1">
             <h3>HOW TO PLAY</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <p>Set the board on a level surface.</p>
+            <p>Form two teams (1 – 4 players each). Each squad receives four bean pucks (select a colour).</p>
+            <p>decide who fires first Keep in mind that shooting last can be advantageous!</p>
+            <p>Position each team nine feet from each end of the shooting line.</p>
             <Link to = {Pdf} target = "_blank">RULES</Link>
           </div>
           <div className="sec2-box2">
@@ -58,8 +61,8 @@ function Home() {
         <div className="section-4">
           <div className="about">
             <h3><span>AB</span>OUT US</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            <button>OUR STORY</button>
+            <p>In the past, pandemics resulted in a rise in state power and an increase in people's fear. Jalfam game was started because we needed an outlet from the doom and gloom of pandemic. According to our research, board games foster this communal empathy in two different ways.</p>
+            <Link to ="/about">OUR STORY</Link>
           </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useReducer } from "react";
 
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -13,6 +13,7 @@ const ReviewsList = () => {
 const dispatch = useDispatch();
 
 const reviews = useSelector((state) => state.cart.reviews);
+const [reducerValue, forceupdate] = useReducer(x => x + 1, 0);
 
 
   async function getReviews() {
@@ -24,18 +25,20 @@ const reviews = useSelector((state) => state.cart.reviews);
         },
       }
     );
-    console.log(reviews);
+    // console.log(reviews);
 
     const reviewssJson = await reviews.json();
-    setReviews(reviewssJson.data);
+    // const newArray = reviewssJson.slice().reverse()
+    // setReviews(reviewssJson.data);
+    // dispatch(setReviews(oldreviews=>[...oldreviews,reviewssJson.data ]))
     dispatch(setReviews(reviewssJson.data))
-    console.log(reviewssJson.data);
+    forceupdate();
 
   }
 
   useEffect(() => {
     getReviews();
-  },[]);
+  },[reducerValue]);
 
   return (
     <Box width="90%" margin="40px auto">
@@ -45,14 +48,15 @@ const reviews = useSelector((state) => state.cart.reviews);
       <Box
         margin="0 auto"
         display="grid"
-        gridTemplateColumns="repeat(auto-fill, 400px)"
+        gridTemplateColumns="repeat(auto-fill, 600px)"
         // justifyContent="space-between"
         // rowGap="20px"
         // columnGap="0.33%"
         gap="1.5rem"
+        className="reviews-box"
       >
         {
-            reviews.map((review)=>{
+            [...reviews].reverse().map((review)=>{
                 return(
                     <Reviews  review={review} key={`${review.username}-${review.id}`}/>
                 )

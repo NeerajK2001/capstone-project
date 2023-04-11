@@ -52,7 +52,9 @@ const Comment = () => {
         hideProgressBar: true,
       });
     }
-    window.location.reload(false);
+    // window.location.reload(false);
+    // dispatch(forceupdate())
+
   };
 
   const handleUserChange = ({ target }) => {
@@ -63,6 +65,8 @@ const Comment = () => {
     }));
   };
 
+  
+
   return (
     <Box width="90%" m="0 auto" mt="40px">
       <Typography variant="h2" mb="20px">
@@ -71,12 +75,13 @@ const Comment = () => {
       <Box
         display="flex"
         justifyContent="space-between"
+        flexDirection="column"
         alignItems="baseline"
         flexWrap="wrap"
         width="100%"
         className="comment-box"
       >
-        <Box display="flex" flexDirection="column" gap="1rem" className="comment-input" width="80%">
+        <Box display="flex" flexDirection="column" gap="1rem" className="comment-input" width="100%">
           <Input
             type="text"
             name="message"
@@ -84,13 +89,15 @@ const Comment = () => {
             onChange={handleUserChange}
             placeholder="Write A Review"
           />
-          <Input
-            type="text"
-            name="rating"
-            value={comment.rating}
+          <select type="select" name="rating" value={comment.rating}
             onChange={handleUserChange}
-            placeholder="rating"
-          />
+            placeholder="rating">
+            <option>1</option>
+            <option>2</option>
+            <option selected>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
         </Box>
         <Box>
           <Button color="primary" onClick={writeComment} width="20%">

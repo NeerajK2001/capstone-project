@@ -2,9 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './testimonials.css';
-import img from "../img/img3.webp"
-
+import '../../styles/testimonials.css';
+import img from "../../components/9on9-logo.png"
 const TestimonialCarousel = ({ testimonials }) => {
   const settings = {
     dots: true,

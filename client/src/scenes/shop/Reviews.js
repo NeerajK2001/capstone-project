@@ -52,8 +52,8 @@ const Reviews = ({ review, width }) => {
           justifyContent="space-between"
           flexDirection="column"
         >
-          <Typography >{message}</Typography>
           <Typography variant="p">Rating: {rating}Stars</Typography>
+          <Typography >{message}</Typography>
         </Box>
       </Box>
     </Box>

@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css'
 import '../../styles/global.css'
 
-import logo from '../../components/img/main.png';
+import logo from '../../components/img/main-logo-2.png';
 import login from '../../components/img/login.png';
 import cartIcon from '../../components/img/cart.png';
 
