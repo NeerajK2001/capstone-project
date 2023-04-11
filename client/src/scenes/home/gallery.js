@@ -95,10 +95,10 @@ export default function MyGallery() {
         <h1>GALLERY</h1>
       </div>
       <div className="container">
-      <Box sx={{ width: 9/10, height: 1/0}}>  {/*, overflowY: 'scroll' */}
-        <ImageList variant="masonry" cols={'fitcontent'} gap={8}>
+      <Box  className='gallery-box' sx={{ width: 9/10, height: 1/0}}>  {/*, overflowY: 'scroll' */}
+        <ImageList  className='image-ul' variant="masonry" cols={'fitcontent'} gap={8}>
           {itemData.slice(0, itemsToShow).map((item) => (
-            <ImageListItem key={item.img}>
+            <ImageListItem key={item.img} className='image-li'>
               <img
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -109,7 +109,7 @@ export default function MyGallery() {
           ))}
         </ImageList>
         {showLoadMore && (
-          <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
+          <Box className='button-box' sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
             <Button variant="contained" onClick={handleLoadMore}>
               Load More
             </Button>

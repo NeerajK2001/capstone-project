@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/Home.css';
 import img4 from '../../components/img/img4.webp';
@@ -6,6 +6,11 @@ import Pdf from '../../components/img/rules.pdf';
 // import TestimonialCarousel from './testimonials/TestimonialCarousel';
 import bgvideo from '../../components/img/bgVideo.mp4';
 import TestimonialCarousel from '../../components/testimonials/TestimonialCarousel';
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const testimonials = [
   {
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor nibh nec nulla elementum, nec lobortis sapien auctor. Integer laoreet magna vel felis pulvinar, eu fringilla nisi rhoncus.',
@@ -22,14 +27,20 @@ const testimonials = [
 ];
 
 
+
 function Home() {
+  useEffect(() => {
+    AOS.init({duration: 1000})
+  }, [])
+
+
   return (
     <div>
         <div className="section-1">
           <video src={bgvideo} autoPlay muted loop className='video' />
           <div className="overlay"></div>
-          <h1>A Board <span>Game</span> <br/>For Everyone</h1>
-          <button>SHOP NOW</button>
+          <h1 data-aos="fade-up" >A Board <span>Game</span> <br/>For Everyone</h1>
+          <button data-aos="fade-up">SHOP NOW</button>
         </div>
 
     <div className="container">

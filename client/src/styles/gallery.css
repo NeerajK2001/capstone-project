@@ -1,4 +1,4 @@
-.css-qxwadg{
+.gallery-box{
     margin: 0 auto;
 }
 .gallery h1{
@@ -9,33 +9,33 @@
     text-align: center;
     margin:3rem 0;
 }
-.MuiImageListItem-root img{
+.image-ul img{
     border-radius: 3px;
 }
-.css-10riir9-MuiImageList-root{
+.image-ul{
     column-count: 4;
 }
-.css-10riir9-MuiImageList-root{
+.image-ul{
     padding:1rem;
     margin: 6rem 0 3rem 0;
 }
-.css-10riir9-MuiImageList-root img{
+.image-ul img{
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.css-10riir9-MuiImageList-root img:hover{
+.image-ul img:hover{
 	-webkit-transform: scale(.9);
 	transform: scale(.9);
     cursor: pointer;
 }
-.css-kl1xo3 button{
+.button-box button{
     background-color: #EA5A0B;
     color:#fff;
     padding:.3rem 1rem;
     margin-bottom: 4rem;
     font-size: 14px;
 }
-.css-kl1xo3 button:hover{
+.button-box button:hover{
     background-color: #e97638;
     cursor: pointer;
 }
@@ -44,12 +44,12 @@
 
 
 @media (max-width:768px) {
-    .css-10riir9-MuiImageList-root{
+    .image-ul{
         column-count: 3;
     }
 }
 @media (max-width:450px) {
-    .css-10riir9-MuiImageList-root{
+    .image-ul{
         column-count: 2;
     }
 }

@@ -21,8 +21,10 @@ const TestimonialCarousel = ({ testimonials }) => {
       {testimonials.map((testimonial, index) => (
         <div className="reviews" key={index}>
           <img src={img} alt="Login-icon" />
+          <div className="text">
           <h3>{testimonial.author}</h3>
           <p>{testimonial.text}</p>
+          </div>
         </div>
       ))}
     </Slider>
