@@ -34,7 +34,7 @@ const Shop = () => {
   
   async function getItem() {
     const item = await fetch(
-      `${BASE_URL}/api/items/5?populate=image`,
+      `${BASE_URL}/api/items/1?populate=image`,
         {headers: {
           Authorization: `${KEY}`
         }}

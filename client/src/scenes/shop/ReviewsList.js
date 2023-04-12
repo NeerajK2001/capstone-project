@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect} from "react";
+// import { useReducer} from "react";
 
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -9,11 +10,13 @@ import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
 
 import Reviews from "./Reviews";
+
 const ReviewsList = () => {
+
 const dispatch = useDispatch();
 
 const reviews = useSelector((state) => state.cart.reviews);
-const [reducerValue, forceupdate] = useReducer(x => x + 1, 0);
+// const [reducerValue, forceupdate] = useReducer(x => x + 1, 0);
 
 
   async function getReviews() {
@@ -25,20 +28,14 @@ const [reducerValue, forceupdate] = useReducer(x => x + 1, 0);
         },
       }
     );
-    // console.log(reviews);
-
     const reviewssJson = await reviews.json();
-    // const newArray = reviewssJson.slice().reverse()
-    // setReviews(reviewssJson.data);
-    // dispatch(setReviews(oldreviews=>[...oldreviews,reviewssJson.data ]))
     dispatch(setReviews(reviewssJson.data))
-    forceupdate();
-
+    // forceupdate();
   }
 
   useEffect(() => {
-    getReviews();
-  },[reducerValue]);
+    getReviews()
+  });
 
   return (
     <Box width="90%" margin="40px auto">

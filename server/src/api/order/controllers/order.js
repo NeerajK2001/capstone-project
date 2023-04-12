@@ -36,12 +36,13 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
         payment_method_types: ['card'],
         customer_email: email,
         mode: 'payment',
-        success_url: 'https://9on9.netlify.app/checkout/success',
-        cancel_url: 'https://9on9.netlify.app/',
+        success_url: 'http://localhost:3001/checkout/success',
+        cancel_url: 'http://localhost:3001/',
         line_items: lineItems,
       });
 
       // create the item
+      
       await strapi
         .service('api::order.order')
         .create({ data: { userName, products, stripeSessionId: session.id } });

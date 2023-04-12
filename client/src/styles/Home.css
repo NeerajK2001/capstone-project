@@ -3,15 +3,30 @@ html {
     overflow-y: scroll;
     scroll-behavior: smooth;
   }
-.video{
+  .video{
     height:90vh;
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     object-fit: cover;
     left: 0;
     width: 100%;
-    max-width: 1800px; 
-    top:51.6%; 
+    top:51.6%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .overlay{
+    height:90vh;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+    width:100%;
+    position: absolute;
+    /* object-fit: cover; */
+    left: 0;
+    top:51.6%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -20,13 +35,9 @@ html {
     transform: translate(-50%, -50%);
 }
 .section-1{
-    height: 88.5vh;
-    background-color:  rgba(0, 0, 0, 0.5);
-    /* background-image: url('../img/sec-1-bg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    text-align: center;
+height: 87vh;
+/* background-color: rgba(0, 0, 0, 0.5); */
+text-align: center;
 }
 .section-1 h1{
     color:#fff;
@@ -220,13 +231,7 @@ html {
     nav{
         height:75px;
     }
-    .video{
-        height:80vh;
-        top:49.5%;
-    }
-    .section-1{
-        height:80vh;
-    }
+    
     .section-1 h1{
         font-size: 3.5rem;
     }

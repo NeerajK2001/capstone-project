@@ -67,7 +67,6 @@ import { toast } from "react-toastify";
 const Contact = () => {
   const [name, setName] = useState('');
   
-  const [phone, setPhone] = useState('');
 
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -100,7 +99,7 @@ const Contact = () => {
         console.log('Form submitted');
         setName('');
 
-        setPhone('');
+        // setPhone('');
 
         setEmail('');
         setMessage('');
