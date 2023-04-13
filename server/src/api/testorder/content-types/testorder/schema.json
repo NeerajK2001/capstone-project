@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testorders",
+  "info": {
+    "singularName": "testorder",
+    "pluralName": "testorders",
+    "displayName": "testorder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "richtext"
+    },
+    "Quantity": {
+      "type": "string"
+    }
+  }
+}

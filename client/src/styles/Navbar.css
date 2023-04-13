@@ -188,6 +188,9 @@ nav img:nth-child(1) {
   transition: ease-in-out .3s;
   z-index: 2;
   background-color: transparent; */
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 .nav-bg{
   background-color: #272C48;

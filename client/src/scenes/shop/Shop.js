@@ -34,7 +34,7 @@ const Shop = () => {
   
   async function getItem() {
     const item = await fetch(
-      `${BASE_URL}/api/items/5?populate=image`,
+      `${BASE_URL}/api/items/1?populate=image`,
         {headers: {
           Authorization: `${KEY}`
         }}
@@ -50,10 +50,10 @@ const Shop = () => {
   return (
     <Box>
       <Box width="90%" m="0 auto" >
-      <Typography variant="h1" mb="20px" mt="20px">Shop 9on9 game</Typography>
         <div className="shop-banner">
           <h2>Guaranteed Fun with<br/><span>9on9 Board Game</span> </h2>
         </div>
+      <Typography variant="h1" mb="20px" mt="20px">Shop 9on9 game</Typography>
         
         <Box display="flex" flexWrap="wrap" columnGap="40px">
           {/* Images */}
