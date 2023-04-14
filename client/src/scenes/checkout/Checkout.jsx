@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
+import { useEffect } from "react";
 import * as yup from "yup";
 // import { shades } from "../../theme";
 import Payment from "./Payment";
@@ -10,6 +11,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
 import axios from "axios";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
 const stripePromise = loadStripe(
   "pk_test_51Mf522BMldolGarEcUn4XsmcdjUPvz1gu2P3ATld3jnNeNKdAIFuxdeg9f6Zk1o4V29f8D11Ns7g8dwuzyzp1beP00t9lQLIFv"
 );
@@ -19,6 +24,8 @@ const Checkout = () => {
   const cart = useSelector((state) => state.cart.cart);
   const isFirstStep = activeStep === 0;
   const isSecondStep = activeStep === 1;
+  
+  const form = useRef();
 
   const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1);
@@ -33,15 +40,115 @@ const Checkout = () => {
 
     if (isSecondStep) {
       makePayment(values);
-    }
+      console.log(values.billingAddress)
+      actions.setTouched({});
+      console.log(values.billingAddress.firstName)
+      console.log(values.email)
+      let orderName = [values.billingAddress.firstName, values.billingAddress.lastName].join(" ");
+      let orderAddress = [values.billingAddress.street1, values.billingAddress.street2,values.billingAddress.city,values.billingAddress.state, values.billingAddress.country,values.billingAddress.zipcode,].join(" ");
+      let orderQuantity = cart.map(({ id, count }) => ({
+        id,
+        count,
+      }));
 
-    actions.setTouched({});
+      let quantityValue = orderQuantity[0].count;
+
+      // const data = {
+      //   name:  orderName,
+      //   address: orderAddress,
+      //   email: values.email,
+      //   phonenumber: values.phoneNumber,
+      //   products: cart.map(({ id, count }) => ({
+      //     id,
+      //     count,
+      //   })),
+      // };
+      // console.log(data)
+      console.log(orderQuantity)
+      const ordered = async () => {
+        try {
+          const url = `${BASE_URL}/api/testorders/`;
+          const headers = {
+          Authorization:`${KEY}`
+        };
+          const res = await axios.post(
+            url,
+            {
+              data: {
+                name:  orderName,
+                address: orderAddress,
+                email: values.email,
+                phone: values.phoneNumber,
+                quantity: quantityValue
+              },
+            },
+            { headers }
+
+          );
+          if (!!res) {
+            console.log("Order Successuful");
+            // toast.success("Ordered successfully!", {
+            //   hideProgressBar: true,
+            // });
+          }
+        } catch (error) {
+          toast.error("Sorry, we could not add your order. Please try again later or contact support.", {
+            hideProgressBar: true,
+          });
+        }
+      };
+
+      
+
+      const sendHandler = () => {
+        // event.preventDeault();
+
+        const templateParams = {
+          email: values.email,
+          name: orderName,
+          address:orderAddress,
+          phone: values.phoneNumber,
+          quantity: orderQuantity[0].count
+          
+        };
+
+        emailjs
+        .send(
+        "service_5mi1ko8",
+        "template_oz3fwkb",
+        templateParams,
+        "MzjPpyVMBYVOizxZf"
+        )
+        .then(
+        (result) => {
+            console.log(result.text);
+            console.log("Email Sent successfully!")
+            // toast.success("Email Sent successfully!", {
+            // hideProgressBar: true,
+            // });
+        },
+        (error) => {
+            console.log(error.text);
+            console.log("There is a problem in Sending Email")
+            // toast.success("There is a problem in Sending Email", {
+            // hideProgressBar: true,
+            // });
+        }
+        );
+      }
+  
+      ordered();
+      sendHandler();
+
+        
+    }
   };
 
   async function makePayment(values) {
+    
     const stripe = await stripePromise;
     const requestBody = {
-      userName: [values.firstName, values.lastName].join(" "),
+      userName: values.firstName,
       email: values.email,
       products: cart.map(({ id, count }) => ({
         id,
@@ -63,49 +170,6 @@ const Checkout = () => {
       sessionId: session.id,
     });
     console.log(requestBody)
-
-    // const orderList = async () => {
-    //   try {
-    //     const url = `${BASE_URL}/api/reviews`;
-    //     // const { username } = userData();
-    //     // console.log(`This is ${username}`);
-    //     // const options = { year: "numeric", month: "long", day: "numeric" };
-    //     // const dateNow = new Date(Date.now()).toLocaleString("en-GB", options);
-  
-    //     const headers = {
-    //       Authorization:`${KEY}`
-    //     };
-    //     if () {
-    //       const res = await axios.post(
-    //         url,
-    //         {
-    //           data: {
-    //             // message: comment.message,
-    //             // rating: comment.rating,
-    //             // username: username,
-    //             // date: dateNow,
-    //           },
-    //         },
-    //         { headers }
-    //       );
-    //       if (!!res) {
-    //         toast.success("Ordered successfully!", {
-    //           hideProgressBar: true,
-    //         });
-    //         setComment(initialForm);
-    //         //   navigate("/login");
-    //         console.log(`Hello the ${dateNow}`);
-    //       }
-    //     }
-    //   } catch (error) {
-    //     toast.error(error.message, {
-    //       hideProgressBar: true,
-    //     });
-    //   }
-    //   // window.location.reload(false);
-    //   // dispatch(forceupdate())
-  
-    // };
 
   }
 
@@ -134,7 +198,7 @@ const Checkout = () => {
             handleSubmit,
             setFieldValue,
           }) => (
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={handleSubmit}>
               {isFirstStep && (
                 <Shipping
                   values={values}

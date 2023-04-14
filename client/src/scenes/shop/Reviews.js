@@ -11,6 +11,9 @@ import profile from "../../components/img/img3.webp";
 // import { addToCart } from "../../state";
 import "../../styles/global.css";
 import "../../styles/Reviews.css";
+import { useState } from "react";
+import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
+import { display } from "@mui/system";
 const Reviews = ({ review, width }) => {
 //   const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -21,6 +24,8 @@ const Reviews = ({ review, width }) => {
 //   } = useTheme();
 
   const { username, date, message, rating } = review.attributes;
+  const [userList, setUsersList] = useState([]);
+  const [starClicked, setStarClicked] = useState();
 
   return (
     <Box
@@ -43,16 +48,33 @@ const Reviews = ({ review, width }) => {
         flexDirection="column"
         width="70%"
       >
-        <Box display="flex" justifyContent="space-between" flexDirection="row">
-          <Typography variant="h3">{username}</Typography>
-          <Typography>{date}</Typography>
+        <Box display="flex" justifyContent="space-between" flexDirection="row" width='100%'>
+          <Typography variant="h3" style={{width:"50%"}}>{username}</Typography>
+          <Typography style={{width:"30%"}}>{date}</Typography>
         </Box>
         <Box
           display="flex"
           justifyContent="space-between"
           flexDirection="column"
         >
-          <Typography variant="p">Rating: {rating}Stars</Typography>
+          <Typography variant="p" className="star"
+          style={{
+            display:"flex",
+            flexDirection:"row",
+            color:"#ff9e0b",
+            margin:"unset"
+          }}
+          >
+          {[...Array(rating)].map((star, idx) => {
+              const actualIndex = idx + 1;
+              
+              return (
+                  <p key={idx} style={{margin:"unset"}} onClick={() => setStarClicked(actualIndex)}>
+                    <StarOutlinedIcon  />
+                  </p>
+              );
+          })}
+          </Typography>
           <Typography >{message}</Typography>
         </Box>
       </Box>
