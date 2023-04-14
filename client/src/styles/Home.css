@@ -1,3 +1,4 @@
+
 html {
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -9,7 +10,7 @@ html {
     object-fit: cover;
     left: 0;
     width: 100%;
-    top:50.6%;
+    top:51.6%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -25,26 +26,26 @@ html {
     position: absolute;
     /* object-fit: cover; */
     left: 0;
-    top:50.6%;
+    top:51.6%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
-  .section-1{
-    height: 87vh;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    text-align: center;
-  }
+}
+.section-1{
+height: 87vh;
+/* background-color: rgba(0, 0, 0, 0.5); */
+text-align: center;
+}
 .section-1 h1{
     color:#fff;
     font-size: 4.8rem;
     letter-spacing: -5px;
     line-height: .9  ;
     margin-top: 0;
-    padding-top: 12rem;
+    padding-top: 14rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
@@ -151,16 +152,18 @@ html {
 
 
 .section-4{
-    background: url('../components/img/img3.webp') no-repeat  100%;
+    background: url('../components/img/img2.webp') no-repeat  100%;
     background-color: #000;
+    /* background-position: left;
+    background-size: contain; */
+    /* margin-bottom: 1rem; */
     background-size: cover;
-    height:80vh;
+    height:90vh;
 }
 .about{
     min-height:40vh;
     max-height: 60vh;
     background-color: #ffffff;
-    min-width: 375px;
     width: 30%;
     margin-left:50%;
     padding:4rem 3rem;
@@ -193,16 +196,16 @@ html {
     position: absolute;
     bottom:-10px;
     right:40px;
-    background-color: #EA5A0B;
-    /* height:2.3rem;
-    width:7.5rem; */
+    background-color: #000;
+    height:2.3rem;
+    width:7.5rem;
     color:white;
     cursor:pointer;
     font-family: 'Lato', sans-serif;
     transition: .2s ease-in-out 0s;
     border: 0;
     text-decoration: none;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 0.6rem;
 }
 .about a:hover{
     /* transition: ease-in-out .15s; */
@@ -228,17 +231,9 @@ html {
     nav{
         height:75px;
     }
-    .video,
-    .overlay{
-        height:80vh;
-        top:45%;
-    }
-    .section-1{
-        height:80vh;
-    }
+    
     .section-1 h1{
         font-size: 3.5rem;
-        padding-top: 9rem;
     }
     .section-2{
         float: none;
@@ -269,26 +264,19 @@ html {
         display: block;
     }
     .section-3 h1{
+
         line-height: .8;
         letter-spacing: 3px;
-        top:40%;
     }
     .about{
         position: static;
         margin: 0;
-        margin-bottom: 5rem;
         width:fit-content;    
         bottom: 0;
         -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
         transform: translateY(0%);
         text-align: center;
-    }
-    .about a{
-        position: relative;
-        margin: 0 auto;
-        right:0;
-        background-color:#000;
     }
     .about h3{
         position: relative;
@@ -301,7 +289,6 @@ html {
     }
     .about p{
         margin: 0;
-        margin-bottom: 1rem;
     }
     .about button{
         position: relative;

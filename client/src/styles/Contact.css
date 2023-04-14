@@ -1,6 +1,6 @@
 .contact-bg{
     /* background-image: url('../img/wallpaperflare.com_wallpaper.webp'); */
-    background-image: url('../components/img/wallpaperflare.com_wallpaper.webp');
+    background-image: url('../components/img/img6.webp');
     background-size: cover;
 }
 .contact-overlay{
@@ -50,18 +50,14 @@ p span{
 }
 .field input,
 .field textarea{
-    width:100%;
-    max-width: 270px;
-    height:45px;
+    width:90%;
+    height:5vh;
     border-radius: 3px;
     border:0px;
     text-align: left;
     padding: 1rem;
     padding-left: 1rem;
     font-family: 'Lato', sans-serif;
-}
-.field textarea{
-    min-height: 168px;
 }
 .error{
     color:rgb(255, 95, 95);
@@ -100,13 +96,10 @@ p span{
     }
     .field-box1,
     .field-box2{
-        width:90%;
+        width:80%;
         margin: 0 auto;
     }
-    .field-box2{
-        margin-top: 2rem;
-    }
     .field input{
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
 }
