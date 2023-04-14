@@ -1,5 +1,4 @@
 .shop-banner{
-    max-height: 500px;
     height: 50vh;
     background: url('../components/img/img2.webp') repeat center center/cover;
     /* margin-top: 40px ; */
@@ -22,7 +21,6 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-align: center;
-    max-height: 500px;
     height: 50vh;
     background-color:  rgba(0, 0, 0, 0.5);
     width: 50%;

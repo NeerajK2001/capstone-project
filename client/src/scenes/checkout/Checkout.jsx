@@ -9,7 +9,7 @@ import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
-import axios from "axios";
+
 const stripePromise = loadStripe(
   "pk_test_51Mf522BMldolGarEcUn4XsmcdjUPvz1gu2P3ATld3jnNeNKdAIFuxdeg9f6Zk1o4V29f8D11Ns7g8dwuzyzp1beP00t9lQLIFv"
 );
@@ -63,49 +63,6 @@ const Checkout = () => {
       sessionId: session.id,
     });
     console.log(requestBody)
-
-    // const orderList = async () => {
-    //   try {
-    //     const url = `${BASE_URL}/api/reviews`;
-    //     // const { username } = userData();
-    //     // console.log(`This is ${username}`);
-    //     // const options = { year: "numeric", month: "long", day: "numeric" };
-    //     // const dateNow = new Date(Date.now()).toLocaleString("en-GB", options);
-  
-    //     const headers = {
-    //       Authorization:`${KEY}`
-    //     };
-    //     if () {
-    //       const res = await axios.post(
-    //         url,
-    //         {
-    //           data: {
-    //             // message: comment.message,
-    //             // rating: comment.rating,
-    //             // username: username,
-    //             // date: dateNow,
-    //           },
-    //         },
-    //         { headers }
-    //       );
-    //       if (!!res) {
-    //         toast.success("Ordered successfully!", {
-    //           hideProgressBar: true,
-    //         });
-    //         setComment(initialForm);
-    //         //   navigate("/login");
-    //         console.log(`Hello the ${dateNow}`);
-    //       }
-    //     }
-    //   } catch (error) {
-    //     toast.error(error.message, {
-    //       hideProgressBar: true,
-    //     });
-    //   }
-    //   // window.location.reload(false);
-    //   // dispatch(forceupdate())
-  
-    // };
 
   }
 

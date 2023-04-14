@@ -21,7 +21,7 @@ const reviews = useSelector((state) => state.cart.reviews);
 
   async function getReviews() {
     const reviews = await fetch(
-      `${BASE_URL}/api/reviews?_limit=5`,
+      `${BASE_URL}/api/reviews`,
       {
         headers: {
           Authorization: `${KEY}`,
