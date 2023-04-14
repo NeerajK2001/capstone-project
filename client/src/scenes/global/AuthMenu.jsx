@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 // import axios from 'axios'
 import styled from "@emotion/styled";
 // import { shades } from "../../theme";
+import {shades} from "../../theme"
 import {
   setIsAuthOpen,
 } from "../../state";
