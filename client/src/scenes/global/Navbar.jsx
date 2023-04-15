@@ -44,7 +44,7 @@ function Navbar() {
   }
 
   return (
-        <nav className='navbar nav-bg'x>
+        <nav className='navbar nav-bg'>
           <Link to="/">
             <img src={logo} alt="Logo" data-aos="flip-up"/>
           </Link>

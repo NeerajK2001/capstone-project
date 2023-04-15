@@ -40,7 +40,6 @@ const Event = ({ event, width }) => {
             width="200px"
             height="200px"
             src={`${BASE_URL}${url}`}
-            
             />
             <Box mt="3px" height="100px" padding="0.5rem">
               <Typography variant="subtitle2" color={neutral.dark}>

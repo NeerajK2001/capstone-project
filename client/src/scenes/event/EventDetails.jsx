@@ -33,7 +33,7 @@ const EventDetails = () =>{
             `${BASE_URL}/api/events/${eventId}?populate=image`,
             {headers: {
                 Authorization: `${KEY}`
-              }}
+        }}
         );
 
         console.log();
