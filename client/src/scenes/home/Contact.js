@@ -169,14 +169,14 @@ const Contact = () => {
     <div>
       <div className="contact-bg">
         <div className="contact-overlay">
-          <div className="contact-sec1">
+          <div className="contact-sec1" data-aos="fade-right">
             <h1>GET IN TOUCH</h1>
             <p><span>PHONE :</span>+1 (098) 765-4321</p>
             <p><span>E-MAIL :</span> devrodies123@gmail.com</p>
             <p><span>ADDRESS :</span> Northwest Edmonton Alberta</p>
           </div>
 
-          <div className="contact-sec2">
+          <div className="contact-sec2" data-aos="fade-right">
               <form  ref={form} onSubmit={sendEmail}>
 
                 <div className="flex-form">

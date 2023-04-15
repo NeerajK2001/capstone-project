@@ -57,7 +57,7 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <div className="part-2">
+        <div className="part-2" data-aos="fade-right">
           <h3>Log In</h3>
           <div className="form">
             <Row className="login">
@@ -69,7 +69,7 @@ const Login = () => {
                       name="identifier"
                       value={user.identifier}
                       onChange={handleChange}
-                      placeholder="Enter your email"
+                      placeholder="Email"
                     />
                   </FormGroup>
                   <FormGroup>
@@ -78,7 +78,7 @@ const Login = () => {
                       name="password"
                       value={user.password}
                       onChange={handleChange}
-                      placeholder="Enter password"
+                      placeholder="Password"
                     />
                   </FormGroup>
                   <Button color="primary" onClick={handleLogin}>
@@ -89,10 +89,10 @@ const Login = () => {
               </Col>
             </Row>
             <p>or</p>
-            <button>Log in with google</button>
-            <button>Log in with facebook</button>
+            <button>Login with google</button>
+            <button>Login with facebook</button>
             <h6>
-                    Click <Link to="/signup">Here</Link> to Signup
+                    Don't have an account? <Link to="/signup">signup</Link>
             </h6>
           </div>
         </div>

@@ -20,7 +20,7 @@ function About() {
 
         <div className="Article-2">
           <div className="article2-sec1"></div>
-          <div className="article2-sec2">
+          <div className="article2-sec2" >
             <p>Secondly, board games are inherently social. The vast majority of board games require social interaction to function, even if there are several board games that may be played alone. In a cooperative game like 9 on 9 game players must strategize to get 99 points. Players participate in friendly competition. All players can find something to enjoy in cooperative and competitive games. By keeping all these things in mind we developed a game 9on9, that emphasizes enjoyment, movement, and skill.</p>
           </div>
         </div>
@@ -28,19 +28,19 @@ function About() {
           <h3>TEAM MEMBERS</h3>
           <div className="person-1">
               <img src={annette} alt="1st Person" />
-              <h4>Annette Maltais</h4>
+              <h4 data-aos="fade-right">Annette Maltais</h4>
           </div>
           <div className="person-2">
               <img src={john} alt="2nd Person" />
-              <h4>John Thibert</h4>
+              <h4 data-aos="fade-right">John Thibert</h4>
               </div>
           <div className="person-3">
               <img src={leann} alt="3rd Person" />
-              <h4>Leann Zahara</h4>
+              <h4 data-aos="fade-right">Leann Zahara</h4>
               </div>
         </div>
     </div>
   );
 }
 
-export default About;
+export default About

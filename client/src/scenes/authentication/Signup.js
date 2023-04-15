@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +53,7 @@ const Signup = () => {
         </div>
         <div className="part-2">
           <h3>Sign up</h3>
-          <div className="form">
+          <div className="form" data-aos="fade-right">
             <Row className="register">
               <Col sm="12" md={{ size: 4, offset: 4 }}>
                 <div>
@@ -64,7 +63,7 @@ const Signup = () => {
                       name="username"
                       value={user.username}
                       onChange={handleUserChange}
-                      placeholder="Enter your full name"
+                      placeholder="Name"
                     />
                   </FormGroup>
                   <FormGroup>
@@ -73,7 +72,7 @@ const Signup = () => {
                       name="email"
                       value={user.email}
                       onChange={handleUserChange}
-                      placeholder="Enter your email"
+                      placeholder="Email"
                     />
                   </FormGroup>
                   <FormGroup>
@@ -82,7 +81,7 @@ const Signup = () => {
                       name="password"
                       value={user.password}
                       onChange={handleUserChange}
-                      placeholder="Enter password"
+                      placeholder="Password"
                     />
                   </FormGroup>
                   <Button color="primary" onClick={signUp}>
@@ -95,7 +94,7 @@ const Signup = () => {
             <button>Sign up with google</button>
             <button>Sign up with facebook</button>
             <p>
-              Already have an account? <Link to="/login">Here</Link>
+              Already have an account? <Link to="/login">login</Link>
             </p>
           </div>
         </div>
