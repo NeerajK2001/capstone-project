@@ -1,3 +1,5 @@
+
+
 import  { useState } from 'react'; 
 import React, { useRef } from "react";
 import '../../styles/Contact.css'
@@ -8,13 +10,31 @@ import { toast } from "react-toastify";
 const Contact = () => {
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
+  
+
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const [nameError, setNameError] = useState('');
   const [subjectError, setSubjectError] = useState('');
+  
+//   const [phoneError, setPhoneError] = useState('');
+
   const [emailError, setEmailError] = useState('');
   const [messageError, setMessageError] = useState('');
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (validate()) {
+//       console.log('Form submitted');
+//       setName('');
+
+//       setPhone('');
+
+//       setEmail('');
+//       setMessage('');
+//     }
+//   };
 
     const form = useRef();
     // console.log(phone);
@@ -23,38 +43,39 @@ const Contact = () => {
     e.preventDefault();
     if (validate()) {
         console.log('Form submitted');
+        emailjs
+        .sendForm(
+        "service_m1t7pmo",
+        "template_dhg1cdk",
+        form.current,
+        "MzjPpyVMBYVOizxZf"
+        )
+        .then(
+        (result) => {
+            console.log(result.text);
+            toast.success("Email Sent successfully!", {
+            hideProgressBar: true,
+            });
+        },
+        (error) => {
+            console.log(error.text);
+            toast.success("There is a problem in Sending Email", {
+            hideProgressBar: true,
+            });
+        }
+        );
+    e.target.reset();
+
         setName('');
 
         // setPhone('');
 
         setEmail('');
         setMessage('');
-    }else{
 
-      emailjs
-          .sendForm(
-          "service_m1t7pmo",
-          "template_dhg1cdk",
-          form.current,
-          "MzjPpyVMBYVOizxZf"
-          )
-          .then(
-          (result) => {
-              console.log(result.text);
-              toast.success("Email Sent successfully!", {
-              hideProgressBar: true,
-              });
-          },
-          (error) => {
-              console.log(error.text);
-              toast.success("There is a problem in Sending Email", {
-              hideProgressBar: true,
-              });
-          }
-          );
     }
 
-    e.target.reset();
+    
 
 
     };
@@ -66,14 +87,15 @@ const Contact = () => {
     
     let emailError = '';
     let messageError = '';
+    let subjectError = "";
 
     if (!name) {
       nameError = 'Name is required';
     }
 
-    if (!subject) {
-      subjectError = 'Subject is required';
-    }
+    // if (!phone) {
+    //   phoneError = 'Phone is required';
+    // }
 
     if (!email) {
       emailError = 'Email is required';
@@ -85,12 +107,14 @@ const Contact = () => {
       messageError = 'Message is required';
     }
 
-   
+    if(!subject){
+      subjectError = 'Subject is required';
+    }
 
     setNameError(nameError);
     // setPhoneError(phoneError);
-    setEmailError(emailError);
     setSubjectError(subjectError);
+    setEmailError(emailError);
     setMessageError(messageError);
 
     return !(nameError || emailError || messageError);
@@ -113,7 +137,7 @@ const Contact = () => {
                 <div className="flex-form">
                   <div className="field-box1">
                       <div className='field'>
-                      <input type="text"  name="user_name" value={name}placeholder='Name'onChange={(e) => setName(e.target.value)}/>
+                      <input type="text"  name="user_name" value={name} placeholder='Name' onChange={(e) => setName(e.target.value)}/>
                         <div className='error'>{nameError}</div>
                       </div>
 
@@ -123,9 +147,9 @@ const Contact = () => {
                       </div>
 
                       <div className='field'>
-                        <input id="subject" value={subject}  name="user_subject" label="subject" placeholder="Subject"onChange={(e) => setSubject(e.target.value)} />
+                        <input id="subject" value={subject}  name="user_subject" label="subject" placeholder="Subject" onChange={(e) => setSubject(e.target.value)} />
+                        <div className='error'>{subjectError}</div>
                       </div>
-                      <div className='error'>{subjectError}</div>
                   </div>
 
                   <div className="field-box2">
