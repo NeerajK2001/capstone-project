@@ -38,10 +38,15 @@ function Navbar() {
     setMenuIconAnimation(menuOpen ? "" : "animate");
   };
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setMenuIconAnimation(false);
+  }
+
   return (
-        <nav className='navbar nav-bg'>
+        <nav className='navbar nav-bg'x>
           <Link to="/">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" data-aos="flip-up"/>
           </Link>
           <button className={`hamburger ${menuIconAnimation}`} onClick={handleMenuClick}>
             <span></span>
@@ -49,11 +54,11 @@ function Navbar() {
             <span></span>
           </button>
           <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
-            <li><Link to="/About">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/Events">Events</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/Shop">Shop</Link></li>
+            <li><Link to="/About" onClick={handleLinkClick}>About</Link></li>
+            <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
+            <li><Link to="/Events" onClick={handleLinkClick}>Events</Link></li>
+            <li><Link to="/gallery" onClick={handleLinkClick}>Gallery</Link></li>
+            <li><Link to="/Shop" onClick={handleLinkClick}>Shop</Link></li>
             {/* <li className='login'><Link to="/Login"><img src={login} alt="Login-icon" /></Link></li> */}
             <li>
               <Badge
@@ -71,7 +76,7 @@ function Navbar() {
                   onClick={() => dispatch(setIsAuthOpen({}))}
                   sx={{ color: "black" }}
                 >
-                  <img src={login} alt="Login-icon" />
+                  <img src={login} alt="Login-icon" onClick={handleLinkClick}/>
                   {/* <ShoppingCartOutlinedIcon /> */}
                 </IconButton>
               </Badge>
@@ -95,7 +100,7 @@ function Navbar() {
                   onClick={() => dispatch(setIsCartOpen({}))}
                   sx={{ color: "black" }}
                 >
-                  <img src={cartIcon} alt="Cart-icon" />
+                  <img src={cartIcon} alt="Cart-icon" onClick={handleLinkClick}/>
                   {/* <ShoppingCartOutlinedIcon /> */}
                 </IconButton>
               </Badge>

@@ -9,7 +9,7 @@ html {
     object-fit: cover;
     left: 0;
     width: 100%;
-    top:51.6%;
+    top:50.6%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -25,7 +25,7 @@ html {
     position: absolute;
     /* object-fit: cover; */
     left: 0;
-    top:51.6%;
+    top:50.6%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
