@@ -29,6 +29,7 @@ const testimonials = [
 ];
 
 
+
 function Home() {
 
   useEffect(() => {
@@ -45,6 +46,7 @@ function Home() {
           <Link data-aos="fade-up" to ="/shop">BUY NOW</Link>
         </div>
 
+    <div className="container">
         <div className="section-2">
           <div className="sec2-box1" data-aos="fade-right">
             <h3>HOW TO PLAY</h3>
@@ -58,6 +60,7 @@ function Home() {
             <img src={img4} alt="Login-icon" />
           </div>
         </div>
+    </div>
 
         <div className="section-3">
           <div>
@@ -65,14 +68,16 @@ function Home() {
             </div>
         </div>
 
-
+      <div className="container">
         <div className="section-5">
           <h3>TESTIMONIALS</h3>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
+      </div>
 
       <div className="section-6"></div>
         <div className="section-4">
+          <div className="sec4-overlay"></div>
           <div className="about">
             <h3 data-aos="fade-right"><span>AB</span>OUT US</h3>
             <p  data-aos="fade-right">In the past, pandemics resulted in a rise in state power and an increase in people's fear. Jalfam game was started because we needed an outlet from the doom and gloom of pandemic. According to our research, board games foster this communal empathy in two different ways.</p>

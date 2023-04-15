@@ -106,7 +106,10 @@ function Navbar() {
               </Badge>
             </li>
           </ul>
+
+
         </nav>
+        
   );
 }
 

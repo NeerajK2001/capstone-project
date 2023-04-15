@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Button from '@mui/material/Button';
+
 import '../../styles/gallery.css';
 
 import img1 from '../../components/img/img1.jpg';

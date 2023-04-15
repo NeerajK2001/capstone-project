@@ -16,5 +16,11 @@
     "url": "https://github.com/NeerajK2001/capstone-project/issues"
   },
   "homepage": "https://github.com/NeerajK2001/capstone-project#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "photoswipe": "^5.3.7",
+    "react-image-viewer-dv": "^1.0.2",
+    "react-images": "^1.2.0-beta.7",
+    "react-photoswipe-gallery": "^2.2.6"
+  }
 }
