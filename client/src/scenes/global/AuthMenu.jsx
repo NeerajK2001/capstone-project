@@ -1,10 +1,7 @@
 import { Box,Button, IconButton, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
-// import axios from 'axios'
 import styled from "@emotion/styled";
-// import { shades } from "../../theme";
-import {shades} from "../../theme"
 import {
   setIsAuthOpen,
 } from "../../state";
