@@ -1,62 +1,3 @@
-// import React, { useRef } from "react";
-// import emailjs from "@emailjs/browser";
-// import { toast } from "react-toastify";
-// const Contact = () => {
-//   const form = useRef();
-
-//   const sendEmail = (e) => {
-//     e.preventDefault();
-//     // if (validate()) {
-//     //   console.log('Form submitted');
-//     //   setName('');
-
-//     //   setPhone('');
-
-//     //   setEmail('');
-//     //   setMessage('');
-
-//     emailjs
-//       .sendForm(
-//         "service_m1t7pmo",
-//         "template_dhg1cdk",
-//         form.current,
-//         "MzjPpyVMBYVOizxZf"
-//       )
-//       .then(
-//         (result) => {
-//           console.log(result.text);
-//           toast.success("Email Sent successfully!", {
-//             hideProgressBar: true,
-//           });
-//         },
-//         (error) => {
-//           console.log(error.text);
-//           toast.success("There is a problem in Sending Email", {
-//             hideProgressBar: true,
-//           });
-//         }
-//       );
-//     e.target.reset();
-//   };
-
-//   return (
-//     <form ref={form} onSubmit={sendEmail}>
-//       <h2>Contact Us</h2>
-//       <label>Name</label>
-//       <input type="text" name="user_name" />
-//       <label>Email</label>
-//       <input type="email" name="user_email" />
-//       <label>Subject</label>
-//       <input type="text" name="user_subject" />
-//       <label>Message</label>
-//       <textarea name="message" />
-//       <input type="submit" value="Send" />
-//     </form>
-//   );
-// };
-
-// export default Contact;
-
 import  { useState } from 'react'; 
 import React, { useRef } from "react";
 import '../../styles/Contact.css'
@@ -66,29 +7,14 @@ import { toast } from "react-toastify";
 
 const Contact = () => {
   const [name, setName] = useState('');
-  
-
+  const [subject, setSubject] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [nameError, setNameError] = useState('');
-  
-//   const [phoneError, setPhoneError] = useState('');
 
+  const [nameError, setNameError] = useState('');
+  const [subjectError, setSubjectError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [messageError, setMessageError] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (validate()) {
-//       console.log('Form submitted');
-//       setName('');
-
-//       setPhone('');
-
-//       setEmail('');
-//       setMessage('');
-//     }
-//   };
 
     const form = useRef();
     // console.log(phone);
@@ -103,29 +29,31 @@ const Contact = () => {
 
         setEmail('');
         setMessage('');
+    }else{
+
+      emailjs
+          .sendForm(
+          "service_m1t7pmo",
+          "template_dhg1cdk",
+          form.current,
+          "MzjPpyVMBYVOizxZf"
+          )
+          .then(
+          (result) => {
+              console.log(result.text);
+              toast.success("Email Sent successfully!", {
+              hideProgressBar: true,
+              });
+          },
+          (error) => {
+              console.log(error.text);
+              toast.success("There is a problem in Sending Email", {
+              hideProgressBar: true,
+              });
+          }
+          );
     }
 
-    emailjs
-        .sendForm(
-        "service_m1t7pmo",
-        "template_dhg1cdk",
-        form.current,
-        "MzjPpyVMBYVOizxZf"
-        )
-        .then(
-        (result) => {
-            console.log(result.text);
-            toast.success("Email Sent successfully!", {
-            hideProgressBar: true,
-            });
-        },
-        (error) => {
-            console.log(error.text);
-            toast.success("There is a problem in Sending Email", {
-            hideProgressBar: true,
-            });
-        }
-        );
     e.target.reset();
 
 
@@ -143,9 +71,9 @@ const Contact = () => {
       nameError = 'Name is required';
     }
 
-    // if (!phone) {
-    //   phoneError = 'Phone is required';
-    // }
+    if (!subject) {
+      subjectError = 'Subject is required';
+    }
 
     if (!email) {
       emailError = 'Email is required';
@@ -157,9 +85,12 @@ const Contact = () => {
       messageError = 'Message is required';
     }
 
+   
+
     setNameError(nameError);
     // setPhoneError(phoneError);
     setEmailError(emailError);
+    setSubjectError(subjectError);
     setMessageError(messageError);
 
     return !(nameError || emailError || messageError);
@@ -192,8 +123,9 @@ const Contact = () => {
                       </div>
 
                       <div className='field'>
-                        <input id="subject"  name="user_subject" label="subject" placeholder="Subject" />
+                        <input id="subject" value={subject}  name="user_subject" label="subject" placeholder="Subject"onChange={(e) => setSubject(e.target.value)} />
                       </div>
+                      <div className='error'>{subjectError}</div>
                   </div>
 
                   <div className="field-box2">
