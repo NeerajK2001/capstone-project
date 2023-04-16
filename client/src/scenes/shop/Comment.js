@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { userData } from "../authentication/helper";
-import { Button, Input } from "reactstrap";
+import { Button} from "reactstrap";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import "../../styles/Comment.css";
@@ -12,46 +12,58 @@ import { KEY } from "../../utils/key";
 const initialForm = { message: "", rating: "" };
 const Comment = () => {
   const [comment, setComment] = useState(initialForm);
-
-//   const navigate = useNavigate();
+  
   const writeComment = async () => {
-    try {
-      const url = `${BASE_URL}/api/reviews`;
-      const { username } = userData();
-      console.log(`This is ${username}`);
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      const dateNow = new Date(Date.now()).toLocaleString("en-GB", options);
+      try {
+        const url = `${BASE_URL}/api/reviews`;
 
-      const headers = {
-        Authorization:`${KEY}`
-      };
-      if (comment.message && comment.rating) {
-        const res = await axios.post(
-          url,
-          {
-            data: {
-              message: comment.message,
-              rating: comment.rating,
-              username: username,
-              date: dateNow,
-            },
-          },
-          { headers }
-        );
-        if (!!res) {
-          toast.success("Commented successfully!", {
+        const { username } = userData();
+        console.log(`This is ${username}`);
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        const dateNow = new Date(Date.now()).toLocaleString("en-GB", options);
+  
+        const headers = {
+          Authorization:`${KEY}`
+        };
+        if(!username){
+          toast.success(" Please Login to Comment", {
             hideProgressBar: true,
-          });
-          setComment(initialForm);
-          //   navigate("/login");
-          console.log(`Hello the ${dateNow}`);
+          })
+        }else{
+          if (comment.message !== "" || comment.rating !== "") {
+            const res = await axios.post(
+              url,
+              {
+                data: {
+                  message: comment.message,
+                  rating: comment.rating,
+                  username: username,
+                  date: dateNow,
+                },
+              },
+              { headers }
+            );
+
+            if (!!res) {
+              toast.success("Commented successfully!", {
+                hideProgressBar: true,
+              });
+              setComment(initialForm);
+              //   navigate("/login");
+              console.log(`Hello the ${dateNow}`);
+            }
+          }else{
+            toast.success(" Both comment and rating need to be selected", {
+              hideProgressBar: true,
+            })
+          }
         }
+      } catch (error) {
+        toast.error("There was some problem. Please try again later", {
+          hideProgressBar: true,
+        });
       }
-    } catch (error) {
-      toast.error(error.message, {
-        hideProgressBar: true,
-      });
-    }
+    
     // window.location.reload(false);
     // dispatch(forceupdate())
 
@@ -82,7 +94,7 @@ const Comment = () => {
         className="comment-box"
       >
         <Box display="flex" flexDirection="column" gap="1rem" className="comment-input" width="100%">
-          <Input
+          <input
             type="text"
             name="message"
             value={comment.message}
@@ -94,7 +106,7 @@ const Comment = () => {
             placeholder="rating">
             <option>1</option>
             <option>2</option>
-            <option selected>3</option>
+            <option selected="selected">3</option>
             <option>4</option>
             <option>5</option>
           </select>
@@ -110,4 +122,3 @@ const Comment = () => {
 };
 
 export default Comment;
-

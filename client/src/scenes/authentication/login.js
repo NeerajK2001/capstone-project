@@ -30,12 +30,12 @@ const Login = () => {
         const { data } = await axios.post(url, user);
         if (data.jwt) {
           storeUser(data);
-          toast.success("Logged in successfully!", {
-            hideProgressBar: true,
-          });
           setUser(initialUser);
           navigate("/");
           window.location.reload(false);
+          toast.success("Logged in successfully!", {
+            hideProgressBar: true,
+          });
         }
       }
     } catch (error) {
