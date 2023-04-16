@@ -18,7 +18,7 @@ const Signup = () => {
       if (user.username && user.email && user.password) {
         const res = await axios.post(url, user);
         if (!!res) {
-          toast.success("Registered successfully. Please Login!", {
+          toast.success("Registered successfully!", {
             hideProgressBar: true,
           });
           setUser(initialUser);

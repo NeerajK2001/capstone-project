@@ -46,7 +46,7 @@ function Navbar() {
   return (
         <nav className='navbar nav-bg'>
           <Link to="/">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" data-aos="flip-up"/>
           </Link>
           <button className={`hamburger ${menuIconAnimation}`} onClick={handleMenuClick}>
             <span></span>
