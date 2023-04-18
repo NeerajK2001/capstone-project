@@ -46,7 +46,7 @@ const Reviews = ({ review, width }) => {
         width="70%"
       >
         <Box display="flex" justifyContent="space-between" flexDirection="row" width='100%'>
-          <Typography variant="h3" style={{width:"50%"}}>{username}</Typography>
+          <Typography variant="p" style={{width:"50%"}}>{username}</Typography>
           <Typography style={{width:"30%"}}>{date}</Typography>
         </Box>
         <Box
