@@ -23,7 +23,7 @@ const Comment = () => {
         const dateNow = new Date(Date.now()).toLocaleString("en-GB", options);
   
         const headers = {
-          Authorization:`${KEY}`
+          Authorization:`Bearer ${KEY}`
         };
         if(!username){
           toast.success(" Please Login to Comment", {

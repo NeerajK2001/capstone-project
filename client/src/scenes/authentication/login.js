@@ -39,7 +39,7 @@ const Login = () => {
         }
       }
     } catch (error) {
-      toast.error(error.message, {
+      toast.error("Email/Password is incorrect! or Sign up first", {
         hideProgressBar: true,
       });
     }

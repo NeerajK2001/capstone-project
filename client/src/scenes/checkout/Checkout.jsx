@@ -52,24 +52,12 @@ const Checkout = () => {
       }));
 
       let quantityValue = orderQuantity[0].count;
-
-      // const data = {
-      //   name:  orderName,
-      //   address: orderAddress,
-      //   email: values.email,
-      //   phonenumber: values.phoneNumber,
-      //   products: cart.map(({ id, count }) => ({
-      //     id,
-      //     count,
-      //   })),
-      // };
-      // console.log(data)
       console.log(orderQuantity)
       const ordered = async () => {
         try {
-          const url = `${BASE_URL}/api/testorders/`;
+          const url = `${BASE_URL}/api/orderlists/`;
           const headers = {
-          Authorization:`${KEY}`
+          Authorization:`Bearer ${KEY}`
         };
           const res = await axios.post(
             url,
