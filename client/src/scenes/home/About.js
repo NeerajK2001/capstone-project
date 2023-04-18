@@ -12,7 +12,7 @@ import '../../styles/About.css';
 
 function About() {
   return (
-    <div>
+    <div className='web-max'>
         <div className="Article-1">
           <div className="article1-sec1">
             <h1>ABOUT US</h1>

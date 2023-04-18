@@ -48,7 +48,7 @@ const AuthMenu = () => {
         <Box padding="30px" overflow="auto" height="100%">
           {/* HEADER */}
           <FlexBox mb="15px">
-            <Typography variant="h3">Account</Typography>
+            <Typography variant="p">Account</Typography>
             <IconButton onClick={() => dispatch(setIsAuthOpen({}))}>
               <CloseIcon />
             </IconButton>

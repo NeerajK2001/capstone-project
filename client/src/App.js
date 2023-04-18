@@ -34,7 +34,8 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <div className="app">
+    <div className="container">
+      
       <BrowserRouter>
         <Navbar />
         <ScrollToTop />
@@ -43,10 +44,10 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="About" element={<About />} />
-          <Route path="Contact" element={<Contact />} />
-          <Route path="Events" element={<Events />} />
-          <Route path="ReviewsList" element={<ReviewsList />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="events" element={<Events />} />
+          <Route path="reviewsList" element={<ReviewsList />} />
           <Route path="event/:eventId" element={<EventDetails />} />
           <Route path="gallery" element={<MyGallery />} />
           <Route path="login" element={<Login />} />

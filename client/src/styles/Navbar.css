@@ -165,6 +165,14 @@ nav img:nth-child(1) {
   }
 } */
 
+nav{
+  background-color: #041E42;
+}
+
+.active{
+  color: #EA5A0B;
+}
+
 
 .navbar {
   /* position: fixed; */
@@ -190,8 +198,16 @@ nav img:nth-child(1) {
   background-color: transparent; */
 }
 .nav-bg{
-  background-color: #272C48;
+  background-color: #041E42;
   z-index: 4;
+}
+
+.navbar h1{
+  margin: unset;
+}
+
+.none{
+  display: none;
 }
 .logo{
   padding-left: 2rem;

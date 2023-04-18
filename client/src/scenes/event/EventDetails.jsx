@@ -32,8 +32,8 @@ const EventDetails = () =>{
         const event = await fetch(
             `${BASE_URL}/api/events/${eventId}?populate=image`,
             {headers: {
-                Authorization: `${KEY}`
-        }}
+                Authorization: `Bearer ${KEY}`
+            }}
         );
 
         console.log();
@@ -50,7 +50,7 @@ const EventDetails = () =>{
     width="80%"
     m= "80px auto" 
     >
-            <Typography variant="h1" mb="20px">{event?.attributes?.name}</Typography>
+        <Typography variant="h2" mb="20px" sx={{color:"#EA5A0B"}}>{event?.attributes?.name}</Typography>
 
         <Box display="flex" flexWrap="wrap" columnGap="40px">
             {/* Images */}
@@ -59,14 +59,14 @@ const EventDetails = () =>{
                     alt={event?.name}
                     width="100%"
                     height="100%"
-                    src={`http://localhost:1337${event?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                    src={`${BASE_URL}${event?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     style={{objectFit: "contain"}}
                 />
             </Box>
             {/* actions */}
             <Box flex="1 1 50%" mb="40px">
                 <Box m="65px 0 25px 0">
-                    <Typography variant="h2">{event?.attributes?.name}</Typography>
+                    <Typography variant="h3">{event?.attributes?.name}</Typography>
                     <Typography sx={{ mt: "20px" }}>{event?.attributes?.longDescription}</Typography>
                 </Box>
                 <Box>

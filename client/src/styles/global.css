@@ -28,8 +28,13 @@ a, button{
   margin: auto;
 }
 
-.container{
-  max-width: 1800px;
+.web-max,
+.tostify,
+.MuiBox-root,
+.footer,
+.home-box,
+.css-1ewaou6 {
+  max-width: 1600px;
   margin: 0 auto;
 }
 

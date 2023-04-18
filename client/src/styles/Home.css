@@ -17,6 +17,7 @@ html {
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    max-width: 1600px;
   }
   .overlay{
     height:90vh;
@@ -33,6 +34,7 @@ html {
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    max-width: 1600px;
   }
   .section-1{
     height: 87vh;
@@ -89,7 +91,7 @@ html {
 .sec2-box2 img{
     display: block;
     margin-left: auto;
-    width:35vw;
+    width: 75%;
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);

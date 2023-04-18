@@ -38,7 +38,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div className="home-box">
         <div className="section-1">
           <video src={bgvideo} autoPlay muted loop className='video' />
           <div className="overlay"></div>
@@ -46,7 +46,7 @@ function Home() {
           <Link data-aos="fade-up" to ="/shop">BUY NOW</Link>
         </div>
 
-    <div className="container">
+    <div className="section-container">
         <div className="section-2">
           <div className="sec2-box1" data-aos="fade-right">
             <h3>HOW TO PLAY</h3>

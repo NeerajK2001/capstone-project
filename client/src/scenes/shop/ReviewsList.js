@@ -24,8 +24,8 @@ const reviews = useSelector((state) => state.cart.reviews);
       `${BASE_URL}/api/reviews`,
       {
         headers: {
-          Authorization: `${KEY}`,
-        },
+          Authorization: `Bearer ${KEY}`
+        }
       }
     );
     const reviewssJson = await reviews.json();

@@ -121,7 +121,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className='web-max'>
       <div className="contact-bg">
         <div className="contact-overlay">
           <div className="contact-sec1" data-aos="fade-right">

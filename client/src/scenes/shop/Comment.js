@@ -111,8 +111,8 @@ const Comment = () => {
             <option>5</option>
           </select>
         </Box>
-        <Box>
-          <Button color="primary" onClick={writeComment} width="20%">
+        <Box className="btn-submit">
+          <Button color="primary"  onClick={writeComment} width="20%">
             Submit
           </Button>
         </Box>

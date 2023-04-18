@@ -11,7 +11,7 @@ import "../../styles/global.css"
 import "../../styles/Event.css"
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
-
+// import axios from "axios";
 const EventList = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("all");
@@ -27,7 +27,7 @@ const EventList = () => {
       `${BASE_URL}/api/events?populate=image`,
     //   { method: "GET" },
       {headers: {
-        Authorization: `${KEY}`
+        Authorization: `Bearer ${KEY}`
       }}
     );
     console.log(events);
@@ -35,6 +35,22 @@ const EventList = () => {
     dispatch(setEvents(itemsJson.data));
     console.log(itemsJson)
   }
+
+  // const baseURL = `${BASE_URL}/api/events?populate=image`;
+  // const headers = {
+  //   Authorization:`${KEY}`
+  // };
+  // async function getEvents() {
+  //   axios.get('https://starfish-app-ettw4.ondigitalocean.app/api/events?populate=image',{headers}).then((response)=>{
+  //     const itemsJson = response.json();
+  //   dispatch(setEvents(itemsJson.data));
+  //   console.log(itemsJson)
+  //   })
+  //   console.log(events);
+  // }
+
+  
+
 
   useEffect(() => {
     getEvents();
