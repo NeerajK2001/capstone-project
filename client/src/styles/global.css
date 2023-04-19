@@ -10,14 +10,14 @@ body{
 
 h1,h2,h3,h4,h5,h6{
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400 !important;
+  font-weight: 400 ;
 }
 
 
 p{
   font-size: 18px ;
   font-family: 'Lato', sans-serif;
-  font-weight: 300 !important;
+  font-weight: 300 ;
 }
 
 a, button{

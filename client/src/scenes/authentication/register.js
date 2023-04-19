@@ -23,7 +23,6 @@ const Registration = () => {
           });
           setUser(initialUser);
           navigate("/login");
-          // window.location.reload(false);
         }
       }
     } catch (error) {

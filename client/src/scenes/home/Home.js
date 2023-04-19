@@ -42,14 +42,14 @@ function Home() {
         <div className="section-1">
           <video src={bgvideo} autoPlay muted loop className='video' />
           <div className="overlay"></div>
-          <h1  data-aos="fade-up">A Board <span>Game</span> <br/>For Everyone</h1>
+          <h2  data-aos="fade-up">A Board <span>Game</span> <br/>For Everyone</h2>
           <Link data-aos="fade-up" to ="/shop">BUY NOW</Link>
         </div>
 
     <div className="section-container">
         <div className="section-2">
           <div className="sec2-box1" data-aos="fade-right">
-            <h3>HOW TO PLAY</h3>
+            <h2>HOW TO PLAY</h2>
             <p>1. &nbsp; Set the board on a level surface.<br/>
             2. &nbsp; Form two teams (1 – 4 players each). Each squad receives four bean pucks (select a colour).<br/>
             3. &nbsp; decide who fires first Keep in mind that shooting last can be advantageous!<br/>
@@ -64,13 +64,13 @@ function Home() {
 
         <div className="section-3">
           <div>
-            <h1> <span>LEARN </span> &nbsp; <span>PLAY</span> &nbsp;<span>GROW</span> </h1>
+            <h2> <span>LEARN </span> &nbsp; <span>PLAY</span> &nbsp;<span>GROW</span> </h2>
             </div>
         </div>
 
       <div className="container">
         <div className="section-5">
-          <h3>TESTIMONIALS</h3>
+          <h2>TESTIMONIALS</h2>
           <TestimonialCarousel testimonials={testimonials} />
         </div>
       </div>
@@ -79,7 +79,7 @@ function Home() {
         <div className="section-4">
           <div className="sec4-overlay"></div>
           <div className="about">
-            <h3 data-aos="fade-right"><span>AB</span>OUT US</h3>
+            <h2 data-aos="fade-right"><span>AB</span>OUT US</h2>
             <p  data-aos="fade-right">In the past, pandemics resulted in a rise in state power and an increase in people's fear. Jalfam game was started because we needed an outlet from the doom and gloom of pandemic. According to our research, board games foster this communal empathy in two different ways.</p>
             <Link to ="/about">OUR STORY</Link>
           </div>

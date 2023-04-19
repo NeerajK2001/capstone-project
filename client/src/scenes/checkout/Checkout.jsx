@@ -44,6 +44,7 @@ const Checkout = () => {
       actions.setTouched({});
       console.log(values.billingAddress.firstName)
       console.log(values.email)
+
       let orderName = [values.billingAddress.firstName, values.billingAddress.lastName].join(" ");
       let orderAddress = [values.billingAddress.street1, values.billingAddress.street2,values.billingAddress.city,values.billingAddress.state, values.billingAddress.country,values.billingAddress.zipcode,].join(" ");
       let orderQuantity = cart.map(({ id, count }) => ({
@@ -55,7 +56,7 @@ const Checkout = () => {
       console.log(orderQuantity)
       const ordered = async () => {
         try {
-          const url = `${BASE_URL}/api/orderlists/`;
+          const url = `${BASE_URL}/api/orderlists`;
           const headers = {
           Authorization:`Bearer ${KEY}`
         };
@@ -111,9 +112,9 @@ const Checkout = () => {
         (result) => {
             console.log(result.text);
             console.log("Email Sent successfully!")
-            // toast.success("Email Sent successfully!", {
-            // hideProgressBar: true,
-            // });
+            toast.success("Email Sent successfully!", {
+            hideProgressBar: true,
+            });
         },
         (error) => {
             console.log(error.text);
@@ -125,8 +126,8 @@ const Checkout = () => {
         );
       }
   
-      ordered();
       sendHandler();
+      ordered();
 
         
     }
