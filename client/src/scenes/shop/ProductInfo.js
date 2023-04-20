@@ -1,4 +1,3 @@
-// import { boxSizing } from "@mui/system";
 import React from "react";
 import '../../styles/global.css';
 import '../../styles/ProductInfo.css';

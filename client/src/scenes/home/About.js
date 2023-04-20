@@ -2,13 +2,7 @@ import React from 'react';
 import leann from '../../components/img/leann-zahara.jpg'
 import annette from '../../components/img/annette-maltais.jpg'
 import john from '../../components/img/john-Thibert.jpg'
-
 import '../../styles/About.css';
-// import person1 from '../../components/img/person1.jpg'
-// import person2 from '../../components/img/person2.jpg'
-// import person3 from '../../components/img/person3.jpg'
-
-
 
 function About() {
   return (

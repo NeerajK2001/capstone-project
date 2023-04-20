@@ -2,9 +2,7 @@ import { useSelector } from "react-redux";
 import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
-// import { useEffect } from "react";
 import * as yup from "yup";
-// import { shades } from "../../theme";
 import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
@@ -52,14 +50,11 @@ const Checkout = () => {
         count,
       }));
 
-      let quantityValue = orderQuantity[0].count;
       console.log(orderQuantity)
       const ordered = async () => {
         try {
-          const url = `${BASE_URL}/api/orderlists`;
-          const headers = {
-          Authorization:`Bearer ${KEY}`
-        };
+          const url = `${BASE_URL}/api/orderlists/`;
+          const headers = { Authorization:`Bearer ${KEY}` };
           const res = await axios.post(
             url,
             {
@@ -68,7 +63,10 @@ const Checkout = () => {
                 address: orderAddress,
                 email: values.email,
                 phone: values.phoneNumber,
-                quantity: quantityValue
+                quantity:cart.map(({ id, count }) => ({
+                  id,
+                  count,
+                }))
               },
             },
             { headers }
@@ -76,21 +74,15 @@ const Checkout = () => {
           );
           if (!!res) {
             console.log("Order Successuful");
-            // toast.success("Ordered successfully!", {
-            //   hideProgressBar: true,
-            // });
           }
         } catch (error) {
-          toast.error("Sorry, we could not add your order. Please try again later or contact support.", {
-            hideProgressBar: true,
-          });
+          console.log("There are some errors in submitting orders");
         }
       };
 
       
 
       const sendHandler = () => {
-        // event.preventDeault();
 
         const templateParams = {
           email: values.email,
@@ -109,25 +101,22 @@ const Checkout = () => {
         "MzjPpyVMBYVOizxZf"
         )
         .then(
-        (result) => {
-            console.log(result.text);
-            console.log("Email Sent successfully!")
-            toast.success("Email Sent successfully!", {
-            hideProgressBar: true,
-            });
-        },
-        (error) => {
-            console.log(error.text);
-            console.log("There is a problem in Sending Email")
-            // toast.success("There is a problem in Sending Email", {
-            // hideProgressBar: true,
-            // });
-        }
+          (result) => {
+              console.log(result.text);
+              console.log("Email Sent successfully!")
+              toast.success("Email Sent successfully!", {
+              hideProgressBar: true,
+              });
+          },
+          (error) => {
+              console.log(error.text);
+              console.log("There is a problem in Sending Email")
+          }
         );
       }
   
-      sendHandler();
       ordered();
+      sendHandler();
 
         
     }
@@ -150,7 +139,7 @@ const Checkout = () => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${KEY}`
+        Authorization: `Bearer ${KEY}`
           },
       body: JSON.stringify(requestBody),
     });

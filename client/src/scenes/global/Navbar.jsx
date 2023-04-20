@@ -1,37 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Badge, IconButton } from "@mui/material";
-import {
-  // PersonOutline,
-  // ShoppingBagOutlinedIcon,
-  // MenuOutlined,
-  // SearchOutlined,
-} from "@mui/icons-material";
-// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-// import { useNavigate } from "react-router-dom";
-// import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 import { setIsAuthOpen } from "../../state";
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from "react";
-// import logo from './img/main-logo.png';
-// import login from './img/login.png';
-// import cart from './img/cart.png';
-// import '../../components/Navbar.css';
 import '../../styles/Navbar.css'
 import '../../styles/global.css'
 
 import logo from '../../components/img/main-logo-2.png';
 import login from '../../components/img/login.png';
 import cartIcon from '../../components/img/cart.png';
-// import { display } from "@mui/system";
 
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuIconAnimation, setMenuIconAnimation] = useState("");
   
-  // const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
@@ -45,7 +30,7 @@ function Navbar() {
     setMenuIconAnimation(false);
   }
 
-  const location = useLocation(); // once ready it returns the 'window.location' object
+  const location = useLocation(); 
   const [url, setUrl] = useState(null);
   useEffect(() => {
     setUrl(location.pathname);
@@ -71,7 +56,6 @@ function Navbar() {
               <li><Link to="/events" className={"underline" + (url === "/events" ?" active" : "")} onClick={handleLinkClick}>Events</Link></li>
               <li><Link to="/gallery" className={"underline" + (url === "/gallery" ?" active" : "")} onClick={handleLinkClick}>Gallery</Link></li>
               <li><Link to="/shop" className={"underline" + (url === "/shop" ?" active" : "")} onClick={handleLinkClick}>Shop</Link></li>
-              {/* <li className='login'><Link to="/Login"><img src={login} alt="Login-icon" /></Link></li> */}
               <li>
                 <Badge
                   sx={{
@@ -89,7 +73,6 @@ function Navbar() {
                     sx={{ color: "black" }}
                   >
                     <img src={login} alt="Login-icon" onClick={handleLinkClick}/>
-                    {/* <ShoppingCartOutlinedIcon /> */}
                   </IconButton>
                 </Badge>
               </li>
@@ -113,7 +96,6 @@ function Navbar() {
                     sx={{ color: "black" }}
                   >
                     <img src={cartIcon} alt="Cart-icon" onClick={handleLinkClick}/>
-                    {/* <ShoppingCartOutlinedIcon /> */}
                   </IconButton>
                 </Badge>
               </li>

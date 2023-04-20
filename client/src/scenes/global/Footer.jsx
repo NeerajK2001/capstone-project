@@ -18,13 +18,6 @@ function Footer() {
           <a href="/">About</a>
           <a href="/">Contact</a>
           <a href="/">Shop</a>
-
-          {/* <div>
-          <a href="/">Events</a>
-          <a href="/">Gallery</a>
-          <a href="/">Cart</a>
-          <a href="/">Shop</a>
-          </div> */}
         </div>
         <div className="fa-sec-3" data-aos="fade-up">
           <div className="social">

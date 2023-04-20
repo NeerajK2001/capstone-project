@@ -1,29 +1,17 @@
 import { Box, Typography } from "@mui/material";
-// import {  Button, IconButton } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import Event from "./event";
-// import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-// import AddIcon from "@mui/icons-material/Add";
-// import RemoveIcon from "@mui/icons-material/Remove";
-// import { shades } from "../../theme";
-// import { addToCart } from "../../state";
-// import { useDispatch } from "react-redux";
 import "../../styles/global.css"
 import "../../styles/Event.css"
 
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
 const EventDetails = () =>{
-    // const dispatch = useDispatch();
     const {eventId} = useParams();
     const [value, setValue] = useState("description");
-    // const [count, setCount] = useState(1);
     const [event, setEvent] = useState(null);
-    // const [items, setEvents] = useState([]);
-
     const handleChange = (event, newValue) =>{
         setValue(newValue);
     }
@@ -66,15 +54,13 @@ const EventDetails = () =>{
             {/* actions */}
             <Box flex="1 1 50%" mb="40px">
                 <Box m="65px 0 25px 0">
-                    <Typography variant="h3">{event?.attributes?.name}</Typography>
+                    <Typography variant="h3" sx={{fontSize:"36px"}}>{event?.attributes?.name}</Typography>
+                    <Typography sx={{color:"#EA5A0B"}}>CATEGORIES: {event?.attributes?.category}</Typography>
+
                     <Typography sx={{ mt: "20px" }}>{event?.attributes?.longDescription}</Typography>
                 </Box>
                 <Box>
-                    {/* <Box m="20px 0 5px 0" display="flex">
-                        <FavoriteBorderOutlinedIcon/>
-                        <Typography sx={{ml: "5px"}}>ADD TO WISHLIST</Typography>
-                    </Box> */}
-                    <Typography>CATEGORIES: {event?.attributes?.category}</Typography>
+                    <Typography>Location: {event?.attributes?.location}</Typography>
                     <Typography>Time: {event?.attributes?.time}</Typography>
                     <Typography>Date: {event?.attributes?.date}</Typography>
                 </Box>

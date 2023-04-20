@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "testorders",
+  "collectionName": "orderlists",
   "info": {
-    "singularName": "testorder",
-    "pluralName": "testorders",
-    "displayName": "testorder",
-    "description": ""
+    "singularName": "orderlist",
+    "pluralName": "orderlists",
+    "displayName": "orderlist"
   },
   "options": {
     "draftAndPublish": true
@@ -15,17 +14,17 @@
     "name": {
       "type": "string"
     },
-    "phone": {
+    "address": {
       "type": "string"
     },
     "email": {
       "type": "string"
     },
-    "address": {
-      "type": "richtext"
+    "phone": {
+      "type": "biginteger"
     },
     "quantity": {
-      "type": "string"
+      "type": "json"
     }
   }
 }

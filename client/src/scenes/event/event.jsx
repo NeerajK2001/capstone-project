@@ -6,19 +6,15 @@ import { Box, Typography, useTheme } from "@mui/material";
 // import { shades } from "../theme";
 // import { shades } from "../../theme";
 import { useNavigate } from "react-router-dom";
-// import { addToCart } from "../../state";
 import "../../styles/global.css"
 import { BASE_URL } from "../../utils/base";
 const Event = ({ event, width }) => {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  // const [count, setCount] = useState(1);
-  // const [isHovered, setIsHovered] = useState(false);
   const {
     palette: { neutral },
   } = useTheme();
 
-  const { category, time, date, shortDescription, name, image } =
+  const { category,  date, shortDescription, name, image } =
     event.attributes;
   const {
     data: {
@@ -47,13 +43,11 @@ const Event = ({ event, width }) => {
                   .replace(/([A-Z])/g, " $1")
                   .replace(/^./, (str) => str.toUpperCase())}
               </Typography>
-              <Typography>{name}</Typography>
+              <Typography variant="h3">{name}</Typography>
               <Typography variant="p">{shortDescription}</Typography>
                 <Box display="flex" justifyContent="space-between">
                   <Typography>{date}</Typography>
-                  <Typography>{time}</Typography>
                 </Box>
-              {/* <Typography fontWeight="bold">${price}</Typography> */}
             </Box>
           </Box>
         </Box>

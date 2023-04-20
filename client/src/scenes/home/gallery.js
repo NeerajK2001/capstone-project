@@ -96,7 +96,7 @@ export default function MyGallery() {
         <h1>GALLERY</h1>
       </div>
       <div className="container">
-      <Box  className='gallery-box' sx={{ width: 9/10, height: 1/0}}>  {/*, overflowY: 'scroll' */}
+      <Box  className='gallery-box' sx={{ width: 9/10, height: 1/0}}> 
         <ImageList  className='image-ul' variant="masonry" cols={'fitcontent'} gap={8}>
           {itemData.slice(0, itemsToShow).map((item) => (
             <ImageListItem key={item.img} className='image-li'>

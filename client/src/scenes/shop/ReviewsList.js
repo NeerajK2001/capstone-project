@@ -1,5 +1,4 @@
 import React, { useEffect} from "react";
-// import { useReducer} from "react";
 
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -16,9 +15,6 @@ const ReviewsList = () => {
 const dispatch = useDispatch();
 
 const reviews = useSelector((state) => state.cart.reviews);
-// const [reducerValue, forceupdate] = useReducer(x => x + 1, 0);
-
-
   async function getReviews() {
     const reviews = await fetch(
       `${BASE_URL}/api/reviews`,
@@ -30,7 +26,6 @@ const reviews = useSelector((state) => state.cart.reviews);
     );
     const reviewssJson = await reviews.json();
     dispatch(setReviews(reviewssJson.data))
-    // forceupdate();
   }
 
   useEffect(() => {
@@ -46,9 +41,6 @@ const reviews = useSelector((state) => state.cart.reviews);
         margin="0 auto"
         display="grid"
         gridTemplateColumns="repeat(auto-fill, 600px)"
-        // justifyContent="space-between"
-        // rowGap="20px"
-        // columnGap="0.33%"
         gap="1.5rem"
         className="reviews-box"
       >

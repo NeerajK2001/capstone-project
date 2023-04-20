@@ -5,13 +5,8 @@ import img4 from '../../components/img/img4.webp';
 import Pdf from '../../components/img/rules.pdf';
 import bgvideo from '../../components/img/bgVideo.mp4';
 import TestimonialCarousel from './TestimonialCarousel';
-
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
-
 
 const testimonials = [
   {

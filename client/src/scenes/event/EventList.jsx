@@ -11,7 +11,7 @@ import "../../styles/global.css"
 import "../../styles/Event.css"
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
-// import axios from "axios";
+
 const EventList = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("all");
@@ -25,7 +25,6 @@ const EventList = () => {
   async function getEvents() {
     const events = await fetch(
       `${BASE_URL}/api/events?populate=image`,
-    //   { method: "GET" },
       {headers: {
         Authorization: `Bearer ${KEY}`
       }}
@@ -36,25 +35,9 @@ const EventList = () => {
     console.log(itemsJson)
   }
 
-  // const baseURL = `${BASE_URL}/api/events?populate=image`;
-  // const headers = {
-  //   Authorization:`${KEY}`
-  // };
-  // async function getEvents() {
-  //   axios.get('https://starfish-app-ettw4.ondigitalocean.app/api/events?populate=image',{headers}).then((response)=>{
-  //     const itemsJson = response.json();
-  //   dispatch(setEvents(itemsJson.data));
-  //   console.log(itemsJson)
-  //   })
-  //   console.log(events);
-  // }
-
-  
-
-
   useEffect(() => {
     getEvents();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }); 
 
   const latest = events.filter(
     (event) => event.attributes.category === "latest"
@@ -89,10 +72,7 @@ const EventList = () => {
       <Box
         margin="0 auto"
         display="grid"
-        gridTemplateColumns="repeat(auto-fill, 450px)"
-        // justifyContent="space-between"
-        // rowGap="20px"
-        // columnGap="0.33%"
+        gridTemplateColumns="repeat(3, 450px)"
         gap="1.5rem"
       >
         {value === "all" &&

@@ -13,7 +13,6 @@ import AuthMenu from "./scenes/global/AuthMenu";
 import MyGallery from "./scenes/home/gallery";
 import Footer from "./scenes/global/Footer";
 import EventDetails from "./scenes/event/EventDetails"
-// import Registration from "./scenes/authentication/register";
 import ReviewsList from "./scenes/shop/ReviewsList";
 import Login from "./scenes/authentication/login";
 import Logout from "./scenes/authentication/logout";
