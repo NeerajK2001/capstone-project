@@ -108,5 +108,7 @@ p span{
     }
     .field input{
         margin-top: 1rem;
+    }.contact-bg{
+        background-image: url('../components/img/mobile/wallpaperflare.com_wallpaper.webp');
     }
 }

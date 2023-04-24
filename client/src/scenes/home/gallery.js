@@ -6,14 +6,14 @@ import Button from '@mui/material/Button';
 
 import '../../styles/gallery.css';
 
-import img1 from '../../components/img/img1.jpg';
-import img2 from '../../components/img/img2.webp';
-import img3 from '../../components/img/img3.webp';
-import img4 from '../../components/img/img4.webp';
-import img5 from '../../components/img/img5.webp';
-import img6 from '../../components/img/img6.webp';
-import img7 from '../../components/img/img7.webp';
-import img8 from '../../components/img/img8.webp';
+import img1 from '../../components/img/board-1.jpg';
+import img2 from '../../components/img/board-2.webp';
+import img3 from '../../components/img/board-3.webp';
+import img4 from '../../components/img/board-4.webp';
+import img5 from '../../components/img/board-5.webp';
+import img6 from '../../components/img/focused-puck.webp';
+import img7 from '../../components/img/pucks.webp';
+import img8 from '../../components/img/boy-playing.webp';
 import img9 from '../../components/img/img14.webp';
 import img10 from '../../components/img/img10.webp';
 import img11 from '../../components/img/img11.webp';

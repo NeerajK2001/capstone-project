@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 import { Link } from 'react-router-dom';
 import '../../styles/Home.css';
-import img4 from '../../components/img/img4.webp';
+import img4 from '../../components/img/boy-playing.webp';
 import Pdf from '../../components/img/rules.pdf';
 import bgvideo from '../../components/img/bgVideo.mp4';
 import TestimonialCarousel from './TestimonialCarousel';

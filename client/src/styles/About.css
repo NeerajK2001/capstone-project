@@ -101,6 +101,9 @@
 
 
 @media (max-width: 768px){
+    .article2-sec1{
+        background-image: url('../components/img/mobile/team.webp');
+    }
     .Article-1{
         min-height:fit-content;
         padding: 2rem 2rem;

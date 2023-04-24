@@ -5,14 +5,14 @@
 }
 .part-1{
     width:45%;
-    background-image: url('../components/img/img1.jpg');
+    background-image: url('../components/img/board-1.jpg');
     background-size: cover;
     position: relative;
     text-align: center;
 }
 
 .login-box{
-    background-image: url('../components/img/img6.webp');
+    background-image: url('../components/img/board-3.webp');
     
 }
 
@@ -100,6 +100,7 @@
     .part-1{
         width:100vw;
         height:20rem;
+        background-image: url('../components/img/mobile/board-1.webp');
     }
     .part-1 h2{
         padding-top: 0;
@@ -114,5 +115,8 @@
     .part-2 button{
         width:100%;
         padding: unset;
+    }
+    .login-box{
+        background-image: url('../components/img/mobile/board-3.webp');
     }
 }

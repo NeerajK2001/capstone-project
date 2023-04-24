@@ -10,7 +10,7 @@ html {
     object-fit: cover;
     left: 0;
     width: 100%;
-    top:32rem;
+    top:45%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -27,7 +27,7 @@ html {
     position: absolute;
     /* object-fit: cover; */
     left: 0;
-    top:32rem;
+    top:45%;
     left: 50%;
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -130,7 +130,7 @@ html {
 .section-3{
     height:80vh;
     background-color: #000000;
-    background: url('../components/img/img1.jpg') repeat fixed 100%;
+    background: url('../components/img/board-1.jpg') repeat fixed 100%;
     text-align: center;
     background-size: cover;
 }
@@ -154,7 +154,7 @@ html {
 
 
 .section-4{
-    background: url('../components/img/img3.webp') no-repeat  100%;
+    background: url('../components/img/focused-puck.webp') no-repeat  100%;
     background-color: #000;
     background-size: cover;
     height:80vh;
@@ -235,15 +235,16 @@ html {
     nav{
         height:40px;
     }
-    .video,
+    .video{
+        display: none;
+    }
     .overlay{
         height:80vh;
         top:45%;
     }
-    /* .video{
-        height:80vh;
-        top:47.5%;
-    } */
+    .section-1{
+        background-image: url('../components/img/mobile/boy-holding-game.png');
+    }
     .section-1 h2{
         font-size: 3.5rem;
         padding-top: 9rem;
@@ -269,6 +270,7 @@ html {
     }
     .section-3{
     height:100vh;
+    background: url('../components/img/mobile/board-1.webp') repeat fixed 100%;
     }
     .section-3 div{
         height:100vh;
@@ -333,7 +335,7 @@ html {
         padding:6rem 2rem;
     }
     .section-6{
-        background-image: url('../components/img/img3.webp');
+        background-image: url('../components/img/mobile/focused-puck.webp');
         background-size:cover;
         background-repeat: no-repeat;
         height: 60vw;

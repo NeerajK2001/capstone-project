@@ -2,7 +2,7 @@
 // import { useDispatch } from "react-redux";
 import { Box, Typography} from "@mui/material";
 // import { IconButton,  Button } from "@mui/material";
-import profile from "../../components/img/img3.webp";
+import profile from "../../components/img/pucks.webp";
 // import AddIcon from "@mui/icons-material/Add";
 // import RemoveIcon from "@mui/icons-material/Remove";
 // import { shades } from "../theme";
