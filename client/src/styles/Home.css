@@ -235,15 +235,10 @@ html {
     nav{
         height:40px;
     }
-    .video{
-        display: none;
-    }
+    .video,
     .overlay{
         height:80vh;
         top:45%;
-    }
-    .section-1{
-        background-image: url('../components/img/mobile/boy-holding-game.png');
     }
     .section-1 h2{
         font-size: 3.5rem;
