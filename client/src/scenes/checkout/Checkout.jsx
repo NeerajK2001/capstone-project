@@ -9,7 +9,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
 import axios from "axios";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 
@@ -104,9 +104,9 @@ const Checkout = () => {
           (result) => {
               console.log(result.text);
               console.log("Email Sent successfully!")
-              toast.success("Email Sent successfully!", {
-              hideProgressBar: true,
-              });
+              // toast.success("Email Sent successfully!", {
+              // hideProgressBar: true,
+              // });
           },
           (error) => {
               console.log(error.text);

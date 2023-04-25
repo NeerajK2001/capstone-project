@@ -20,6 +20,7 @@ import { KEY } from "../../utils/key";
 import ProductInfo from "./ProductInfo";
 import ProductPros from "./ProductPros";
 import EnergySavingsLeafOutlinedIcon from '@mui/icons-material/EnergySavingsLeafOutlined';
+import { Link } from "react-router-dom";
 // import CallToShop from "../../components/img/img2.webp";
 
 const Shop = () => {
@@ -81,10 +82,10 @@ const Shop = () => {
                 <Typography variant="p">Sold By Jalfam Games</Typography>
                 <Typography variant="p">Eco-friendly <EnergySavingsLeafOutlinedIcon/></Typography>
               </Box>
-              <Typography variant="p">See All Reviews</Typography>
-
+              <Typography variant="p" className="link-reviews"><a href="#reviews-list">See All Reviews</a></Typography>
+              
               <Typography variant="h3" m="5px 0px">
-                ${item?.attributes?.price}
+                ${item?.attributes?.price}<sup>&#43;GST</sup>
               </Typography>
               <Typography sx={{ mt: "20px" }}>
                 {item?.attributes?.longDescription}

@@ -34,6 +34,16 @@
     color: green;
 }
 
+.link-reviews a{
+    text-decoration: none;
+    color: black;
+}
+
+.link-reviews a:hover{
+    text-decoration:underline;
+    color: #EA5A0B;
+}
+
 @media only screen and (max-width: 600px) {
     .shop-button{
         flex-direction: column;

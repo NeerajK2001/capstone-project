@@ -9,17 +9,17 @@ function Footer() {
   return (
   <div className="fa-maxwidth">
     <div className='footer'>
-        <div className="fa-sec-1 footer-box" data-aos="fade-up">
+        <div className="fa-sec-1 footer-box" >
             <a href='/'><img src={img} alt='Logo'></img></a>
             <button href="/Home" onClick={gotop}>BACK TO TOP</button>
         </div>
-        <div className="fa-nav" data-aos="fade-up">
+        <div className="fa-nav" >
           <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
           <a href="/">Shop</a>
         </div>
-        <div className="fa-sec-3" data-aos="fade-up">
+        <div className="fa-sec-3" >
           <div className="social">
             <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 51.529 78.833">
               <g id="SVGRepo_iconCarrier" transform="translate(-336.5 0.5)">

@@ -33,7 +33,7 @@ const reviews = useSelector((state) => state.cart.reviews);
   });
 
   return (
-    <Box width="90%" margin="40px auto">
+    <Box width="90%" margin="40px auto" id="reviews-list">
       <Typography variant="h2" textAlign="left" mb="20px">
         Top Reviews
       </Typography>

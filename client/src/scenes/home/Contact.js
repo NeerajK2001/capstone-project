@@ -8,19 +8,15 @@ import { toast } from "react-toastify";
 const Contact = () => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
-
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const [nameError, setNameError] = useState("");
   const [subjectError, setSubjectError] = useState("");
-
-  //   const [phoneError, setPhoneError] = useState('');
-
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
+
   const form = useRef();
-  // console.log(phone);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -56,10 +52,8 @@ const Contact = () => {
   };
 
   const validate = () => {
+    
     let nameError = "";
-
-    // let phoneError = '';
-
     let emailError = "";
     let messageError = "";
     let subjectError = "";

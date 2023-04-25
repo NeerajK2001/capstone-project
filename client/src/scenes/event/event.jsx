@@ -1,13 +1,8 @@
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
 import { Box, Typography, useTheme } from "@mui/material";
-// import AddIcon from "@mui/icons-material/Add";
-// import RemoveIcon from "@mui/icons-material/Remove";
-// import { shades } from "../theme";
-// import { shades } from "../../theme";
 import { useNavigate } from "react-router-dom";
 import "../../styles/global.css"
 import { BASE_URL } from "../../utils/base";
+
 const Event = ({ event, width }) => {
   const navigate = useNavigate();
   const {
