@@ -14,11 +14,12 @@ import img5 from '../../components/img/board-5.webp';
 import img6 from '../../components/img/focused-puck.webp';
 import img7 from '../../components/img/pucks.webp';
 import img8 from '../../components/img/boy-playing.webp';
-import img9 from '../../components/img/img14.webp';
-import img10 from '../../components/img/img10.webp';
-import img11 from '../../components/img/img11.webp';
-import img12 from '../../components/img/img15.webp';
-import img13 from '../../components/img/img16.webp';
+import img9 from '../../components/img/wooden-board.webp';
+import img10 from '../../components/img/ocean-view.webp';
+import img11 from '../../components/img/living-room-kids.webp';
+import img12 from '../../components/img/triangle-home.webp';
+import img13 from '../../components/img/grass-back.webp';
+import img14 from '../../components/img/back-back-board.webp';
 
 export default function MyGallery() {
   const [itemsToShow, setItemsToShow] = React.useState(12);
@@ -76,10 +77,14 @@ export default function MyGallery() {
     img: img13,
     title: '9on9',
   },
+  {
+    img: img14,
+    title: '9on9',
+  },
   ];
 
   const handleLoadMore = () => {
-    setItemsToShow(itemsToShow + 12);
+    setItemsToShow(itemsToShow + 8);
   };
 
   React.useEffect(() => {

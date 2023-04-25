@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * orderlist controller
- */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
