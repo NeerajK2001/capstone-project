@@ -8,6 +8,7 @@ import "../../styles/Event.css"
 
 import { BASE_URL } from "../../utils/base";
 import { KEY } from "../../utils/key";
+
 const EventDetails = () =>{
     const {eventId} = useParams();
     const [value, setValue] = useState("description");

@@ -12,7 +12,7 @@ import axios from "axios";
 // import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
-
+import { useNavigate } from "react-router-dom";
 const stripePromise = loadStripe(
   "pk_test_51Mf522BMldolGarEcUn4XsmcdjUPvz1gu2P3ATld3jnNeNKdAIFuxdeg9f6Zk1o4V29f8D11Ns7g8dwuzyzp1beP00t9lQLIFv"
 );
@@ -24,6 +24,7 @@ const Checkout = () => {
   const isSecondStep = activeStep === 1;
   
   const form = useRef();
+  const navigate = useNavigate();
 
   const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1);
@@ -123,7 +124,6 @@ const Checkout = () => {
   };
 
   async function makePayment(values) {
-    
     const stripe = await stripePromise;
     const requestBody = {
       userName: values.firstName,
@@ -134,6 +134,7 @@ const Checkout = () => {
       })),
     };
 
+
     const response = await fetch(`${BASE_URL}/api/orders/`, {
       method: "POST",
       headers: {
@@ -143,11 +144,14 @@ const Checkout = () => {
           },
       body: JSON.stringify(requestBody),
     });
+
     const session = await response.json();
     await stripe.redirectToCheckout({
       sessionId: session.id,
     });
     console.log(requestBody)
+    navigate("/checkout/success")
+    
 
   }
 

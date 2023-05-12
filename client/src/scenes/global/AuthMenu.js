@@ -14,7 +14,7 @@ const FlexBox = styled(Box)`
 const { username } = userData();
 
 
-const AuthMenu = () => {
+  const AuthMenu = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isAuthOpen = useSelector((state) => state.cart.isAuthOpen);

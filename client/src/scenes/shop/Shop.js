@@ -20,12 +20,9 @@ import { KEY } from "../../utils/key";
 import ProductInfo from "./ProductInfo";
 import ProductPros from "./ProductPros";
 import EnergySavingsLeafOutlinedIcon from '@mui/icons-material/EnergySavingsLeafOutlined';
-import { Link } from "react-router-dom";
-// import CallToShop from "../../components/img/img2.webp";
 
 const Shop = () => {
   const dispatch = useDispatch();
-  // const [value, setValue] = useState("description");
   const [count] = useState(1);
   const [item, setItem] = useState(null);
 
